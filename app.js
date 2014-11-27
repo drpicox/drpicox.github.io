@@ -1,0 +1,1 @@
+angular.module("com.david-rodenas.dh",["com.david-rodenas.dh.pages.root"]),angular.module("com.david-rodenas.dh.pages.root",[]),function(a){"use strict";function b(){var a={restrict:"E",templateUrl:"dh.pages.root/directives/dhRootView.html"};return a}a.module("com.david-rodenas.dh.pages.root").directive("dhRootView",b)}(angular);
