@@ -41,6 +41,33 @@ angular.module('com.david-rodenas.dh').run(['$templateCache', function($template
     "\t\t\t\t</li>\n" +
     "\t\t\t</ul>\n" +
     "\n" +
+    "\t\t\t<br><br>\n" +
+    "\t\t\t<h3>Programming links:</h3>\n" +
+    "\t\t\t<ul>\n" +
+    "\t\t\t\t<li><a href=\"https://github.com/drpicox/drpicox.github.io\" target=\"_blank\">This web page</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li>Some of my open source <a href=\"https://github.com/drpicox/drpx-components\" target=\"_blank\">angular components</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li>My first experience with polymer, a <a href=\"https://github.com/drpicox/polymer-carousel\" target=\"_blank\">polymer carousel</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li>Very simple and small a <a href=\"https://github.com/drpicox/lunar-landing\" target=\"_blank\">lunar landing</a> game\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t</ul>\n" +
+    "\n" +
+    "\n" +
+    "\t\t\t<br><br>\n" +
+    "\t\t\t<h3>Teaching links:</h3>\n" +
+    "\t\t\t<ul>\n" +
+    "\t\t\t\t<li><a href=\"https://github.com/drpicox/tutorial-promises-v1\" target=\"_blank\">Promises v1</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li> <a href=\"https://github.com/drpicox/tutorial-gruntjs-v1\" target=\"_blank\">Grunt v1</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li><a href=\"https://github.com/drpicox/tutorial-jspatterns-v1\" target=\"_blank\">Js Patterns v1</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t<li><a href=\"https://github.com/drpicox/tutorial-angulardesigners-v1\" target=\"_blank\">Angular for Designers v1</a>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t</ul>\n" +
+    "\n" +
     "\t\t</div><!-- /.col* -->\n" +
     "\n" +
     "\n" +
