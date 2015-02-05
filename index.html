@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<html ng-app="com.david-rodenas.dh">
+<html ng-app="drHome" ng-strict-di>
 <head>
 	<title>David Rodenas - @drpicox Home page</title>
-	<meta name="viewport" content="width=device-width">
-	<meta name="google-site-verification" content="QfXW9ibW_gwrtsViUn9usf-eQqU5OT45JV1aBm-cMBE" />
 	
 	<link rel="stylesheet" href="styles.css">
 
 	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500|Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'>
+	<style>
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	  display: none !important;
+	}
+	</style>
 </head>
-<body>
+<body layout="column" ng-cloak>
 
-	<dh-root-view></dh-root-view>
+	<header>
+		<site-header></site-header>
+	</header>
 
+	<main flex scroll-x>
+		<div class="container" layout="row">
+			<div class="hidden-sm">
+				<sidebar></sidebar>
+			</div>
+			<div ng-view flex></div>
+		</div>
+	</main>
+
+	<footer>
+		<site-footer></site-footer>
+	</footer>
 
 	<script src="components.js"></script>
 
 	<script src="app.js"></script>
-
-	<script src="dh-views.js"></script>
 
 
 	<script>
@@ -32,6 +47,7 @@
 	  ga('require', 'linkid', 'linkid.js');
 	  ga('send', 'pageview');
 	</script>
+
 	
 </body>
 </html>
