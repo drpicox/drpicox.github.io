@@ -2,6 +2,8 @@
 <html ng-app="drHome" ng-strict-di>
 <head>
 	<title>David Rodenas - @drpicox Home page</title>
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 	
 	<link rel="stylesheet" href="styles.css">
 
@@ -10,26 +12,37 @@
 	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	  display: none !important;
 	}
+	body {
+		background-image: url(images/grid.png);
+		background-repeat: repeat;
+		background-size: 1em 1em;
+	}
 	</style>
 </head>
-<body layout="column" ng-cloak>
+<body layout="row" ng-cloak>
 
-	<header>
-		<site-header></site-header>
-	</header>
+	<md-sidenav class="md-sidenav-left md-whiteframe-z2" 
+	md-component-id="sidebar" 
+	md-is-locked-open="$media('gt-sm')"
+	style="width: 224px; min-width:224px;">
+		<sidebar></sidebar>
+	</md-sidenav>
 
-	<main flex scroll-x>
-		<div class="container" layout="row">
-			<div class="hidden-sm">
-				<sidebar></sidebar>
-			</div>
-			<div ng-view flex></div>
-		</div>
-	</main>
+	<div layout="column" flex>
 
-	<footer>
-		<site-footer></site-footer>
-	</footer>
+		<header>
+			<site-header></site-header>
+		</header>
+
+		<md-content flex md-scroll-y>
+			<main flex ng-view></main>
+
+			<footer>
+				<site-footer></site-footer>
+			</footer>
+		</md-content>
+
+	</div>
 
 	<script src="components.js"></script>
 
