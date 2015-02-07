@@ -1,17 +1,1 @@
-{
-  "first-ngtags-app": {
-    "title": "First ngtags App",
-    "tags": [
-      "ngtags",
-      "angular",
-      "app",
-      "javascript",
-      "html",
-      "grunt"
-    ],
-    "date": "2015-02-05T00:00:00.000Z",
-    "preview": "[Ngtags](http://ngtags.org) objective is to simplify the creation of [AngularJS](https://angularjs.org) apps. Instead of creating complex _directive_ and _routes_ structure definitions it allows to create them through an `html` like tags self explained and contained. Say hello:\n\n```html\n…",
-    "iso8601Date": "2015-02-05T01:00:00+01:00",
-    "basename": "first-ngtags-app"
-  }
-}
+{}
