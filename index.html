@@ -22,10 +22,11 @@
 <body layout="row" ng-cloak>
 
 	<md-sidenav class="md-sidenav-left md-whiteframe-z2" 
-	md-component-id="sidebar" 
-	md-is-locked-open="$media('gt-sm')"
-	style="width: 224px; min-width:224px;">
-		<sidebar></sidebar>
+	drpx-toggle="sidenavLgSm as sidenavLgSm" 
+	md-component-id="sidenav" 
+	md-is-locked-open="$media('gt-sm') && sidenavLgSm.isOpen()"
+	style="xwidth: 224px; xmin-width:224px;">
+		<sidenav></sidenav>
 	</md-sidenav>
 
 	<div layout="column" flex>
