@@ -10,8 +10,19 @@
       "grunt"
     ],
     "date": "2015-02-05T00:00:00.000Z",
-    "preview": "<rep style=\"background:red\">\n[Ngtags](http://ngtags.org) objective is to simplify the creation of [AngularJS](https://angularjs.org) apps. Instead of creating complex _directive_ and _routes_ structure definitions it allows to create them through an `html` like tags self explained and contained. …",
-    "iso8601Date": "2015-02-05T01:00:00+01:00",
-    "basename": "first-ngtags-app"
+    "basename": "first-ngtags-app",
+    "preview": " [Ngtags](http://ngtags.org) objective is to simplify the creation of [AngularJS](https://angularjs.org) apps. Instead of creating complex _directive_ and _routes_ structure definitions it allows to create them through an `html` like tags self explained and contained. Say hello:  ```html <angular-element name=\"say-hello\">     <template>         <h1"
+  },
+  "grunt-frontmatter": {
+    "title": "grunt-frontmatter: extracting yaml",
+    "tags": [
+      "grunt",
+      "yaml",
+      "javascript",
+      "front-matter"
+    ],
+    "date": "2015-02-09T00:00:00.000Z",
+    "basename": "grunt-frontmatter",
+    "preview": " Here I present a new grunt task (yep, another grunt task), the idea of these task is to extract YAML front-matter from files and put them all into one single JSON file.  For long time I have been using [grunt-markdown-to-json](https://www.npmjs.com/package/grunt-markdown-to-json) in my developments (two examples, one was this web page, another is "
   }
 }
