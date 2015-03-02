@@ -24,5 +24,20 @@
     "date": "2015-02-09T00:00:00.000Z",
     "basename": "grunt-frontmatter",
     "preview": " Here I present a new grunt task (yep, another grunt task), the idea of these task is to extract YAML front-matter from files and put them all into one single JSON file.  For long time I have been using [grunt-markdown-to-json](https://www.npmjs.com/package/grunt-markdown-to-json) in my developments (two examples: one was this web page, another is "
+  },
+  "updateable": {
+    "title": "Updateable pattern or flux-for-angular",
+    "tags": [
+      "angular",
+      "app",
+      "javascript",
+      "flux",
+      "observer",
+      "pattern",
+      "updateable"
+    ],
+    "date": "2015-03-02T00:00:00.000Z",
+    "basename": "updateable",
+    "preview": " This last year Flux has become higly popular, the main reason: it is an architecture that allows to create large and maintanable aplications. In the following video Facebook people explains how and why developed it:  [![Why FLUX](http://img.youtube.com/vi/nYkdrAPrdcw/0.jpg)](https://www.youtube.com/watch?v=nYkdrAPrdcw&list=PLb0IAmt7-GS188xDYE-u1Sh"
   }
 }
