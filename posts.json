@@ -11,7 +11,7 @@
     ],
     "date": "2015-02-05T00:00:00.000Z",
     "basename": "first-ngtags-app",
-    "preview": " [Ngtags](http://ngtags.org) objective is to simplify the creation of [AngularJS](https://angularjs.org) apps. Instead of creating complex _directive_ and _routes_ structure definitions it allows to create them through an `html` like tags self explained and contained. Say hello:  ```html <angular-element name=\"say-hello\">     <template>         <h1"
+    "preview": " [Ngtags](http://ngtags.org) objective is to simplify the creation of [AngularJS](https://angularjs.org) apps. Instead of creating complex _directive_ and _routes_ structure definitions it allows to create them through an `html` like tags self explained and contained."
   },
   "grunt-frontmatter": {
     "title": "grunt-frontmatter: extracting yaml",
@@ -23,7 +23,7 @@
     ],
     "date": "2015-02-09T00:00:00.000Z",
     "basename": "grunt-frontmatter",
-    "preview": " Here I present a new grunt task (yep, another grunt task), the idea of these task is to extract YAML front-matter from files and put them all into one single JSON file.  For long time I have been using [grunt-markdown-to-json](https://www.npmjs.com/package/grunt-markdown-to-json) in my developments (two examples: one was this web page, another is "
+    "preview": " Here I present a new grunt task (yep, another grunt task), the idea of these task is to extract YAML front-matter from files and put them all into one single JSON file.  For long time I have been using [grunt-markdown-to-json](https://www.npmjs.com/package/grunt-markdown-to-json) in my developments (two examples: one was this web page, another is [Wenode](http://wenode.barcelonajs.org))."
   },
   "updateable": {
     "title": "Updateable pattern or flux-for-angular",
@@ -37,7 +37,8 @@
       "updateable"
     ],
     "date": "2015-03-02T00:00:00.000Z",
+    "abstract": "This last year Flux had become highly popular, but how it can be applied to Angular? Here I present an alternative mechanism more in line with Angular philosophy.\n",
     "basename": "updateable",
-    "preview": " This last year Flux had become highly popular, the main reason: an architecture that allows to create large and maintainable applications. In the following video Facebook people explains how and why they developed it:  [![Why FLUX](http://img.youtube.com/vi/nYkdrAPrdcw/0.jpg)](https://www.youtube.com/watch?v=nYkdrAPrdcw&list=PLb0IAmt7-GS188xDYE-u1"
+    "preview": " This last year Flux had become highly popular, the main reason: an architecture that allows to create large and maintainable applications. In the following video Facebook people explains how and why they developed it:  [![Why FLUX](http://img.youtube.com/vi/nYkdrAPrdcw/0.jpg)](https://www.youtube.com/watch?v=nYkdrAPrdcw&list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v#t=621)  In https://facebook.github.io/flux/docs/overview.html describes detailed the Flux flow wich is the following:             --------------           -------------           -------------           |              |         |             |         |             |           |  Dispatcher  |  ---->  |    Store    |  ---->  |    View     |             |              |         |             |         |             |            --------------           -------------           -------------                   ^                                               |                   |                                               |                   |                 -------------                 |                   |                |             |                |                    --------------  |   Action    |  <-------------                                    |             |                                     -------------   > All data flows through the dispatcher as a central hub."
   }
 }

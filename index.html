@@ -16,43 +16,24 @@
 
 	<link rel="stylesheet" href="styles.css">
 
-	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500|Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Source+Sans+Pro:200,400italic,700,400' rel='stylesheet' type='text/css'>
 	<style>
 	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	  display: none !important;
 	}
-	body {
-		background-image: url(images/grid.png);
-		background-repeat: repeat;
-		background-size: 1em 1em;
-	}
 	</style>
 </head>
-<body layout="row" ng-cloak>
+<body layout="column" ng-cloak>
 
-	<md-sidenav class="md-sidenav-left md-whiteframe-z2" 
-	drpx-toggle="sidenavLg as sidenavLg" 
-	md-component-id="sidenav" 
-	md-is-locked-open="$media('gt-lg') && sidenavLg.isOpen()"
-	style="xwidth: 224px; xmin-width:224px;">
-		<sidenav></sidenav>
-	</md-sidenav>
+	<header class="whiteframe-z1">
+		<site-header></site-header>
+	</header>
 
-	<div layout="column" flex>
+	<main flex ng-view></main>
 
-		<header>
-			<site-header></site-header>
-		</header>
-
-		<md-content flex md-scroll-y>
-			<main flex ng-view></main>
-
-			<footer>
-				<site-footer></site-footer>
-			</footer>
-		</md-content>
-
-	</div>
+	<footer>
+		<site-footer></site-footer>
+	</footer>
 
 	<script src="components.js"></script>
 
