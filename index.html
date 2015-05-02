@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="drHome" ng-strict-di>
 <head>
-	<title head-title-be>David Rodenas - @drpicox Home page</title>
-	<meta head-description-be name="description" content="This is the home page of @drpicox, david rodenas.">
-	<meta head-keywords-be name="keywords" content="david,rodenas,homepage,blog">
+	<title>David Rodenas - @drpicox Home page</title>
+	<meta name="description" content="This is the home page of @drpicox, david rodenas.">
+	<meta name="keywords" content="david,rodenas,homepage,blog">
 
-	<meta name="google-site-verification" content="QfXW9ibW_gwrtsViUn9usf-eQqU5OT45JV1aBm-cMBE" />
 	<meta name="fragment" content="!">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="mobile-web-app-capable" content="yes">
@@ -13,28 +12,26 @@
 	<meta name="application-name" content="@drpicox Home">
 	<meta name="apple-mobile-web-app-title" content="@drpicox Home">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<link rel="stylesheet" href="styles.css">
 
-	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Source+Sans+Pro:200,400italic,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<style>
 	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	  display: none !important;
 	}
 	</style>
 </head>
-<body layout="column" ng-cloak>
+<body ng-cloak>
 
-	<header class="whiteframe-z1">
-		<site-header></site-header>
-	</header>
+	<site-header></site-header>
 
-	<main flex ng-view></main>
+	<ng-view autoscroll></ng-view>
 
-	<footer>
-		<site-footer></site-footer>
-	</footer>
-
+	<site-footer></site-footer>
+	
 	<script src="components.js"></script>
 
 	<script src="app.js"></script>

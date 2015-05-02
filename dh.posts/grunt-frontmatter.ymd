@@ -1,9 +1,9 @@
 ---
 title: "grunt-frontmatter: extracting yaml"
+subtitle: "Automatize metadata extraction in your Grunt process"
 tags:
   - grunt
   - yaml
-  - javascript
   - front-matter
 date: 2015-02-09
 ---

@@ -1,12 +1,10 @@
 ---
 title: "First ngtags App"
+subtitle: "Demo case with public source of ngtags"
 tags:
   - ngtags
   - angular
-  - app
-  - javascript
-  - html
-  - grunt
+  - apps
 date: 2015-02-05
 ---
 
