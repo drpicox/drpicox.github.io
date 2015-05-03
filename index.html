@@ -26,11 +26,20 @@
 </head>
 <body ng-cloak>
 
-	<site-header></site-header>
+	<splash-screen id="splash" class="text-center text-muted">
+
+		<br><br><br><br><br><br>
+		<i class="fa fa-spinner fa-4x fa-pulse"></i>
+
+	</splash-screen>
+
+	<site-header ng-if="!$.splash.active"></site-header>
 
 	<ng-view autoscroll></ng-view>
 
-	<site-footer></site-footer>
+	<site-footer ng-if="!$.splash.active"></site-footer>
+
+	<loading-view ng-if="!$.splash.active"></loading-view>
 	
 	<script src="components.js"></script>
 
