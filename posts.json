@@ -15,6 +15,22 @@
     "basename": "drpx-id",
     "preview": "  ."
   },
+  "drpx-transcludeto": {
+    "title": "drpx-transcludeto: multi-transclude",
+    "subtitle": "Improve your directives modularity",
+    "tags": [
+      "angular",
+      "modules"
+    ],
+    "date": "2015-05-06T00:00:00.000Z",
+    "abstract": "Angular lets you to transclude html templates into your directives, in other words, parametrize a directive with one template. Unfortunately, angular is limited by one single translcussion. Here I present a small module that allows multiple transclussion, it allows you to create directives like lists with custom header items and footers, higly configurable dialogs, ...\n",
+    "snippet": "```javascript\n<list-pager list=\"vm.people\">\n    <h1 target-to=\"header\">People</h1>\n    <person-detail person=\"$container.item\" target-to=\"item\"></person-detail>\n    <div target-to=\"footer\">\n        <button ng-click=\"add()\">Add</button>\n    </div>\n</list-pager>\n```\n",
+    "source": "https://github.com/drpicox/drpx-transcludeto",
+    "append": "/drpx-transcludeto/README.md",
+    "hideTitle": true,
+    "basename": "drpx-transcludeto",
+    "preview": "  ."
+  },
   "first-ngtags-app": {
     "title": "First ngtags App",
     "subtitle": "Demo case with public source of ngtags",
