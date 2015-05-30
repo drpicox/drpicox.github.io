@@ -25,7 +25,7 @@
     "source": "https://github.com/drpicox/drpx-id",
     "append": "/drpx-id/README.md",
     "basename": "drpx-id",
-    "preview": "  ."
+    "preview": " <div>   **Test** </div>  <div> <edit-on-codepen>   <codepen-button></codepen-button>   <codepen-content key=\"js\" markdown=\"1\"> ```javascript function(){ lo; } ```   </codepen-content>   <codepen-content key=\"html\" markdown=\"1\" class=\"nghide\"> ```html     <script src=\"http://sdfds.fs\">         <hola>Hola</hola> ```   </codepen-content> </edit-on-codepen> </div> ."
   },
   "drpx-transcludeto": {
     "title": "drpx-transcludeto: multi-transclude",
@@ -66,6 +66,19 @@
     "date": "2015-02-09T00:00:00.000Z",
     "basename": "grunt-frontmatter",
     "preview": " Here I present a new grunt task (yep, another grunt task), the idea of these task is to extract YAML front-matter from files and put them all into one single JSON file.  For long time I have been using [grunt-markdown-to-json](https://www.npmjs.com/package/grunt-markdown-to-json) in my developments (two examples: one was this web page, another is [Wenode](http://wenode.barcelonajs.org))."
+  },
+  "unboxing-di": {
+    "title": "Unboxing Dependency Injection",
+    "subtitle": "...or how I realised how much work saves dependency injection",
+    "tags": [
+      "teaching",
+      "angular"
+    ],
+    "date": "2015-05-29T00:00:00.000Z",
+    "abstract": "AngularJS dependency injection saves a lot of work, and this feature comes out of the box. Beginners are usually puzzled by this feature, many times misunderstood, but it saves a lot of time and simplifies drastically the maintenance of large applications. Here I show few small examples that illustrate how much work is saved by dependency injection and how it simplifies the maintenance of complex developments.\n",
+    "snippet": "```javascript\napp.factory('Customer', function CustomerFactory() { ... });\napp.factory('CustomersState', function CustomersStateFactory(Customer,State) { ... });\napp.factory('Product', function ProductFactory() { ... });\napp.factory('ProductsState', function ProductsStateFactory(Product,State) { ... });\napp.factory('Cart', function CartFactory(CustomersState,ProductsState) { ... });\n\n// vs\n\napp.Customer = (function CustomerFactory() { ... })();\napp.CustomersState = (function CustomersStateFactory(Customer,State) { ... })(app.Customer,tools.State);\napp.Product = (function ProductFactory() { ... })(Product,State);\napp.ProductsState = (function ProductsStateFactory() { ... })(app.Product,tools.State);\napp.Cart = (function CartFactory(CustomersState,ProductsState) { ... })(app.CustomersState,app.ProductsState);\n```\n",
+    "basename": "unboxing-di",
+    "preview": " The opening example illustrates a simplified case of an app that has three main types of entities: Customer, Product and Cart. Additionally, it also considers two special _\"controllers\"_ that are supposed to be a kind of dictionary."
   },
   "updateable": {
     "title": "Updateable pattern or flux-for-angular",
