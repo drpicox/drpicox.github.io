@@ -1,4 +1,17 @@
 {
+  "angular-101-l1": {
+    "title": "Angular 101 - L1",
+    "subtitle": "The right place to start web apps",
+    "tags": [
+      "teaching",
+      "angular"
+    ],
+    "date": "2015-07-16T00:00:00.000Z",
+    "abstract": "The most difficult part to start with one technology is just that: start. This small article shows the necessary steps to start: how to create a simple web page with angular,  how to start a web server and use it, how to add few nice styles,  and how to create your first angular component. It does not try to explain everything in detail,  it is just a start.\n",
+    "snippet": "```html\n<button ng-click=\"vm.sayHello()\">Say hello</button>\n<div>{{vm.hello}}</div>\n```\n",
+    "basename": "angular-101-l1",
+    "preview": "## Chapter 1: First angular app This is a small example just to see the fundamentals of angular. Follow it step by step and you will the most basic angular app running."
+  },
   "angular-provider": {
     "title": "Angular providers",
     "subtitle": "providers, factories, services, values, constants",
