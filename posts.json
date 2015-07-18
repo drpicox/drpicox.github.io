@@ -1,7 +1,7 @@
 {
   "angular-101-l1": {
     "title": "Angular 101 - L1",
-    "subtitle": "The right place to start web apps",
+    "subtitle": "The right place to start building your own web apps",
     "tags": [
       "teaching",
       "angular"
@@ -82,14 +82,14 @@
   },
   "unboxing-di": {
     "title": "Unboxing Dependency Injection",
-    "subtitle": "...or how I realised how much work saves dependency injection",
+    "subtitle": "...or how I realised how much work saves automatic dependency injection",
     "tags": [
       "discussion",
       "angular"
     ],
     "date": "2015-05-29T00:00:00.000Z",
     "abstract": "AngularJS dependency injection saves a lot of work, and this feature comes out of the box. Beginners are usually puzzled by this feature, many times misunderstood, but it saves a lot of time and simplifies drastically the maintenance of large applications. Here I show few small examples that illustrate how much work is saved by dependency injection and how it simplifies the maintenance of complex developments.\n",
-    "snippet": "```javascript\napp.factory('Customer', function CustomerFactory() { ... });\napp.factory('CustomersState', function CustomersStateFactory(Customer,State) { ... });\napp.factory('Product', function ProductFactory() { ... });\napp.factory('ProductsState', function ProductsStateFactory(Product,State) { ... });\napp.factory('Cart', function CartFactory(CustomersState,ProductsState) { ... });\n// vs\napp.Customer = (function CustomerFactory() { ... })();\napp.CustomersState = (function CustomersStateFactory(Customer,State) { ... })(app.Customer,tools.State);\napp.Product = (function ProductFactory() { ... })(Product,State);\napp.ProductsState = (function ProductsStateFactory() { ... })(app.Product,tools.State);\napp.Cart = (function CartFactory(CustomersState,ProductsState) { ... })(app.CustomersState,app.ProductsState);\n```\n",
+    "snippet": "```javascript\napp.factory('Customer', function CustomerFactory() { ... });\napp.factory('customersState', function customersStateFactory(Customer,State) { ... });\napp.factory('Product', function ProductFactory() { ... });\napp.factory('productsState', function productsStateFactory(Product,State) { ... });\napp.factory('Cart', function CartFactory(customersState,productsState) { ... });\n// vs\napp.Customer = (function CustomerFactory() { ... })();\napp.customersState = (function customersStateFactory(Customer,State) { ... })(app.Customer,tools.State);\napp.Product = (function ProductFactory() { ... })(Product,State);\napp.productsState = (function productsStateFactory() { ... })(app.Product,tools.State);\napp.Cart = (function CartFactory(customersState,productsState) { ... })(app.customersState,app.productsState);\n```\n",
     "basename": "unboxing-di",
     "preview": "The opening example illustrates a simplified case of an app that has three main types of entities: Customer, Product and Cart. Additionally, it also considers two special _\"controllers\"_ that are supposed to be a kind of dictionary."
   },
