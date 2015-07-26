@@ -9,8 +9,23 @@
     "date": "2015-07-16T00:00:00.000Z",
     "abstract": "The most difficult part to start with one technology is just that: start. This small article shows the necessary steps to start: how to create a simple web page with angular,  how to start a web server and use it, how to add few nice styles,  and how to create your first angular component. It does not try to explain everything in detail,  it is just a start.\n",
     "snippet": "```html\n<button ng-click=\"vm.sayHello()\">Say hello</button>\n<div>{{vm.hello}}</div>\n```\n",
+    "next": "angular-101-l2",
     "basename": "angular-101-l1",
     "preview": "## Chapter 1: First angular app This is a small example just to see the fundamentals of angular. Follow it step by step and you will the most basic angular app running."
+  },
+  "angular-101-l2": {
+    "title": "Angular 101 - L2",
+    "subtitle": "Guess a number game app",
+    "tags": [
+      "teaching",
+      "angular"
+    ],
+    "date": "2015-07-26T00:00:00.000Z",
+    "abstract": "In the previous article we just have started with Angular. Now it is time to do something more challenging. What about to create a game to guess a number? This article will go deeper inside controllers,  will show how to use data models, will show how to use dependency injection, and will show how to repeat and nest visual components.\n",
+    "snippet": "```html\n<input type=\"number\" ng-model=\"vm.number\">\n<button ng-click=\"vm.guess()\">Guess</button>\n<div ng-show=\"vm.guessed\">You number is {{vm.result}}!</div>\n```\n",
+    "prev": "angular-101-l1",
+    "basename": "angular-101-l2",
+    "preview": "## Chapter 1: Your first double data binding Angular updates the view of the app automatically when data changes, and at the same time, if a view changes a data,  angular updates it. Let's see what that means: 1."
   },
   "angular-provider": {
     "title": "Angular providers",
