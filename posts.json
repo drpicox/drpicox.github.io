@@ -36,7 +36,7 @@
     ],
     "date": "2015-05-08T00:00:00.000Z",
     "abstract": "One of the most difficult parts to angular newcomers is to understand the concept of factories, services, and the hardest one are provider. Nevertheless they are quite simple and,  surprisingly all them are just sugar syntax to make providers. Provider is the basic tool of angular dependency injection and in this article I show in few examples how are they related.\n",
-    "snippet": "```javascript\nfunction Logger() {\n    this.log = function(msg) { console.log(msg); };\n}\n// ..choose..\nmodule.value('Logger', new Logger());\n// ..or..\nmodule.service('Logger', Logger);\n// ..or..\nmodule.factory('Logger', function() { return new Logger(); });\n// ..or..\nmodule.provider('Logger', function() {\n    this.$get = function() { return new Logger(); };\n});\n```\n",
+    "snippet": "```javascript\nfunction Logger() {\n    this.log = function(msg) { console.log(msg); };\n}\n// ..choose..\nmodule.value('logger', new Logger());\n// ..or..\nmodule.service('logger', Logger);\n// ..or..\nmodule.factory('logger', function() { return new Logger(); });\n// ..or..\nmodule.provider('logger', function() {\n    this.$get = function() { return new Logger(); };\n});\n```\n",
     "basename": "angular-provider",
     "preview": "All this four example does exactly the same, and Yes, almost all components in Angular are providers: values, services, factories, directives... And you didn't noticed, aren't you? ### What the example does? Let's look carefully to the introduction example."
   },
