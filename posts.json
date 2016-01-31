@@ -27,6 +27,19 @@
     "basename": "angular-101-l2",
     "preview": "## Chapter 1: Your first double data binding Angular updates the view of the app automatically when data changes, and at the same time, if a view changes a data,  angular updates it. Let's see what that means: 1."
   },
+  "angular-camp": {
+    "title": "AngularCamp talks",
+    "subtitle": "Resources for the AngularCamp talks",
+    "tags": [
+      "teaching",
+      "angular"
+    ],
+    "date": "2016-01-31T00:00:00.000Z",
+    "abstract": "AngularCamp take place at January 30-31 of 2016 in Barcelona.  During the event, I proposed few talks, and I did them.  In this post I collect the slides and resources involved in those talks.\n",
+    "snippet": "```javascript\nconsole.debug('[http-book6] remote get simulating...');\n$timeout(function() {\n    savedBook = bookMock;\n    $timeout(function() {\n        cbQueue.forEach(function(cb) {\n            cb(bookMock);\n        });\n    });\n    console.debug('[http-book6] remote get simulated.');\n}, 3000);\n```\n",
+    "basename": "angular-camp",
+    "preview": "The Angular Camp official web page is: - http://angularcamp.org/ ### Promises - Arguments against detractors In this repo, I present, step by step, whichs problems appears when we work with promises, and at the end, I show how we can do the same with promises. - https://github.com/drpicox/promises-against-callbacks ### MVC - Model, the great forgotten In this presentation, I show step by step the construction of an Angular application, and which role plays the model."
+  },
   "angular-provider": {
     "title": "Angular providers",
     "subtitle": "providers, factories, services, values, constants",
