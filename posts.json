@@ -53,6 +53,20 @@
     "basename": "angular-provider",
     "preview": "All this four example does exactly the same, and Yes, almost all components in Angular are providers: values, services, factories, directives... And you didn't noticed, aren't you? ### What the example does? Let's look carefully to the introduction example."
   },
+  "as-directive": {
+    "title": "My proposal for as Directive",
+    "subtitle": "A directive to rule them all component controllers",
+    "tags": [
+      "angular",
+      "modules"
+    ],
+    "date": "2016-03-04T00:00:00.000Z",
+    "abstract": "Large part of the effort of building Angular applications is to connect components. Using bindings we can pass arguments, trigger updates, watch changes. Using require we can connect to other  parent or sibiling controllers and use them directly. But what happen when we want to connect to children controllers? How we can do it? What do we obtain?\n",
+    "snippet": "```html\n<toggle as=\"myToggle\"></toggle>\n<button ng-click=\"myToggle.toggle();\">Toggle</button>\n<p ng-show=\"myToggle.isOpened()\">The toggle is active</p>\n```\n",
+    "source": "https://github.com/angular/angular.js/pull/14080",
+    "basename": "as-directive",
+    "preview": "## A new propossal: `asDirective` See https://github.com/angular/angular.js/pull/14080 for details, current status of the propossal, and feel free to comment. Here I propose a new Directive: the `asDirective`."
+  },
   "drpx-id": {
     "title": "drpx-id: reference your children",
     "subtitle": "Improve connection between your Angular directives",
@@ -65,8 +79,9 @@
     "snippet": "```html\n<!-- yourComponent.tpl.html -->\n<toggle id=\"theToggle\"></toggle>\n<button ng-click=\"theToggle.toggle()\">Toggle</button>\n<h1 ng-show=\"theToggle.isOpen()\">My Content</h1>\n```\n",
     "source": "https://github.com/drpicox/drpx-id",
     "append": "/drpx-id/README.md",
+    "unused": "<div>\n  **Test**\n</div>\n<div>\n<edit-on-codepen>\n  <codepen-button></codepen-button>\n  <codepen-content key=\"js\" markdown=\"1\">\n```javascript\nfunction(){ lo; }\n```\n  </codepen-content>\n  <codepen-content key=\"html\" markdown=\"1\" class=\"nghide\">\n```html\n    <script src=\"http://sdfds.fs\">    \n    <hola>Hola</hola>\n```\n  </codepen-content>\n</edit-on-codepen>\n</div>\n",
     "basename": "drpx-id",
-    "preview": "<div>   **Test** </div> <div> <edit-on-codepen>   <codepen-button></codepen-button>   <codepen-content key=\"js\" markdown=\"1\"> ```javascript function(){ lo; } ```   </codepen-content>   <codepen-content key=\"html\" markdown=\"1\" class=\"nghide\"> ```html     <script src=\"http://sdfds.fs\">         <hola>Hola</hola> ```   </codepen-content> </edit-on-codepen> </div> ."
+    "preview": "See [asDirective](#!/posts/asDirective). ."
   },
   "drpx-transcludeto": {
     "title": "drpx-transcludeto: multi-transclude",
@@ -114,11 +129,11 @@
     "tags": [
       "links"
     ],
-    "date": "2015-09-15T00:00:00.000Z",
+    "date": "2016-03-04T00:00:00.000Z",
     "abstract": "Here you will find some of the resources that I found interesting to share. Some of them are some of my libraries,  others are libraries that I use daily, and others are just interesting or amusing things. It is just like it was www in 90s.\n",
     "snippet": "```html\n<a href=\"http://david-rodenas.com\">David Rodenas' Home</a>\n```\n",
     "basename": "links",
-    "preview": "## Barcelona Tech Meetups * [AngularBeers](https://twitter.com/ngbeers): One-off meetup for networking, beers and socializing ## My AngularJS Components * [drpx-bind-angular](https://github.com/drpicox/drpx-bind-angular): bind angular string templates like ng-bind does with text * [drpx-class-route](https://github.com/drpicox/drpx-class-route) / [demo](http://david-rodenas.com/drpx-class-route/demo.html): add classes depending the route * [drpx-id](https://github.com/drpicox/drpx-id): access to components controllers from templates * [drpx-seo](https://github.com/drpicox/drpx-seo): enable SEO to your SPA AngularJS apps without serverside support * [drpx-storage](https://github.com/drpicox/drpx-storage) / [mock](https://github.com/drpicox/drpx-storage-mocks): angular wrapper for [mozilla localForage](https://github.com/mozilla/localForage) * [drpx-transcludeto](https://github.com/drpicox/drpx-transcludeto) / [demo](http://david-rodenas.com/drpx-transcludeto/demo.html): multitransclussion for angular * [drpx-updateable](https://github.com/drpicox/drpx-updateable): lazy compute derived data (better than [flux](https://facebook.github.io/flux/)) ## Teaching * [JSpatterns v1](http://david-rodenas.com/tutorial-jspatterns-v1/) / [pdf](http://david-rodenas.com/tutorial-jspatterns-v1/JSandPatterns.pdf): stop messing with dom * [Angular for designers v1](https://github.com/drpicox/tutorial-angulardesigners-v1) / [demo](http://david-rodenas.com/tutorial-angulardesigners-v1/): small examples tutorial * [Promises v1](http://david-rodenas.com/tutorial-promises-v1): first tutorial, it should be improved * [Grunt v1](http://david-rodenas.com/tutorial-gruntjs-v1/#/grunt): small tutorial for grunt (quite old!) ## Browserify [Browserify](http://browserify.org/) is a very powerful tool to create javascript bundles. It accepts transforms in order to build an application."
+    "preview": "## Barcelona Tech Meetups * [AngularBeers](https://twitter.com/ngbeers): One-off meetup for networking, beers and socializing * [AngularCamp](http://angularcamp.org/): Recurrent casual community Angular meetup. ## My AngularJS Components * [as](https://github.com/angular/angular.js/pull/14080): a propossal directive to access component controllers (more [here](#!/posts/as-directive)) * [drpx-bind-angular](https://github.com/drpicox/drpx-bind-angular): bind angular string templates like ng-bind does with text * [drpx-class-route](https://github.com/drpicox/drpx-class-route) / [demo](http://david-rodenas.com/drpx-class-route/demo.html): add classes depending the route * [drpx-id](https://github.com/drpicox/drpx-id): access to components controllers from templates (see `as` directive) * [drpx-seo](https://github.com/drpicox/drpx-seo): enable SEO to your SPA AngularJS apps without serverside support * [drpx-storage](https://github.com/drpicox/drpx-storage) / [mock](https://github.com/drpicox/drpx-storage-mocks): angular wrapper for [mozilla localForage](https://github.com/mozilla/localForage) * [drpx-transcludeto](https://github.com/drpicox/drpx-transcludeto) / [demo](http://david-rodenas.com/drpx-transcludeto/demo.html): multitransclussion for angular * [drpx-updateable](https://github.com/drpicox/drpx-updateable): lazy compute derived data (better than [flux](https://facebook.github.io/flux/)) ## Teaching * [MVC Models](http://david-rodenas.com/posts/resources/Mvc%20-%20Model,%20the%20great%20forgotten.pdf): A step by step presentation showing what models are for * [JSpatterns v1](http://david-rodenas.com/tutorial-jspatterns-v1/) / [pdf](http://david-rodenas.com/tutorial-jspatterns-v1/JSandPatterns.pdf): stop messing with dom * [Angular for designers v1](https://github.com/drpicox/tutorial-angulardesigners-v1) / [demo](http://david-rodenas.com/tutorial-angulardesigners-v1/): small examples tutorial * [Promises v1](http://david-rodenas.com/tutorial-promises-v1): first tutorial, it should be improved * [Grunt v1](http://david-rodenas.com/tutorial-gruntjs-v1/#/grunt): small tutorial for grunt (quite old!) ## Browserify [Browserify](http://browserify.org/) is a very powerful tool to create javascript bundles."
   },
   "unboxing-di": {
     "title": "Unboxing Dependency Injection",
