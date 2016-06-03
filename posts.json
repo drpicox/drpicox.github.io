@@ -145,7 +145,6 @@
     "date": "2016-06-03T00:00:00.000Z",
     "abstract": "What if I can say you that you can build a WebSite that can be installed in a mobile phone like a native App, that has instant loading, works offline and can receive notifications?\n",
     "snippet": "```javascript\nif('serviceWorker' in navigator) {\n  navigator.serviceWorker\n           .register('/sw.js')\n           .then(function() { console.log(\"Service Worker Registered\"); });\n}\n```\n",
-    "prev": "angular-101-l1",
     "basename": "progressive-web-app",
     "preview": "Progressive Web App is a Web App that can work as an App inside a Mobile phone but at the same time as a Web App in any other browser. For this reason the web app must be able to have instant loading, be able to be added to home screen, may receive push notifications, be fast and secure, and be responsive."
   },
