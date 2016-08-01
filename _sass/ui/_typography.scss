@@ -1,0 +1,63 @@
+body {
+  color: $text;
+
+  font-size: 16px;
+  line-height: 28px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 1;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  color: $primary;
+}
+
+h1 {
+  font-size: 56px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 21px;
+}
+
+p {
+  hyphens: auto;
+}
+
+.highlight {
+  border-left: solid 4px $primary;
+  border-radius: 4px;
+  padding: 6px 18px;
+  overflow: auto;
+  line-height: 1.2;
+  code, pre {
+    font-family: courier, monaco, consolas, monospace;
+    font-size: 14px;
+    font-weight: 300;    
+  }
+}
+@media #{$phone-media} {
+  .highlight {
+    font-size: 10px;
+  }
+}
+
+a, a:visited, a:focus, a:hover {
+  color: $primary;
+}
+
+.muted {
+  color: $mute;
+}
+
+a.rel-link {
+  color: $text;
+  text-decoration: none;
+}

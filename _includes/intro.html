@@ -1,0 +1,21 @@
+{% assign intro = include.intro %}
+
+<div class="intro zone-primary">
+  <amp-img
+    src="{{ site.baseurl }}/assets/images/{{ intro.image }}" 
+    width=2 height=1 layout="responsive"
+    ></amp-img>
+
+  <div class="intro-overlay section">
+    <div class="container">
+      <h1>{{ intro.title }}</h1>
+      <p class="hidden-phone">{{ intro.subtitle }}</p>
+      {% if intro.cfa %}
+      <a class="btn" href="{{ site.baseurl }}/{{intro.cfa.link}}">
+        {{ intro.cfa.text }} →
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+

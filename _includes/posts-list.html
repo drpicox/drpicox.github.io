@@ -1,0 +1,13 @@
+{% assign posts = include.posts %}
+
+{% for post in posts %}
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+    <a class="card" href="{{ site.baseurl }}/{{ post.url }}" itemprop="url">
+      <div class="card-icon"><i class="fa fa-list"></i></div>
+      <h3 itemprop="name">{{ post.title }}</h3>
+      <small class="mute">
+        <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
+      </small>
+    </a>
+  </article>
+{% endfor %}

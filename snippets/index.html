@@ -1,0 +1,18 @@
+---
+layout: page
+---
+<h1>Snippets</h1>
+
+
+{% for post in site.posts %}
+  {% if post.snippet %}
+    {{ post.snippet | markdownify }}  
+    <p><a class="rel-link" href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }} →</a></p>
+    <br>
+  {% endif %}
+{% endfor %}
+
+  <p>
+  <a href="{{ site.baseurl }}/">← Back to Home</a>
+  </p>
+

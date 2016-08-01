@@ -1,0 +1,28 @@
+---
+layout: page
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.abstract }}</p>
+  {% if page.snippet %}
+  {{ page.snippet | markdownify }}
+  {% endif %}
+  <br>
+{{ content }}
+</article>
+<p class="muted">eop.</p>
+<br>
+
+<div class="layout-row">
+  {% if page.previous.url %} 
+    <a class="rel-link" href="{{ site.baseurl }}/{{page.previous.url}}">← {{page.previous.title}}</a> 
+  {% else %}
+    <a class="rel-link" href="{{ site.baseurl }}/">← HOME</a> 
+  {% endif %} 
+  <div class="flex"></div>
+  {% if page.next.url %} 
+    <a class="rel-link" href="{{ site.baseurl }}/{{page.next.url}}">{{page.next.title}} →</a> 
+  {% else %}
+    <a class="rel-link" href="{{ site.baseurl }}/">HOME →</a> 
+  {% endif %} 
+</div>

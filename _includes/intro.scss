@@ -1,0 +1,16 @@
+.intro {
+  position: relative;
+}
+.intro-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(51,51,51,0.8);
+  p {
+    color: invert($text);
+  }
+}
+@media #{$phone-media} {
+  .intro-overlay h1 {
+    font-size: 40px;
+  }
+}
