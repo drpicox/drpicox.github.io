@@ -52,6 +52,10 @@ a, a:visited, a:focus, a:hover {
   color: $primary;
 }
 
+main {
+  display: block;
+}
+
 .muted {
   color: $mute;
 }
