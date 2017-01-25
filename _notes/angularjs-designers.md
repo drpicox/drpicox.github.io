@@ -14,7 +14,7 @@ description: >
     to allow them to do quickly layouts
     using angular.
 snippet: |
-    ```javascript
+    ```html
     <h3>Demo of a toggle</h3>
     <div ng-controller="Toggle as burger">
         <button ng-click="burger.toggle()">Show/Hide</button>
