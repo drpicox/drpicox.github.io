@@ -1,6 +1,23 @@
+<amp-sidebar id="sidebar" layout="nodisplay" side="left">
+  <i class="material-icons" on="tap:sidebar.close">close</i>
+  <ul>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li>&nbsp;</li>
+    {% for note in site.notes %}
+      {% if note.tags[0] == 'root' %}
+      <li><a href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+    <li>&nbsp;</li>
+    <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+  </ul>
+</amp-sidebar>
+
 <header>
   <div class="container">
   <nav>
+    <i class="material-icons" on="tap:sidebar.toggle">menu</i>
+    &nbsp;
     <a href="{{ site.baseurl }}/">
       <amp-img src="{{ site.baseurl }}/assets/images/david.jpg" alt="Welcome" height="48" width="48" class="img-circle "></amp-img>
     </a>

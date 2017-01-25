@@ -19,9 +19,32 @@ nav {
   align-items: center;
   height: 56px;
   a { color: white; }
+  > i {
+    cursor: pointer;
+    color: rgba(white, 0.82);
+  }
 }
 
 body {
   padding-top: 55px; // default content adds the missing 1px
 }
 
+amp-sidebar {
+  text-align: right;
+  > i {
+    cursor: pointer;
+  }
+  
+  ul {
+    padding: 1em 1em;
+    text-align: left;
+    list-style: none;
+    padding-left: 0;
+  }
+  a, ul a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.2em 1em;
+  }
+}
