@@ -10,7 +10,7 @@ tags:
 description: >
   Browserify is able to generate multiple bundles using 
   its options or plugins.
-snippet: >
+snippet: |
   ```bash
   $ browserify x.js y.js \
      -p [ factor-bundle -o bundle/x.js -o bundle/y.js ] \
@@ -18,7 +18,7 @@ snippet: >
   ```
 ---
 
-## Split using no plugin
+## Split using no plugin
 
 It requires to have a common
 javascript entry point. 
