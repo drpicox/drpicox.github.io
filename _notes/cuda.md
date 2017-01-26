@@ -29,7 +29,6 @@ If more power is required, better GPUs can be acquired,
 or more GPUs can be used simultaneously.
 
 ```c
-// by Ingemar Ragnemalm 2010
 #include <stdio.h>
  
 const int N = 16; 
