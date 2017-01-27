@@ -1,5 +1,6 @@
 ---
 title: Teaching
+defines: teaching
 description: >
   I have more than 8 years of teaching.
   I have been teaching in 

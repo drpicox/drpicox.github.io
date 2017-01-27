@@ -1,13 +1,11 @@
-{% assign _tags = include.tags %}
-
-{% unless _tags %}{% assign _tags = page.tags %}{% endunless %}
+{% assign _tags = page.tags %}
 
 {% assign _tag_definitions = '' | split:'' %}
 {% for _tag in _tags %}
-  {% assign _tag_definition = site.entries | where:"defines",_tag | first %}
-  {% if _tag_definition %}
-    {% assign _tag_definitions = _tag_definitions | push:_tag_definition %}
-  {% endif %}
+{%   include fn-tag-entry.jk tag=_tag %}
+{%   if result %}
+{%     assign _tag_definitions = _tag_definitions | push:result  %}
+{%   endif %}
 {% endfor %}
 
 {% if _tag_definitions.size > 0 %}

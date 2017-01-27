@@ -6,7 +6,8 @@ description: >
   a high level of re-usability
   maintainability and testability
 tags:
-  - root
+  - teaching
+  - angularjs
 ---
 
 {% include entry-children-media.html %}

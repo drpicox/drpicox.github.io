@@ -1,0 +1,29 @@
+.toggle {
+  display: none;
+}
+
+.toggle ~ label {
+  cursor: pointer;
+}
+
+.toggle ~ label i.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.toggle ~ .toggle-content {
+  display: none;
+}
+
+.toggle ~ label i.material-icons:after {
+  content: "arrow_drop_down";
+}
+
+.toggle:checked ~ label i.material-icons:after {
+  content: "arrow_drop_up";
+}
+
+.toggle:checked ~ .toggle-content {
+  display: block;
+}
