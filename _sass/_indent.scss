@@ -7,3 +7,9 @@
 .indent-small {
   margin: 0 0.5em;
 }
+
+@media (max-width: $mobile-max) {
+  .indent-m-small {
+    margin: 0 0.5em;
+  }
+}
