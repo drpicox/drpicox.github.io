@@ -1,6 +1,7 @@
 {% assign src = include.image.src %}
 {% assign width = include.image.width %}
 {% assign height = include.image.height %}
+{% assign not_expand = include.not_expand %}
 
 {% assign protocol = src | slice: 0,4 %}
 {% assign double = src | slice: 0,2 %}
@@ -14,7 +15,7 @@
 <amp-img src="{{ full_src }}" 
     width="{{ width }}" height="{{ height }}"
     layout="responsive"
-    {% comment %}
-    sizes="(min-width: {{ width }}px) {{ width }}px, 100vw"
-    {% endcomment %}
+    {% if not_expand %}
+    sizes="(min-width: {{ width | plus:width }}px) {{ width | plus:width }}px, 100vw"
+    {% endif %}
     ></amp-img>

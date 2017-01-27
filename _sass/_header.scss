@@ -1,50 +1,16 @@
-body > header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: $primary-dark;//#d84528;
   z-index: 20;
-
-  .large {
-    font-size: 20px;
-  } 
-  .separator {
-    flex: 1 0 auto;
-  } 
 }
-
-nav {
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  height: 56px;
-  a { color: white; }
-  > i {
-    cursor: pointer;
-    color: rgba(white, 0.82);
-  }
-}
-
 body {
-  padding-top: 55px; // default content adds the missing 1px
+  padding-top: 56px
 }
 
-amp-sidebar {
-  text-align: right;
-  > i {
-    cursor: pointer;
-  }
-  
-  ul {
-    padding: 1em 1em;
-    text-align: left;
-    list-style: none;
-    padding-left: 0;
-  }
-  a, ul a {
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    padding: 0.2em 1em;
-  }
+
+header .material-icons {
+  display: inline;
+  vertical-align: middle;
+  line-height: 56px;
 }

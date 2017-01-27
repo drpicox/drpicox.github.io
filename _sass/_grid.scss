@@ -1,7 +1,27 @@
 .layout-row {
-  display: flex;
+  display: flex
 }
 
-.align-items-center {
-  align-items: center;
+.justify-center {
+  justify-content: center;
+}
+
+@for $i from 1 through 4 {
+  .flex-#{$i} {
+    flex: #{$i};
+    min-width: 0;
+  }
+}
+
+@media (max-width: $mobile-max) {
+  @for $i from 1 through 4 {
+    .flex-m-#{$i} {
+      flex: #{$i};
+      min-width: 0;
+    }
+  }
+}
+
+.gap {
+  width: 1em;
 }

@@ -1,0 +1,29 @@
+{% capture infobox_content %}
+
+  {% if page.image %}
+    <p class="layout-row justify-center">
+    {% include image.html image=page.image not_expand=true %}
+    </p>
+    <meta itemprop="image" content="{{ site.url }}{{ site.baseurl }}{{ page.image.src }}">
+    {% assign has_infobox = true %}
+  {% endif %}
+
+  {% if page.website %}
+    <a href="{{ page.website }}" target="_blank" class="more">Website</a><br>
+    {% assign has_infobox = true %}
+  {% endif %}
+  {% if page.source %}
+    <a href="{{ page.source }}" target="_blank" class="more">Source</a><br>
+    {% assign has_infobox = true %}
+  {% endif %}
+
+{% endcapture %}
+
+{% if has_infobox %}
+<div class="entry-infobox">
+  <div class="well tint-light no-margin">
+    <div class="text-center">Information</div>
+    {{ infobox_content }}
+  </div>
+</div>
+{% endif %}

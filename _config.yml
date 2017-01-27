@@ -1,7 +1,7 @@
 collections:
-  notes:
+  entries:
       output: true
-      permalink: /notes/:path/
+      permalink: /entries/:path/
 
 defaults:
   - scope:
@@ -11,9 +11,10 @@ defaults:
       layout: update
   - scope:
       path: ""
-      type: notes
+      type: entries
     values:
-      layout: note
+      layout: entry
+      sort: url
 
 exclude: ['Gemfile','Gemfile.lock']
 
@@ -30,7 +31,7 @@ logo: /assets/images/david.jpg
 #paginate: 5
 #paginate_path: "/posts/page-:num/"
 
-permalink: /updates/:title
+permalink: /posts/:title
 
 social:
     name: David Rodenas

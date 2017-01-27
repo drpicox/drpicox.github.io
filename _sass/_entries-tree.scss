@@ -1,0 +1,39 @@
+ul.entries-tree {
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @for $i from 1 through 4 {
+    li.level-#{$i} {
+      margin-left: #{$i - 1}em;
+    }
+  }
+  li.active {
+    font-weight: bolder;
+    color: $text-primary;
+  }
+  li.ref {
+    font-style: italic;
+  }
+  li.level-0 {
+    margin-top: 0.5em;
+  }
+
+  a { 
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .material-icons {
+    font-size: inherit;
+    width: 1em;
+    text-align: center;
+  }
+}
+

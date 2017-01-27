@@ -1,20 +1,20 @@
-{% assign tags = include.tags %}
+{% assign _tags = include.tags %}
 
-{% unless tags %}{% assign tags = page.tags %}{% endunless %}
+{% unless _tags %}{% assign _tags = page.tags %}{% endunless %}
 
-{% assign tag_notes = '' | split:'' %}
-{% for tag in tags %}
-  {% assign tag_note = site.notes | where:"slug",tag | first %}
-  {% if tag_note %}
-    {% assign tag_notes = tag_notes | push:tag_note %}
+{% assign _tag_definitions = '' | split:'' %}
+{% for _tag in _tags %}
+  {% assign _tag_definition = site.entries | where:"defines",_tag | first %}
+  {% if _tag_definition %}
+    {% assign _tag_definitions = _tag_definitions | push:_tag_definition %}
   {% endif %}
 {% endfor %}
 
-{% if tag_notes.size > 0 %}
-<p>
+{% if _tag_definitions.size > 0 %}
+<p class="tags">
 Tags:
-{% for tag_note in tag_notes %}
-<a href="{{ site.baseurl }}{{ tag_note.url }}">{{ tag_note.slug }}</a>{% unless forloop.last %},{% endunless %}
+{% for _tag_definition in _tag_definitions %}
+<a href="{{ site.baseurl }}{{ _tag_definition.url }}">{{ _tag_definition.slug }}</a>{% unless forloop.last %},{% endunless %}
 {% endfor %}
 </p>
 {% endif %}

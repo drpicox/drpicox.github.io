@@ -1,0 +1,33 @@
+ul.entries-breadcrumb {
+  padding: 0;
+
+  li {
+    display: inline-block;
+  }
+  li:after {
+    display: inline;
+    content: " / ";
+  }
+  li:last-child:after {
+    display: none;
+  }
+
+  @media (max-width: $mobile-max) {
+    li:after {
+      display: none;
+    }
+    li {
+      display: none;
+    }
+    li:last-child {
+      display: inline-block;
+    }
+    li:before {
+      display: inline-block;
+      content: "<";
+      min-width: 1em;
+    }
+  }
+
+}
+
