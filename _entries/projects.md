@@ -1,6 +1,10 @@
 ---
 title: Projects
 defines: projects
+image:
+  src: /assets/images/algorithm-performance-visualization.jpg
+  width: 600
+  height: 385
 refs:
   - /entries/talks/mvs/stuff
 tags:

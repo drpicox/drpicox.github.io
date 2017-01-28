@@ -5,7 +5,7 @@ body {
   color: $text-secondary;
 }
 
-a {
+a, html.html body a.plain {
   color: inherit;
   text-decoration: none;
 }
@@ -39,6 +39,10 @@ html body .cursor-pointer {
   cursor: pointer;
 }
 
+.clear-both {
+  clear: both;
+}
+
 .large {
   font-size: 1.3em;
 }
@@ -51,8 +55,17 @@ html body .no-margin {
   font-size: .9em;
 }
 
+.text-primary {
+  color: $text-primary;
+}
+.text-secondary {
+  color: $text-secondary;
+}
 .text-center {
   text-align: center;
+}
+.text-left {
+  text-align: left;
 }
 .text-right {
   text-align: right;

@@ -2,11 +2,31 @@
 layout: page
 ---
 
-<h1>Welcome!</h1>
+<h1 class="text-center">Welcome!</h1>
 
-<p>
+<p class="indent-large">
 PhD., Engineer and Vicedean at the Official Catalan CS Society and CS enthusiastic who loves to innovate and extract all potential to this young technology.
 </p>
+
+<br>
+<div class="layout-row text-center">
+  <div class="col-6 col-m-12">
+    {% include home-highlight.html id="/entries/projects" %}
+  </div>
+  <div class="col-6 col-m-12">
+    {% include home-highlight.html id="/entries/teaching" %}
+  </div>
+  <div class="col-6 col-m-12">
+    {% include home-highlight.html id="/entries/contributions" %}
+  </div>
+  <div class="col-6 col-m-12">
+    {% include home-highlight.html id="/entries/talks" %}
+  </div>
+</div>
+<br>
+
+<h2>Bio</h2>
+
 <p>
 I was born in Barcelona in 1978 and raised in Montgat, 
 a small town near Barcelona. 
