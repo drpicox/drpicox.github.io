@@ -4,24 +4,15 @@
   <a href="https://twitter.com/drpicox" target="_blank">Twitter</a> |
   <a href="https://github.com/drpicox/drpicox.github.io/edit/master/{{ page.path }}"
     target="_blank">Edit Me</a>
-  {% if page.layout == "note" %}
+  {% if page.layout == "entry" %}
 {% capture file_value %}---
-tilte: "{{ page.title }}"
 tags: {% for tag in page.tags %}
   - {{ tag }}{% endfor %}
-{% if page.snippet %}
-snippet: | {% assign lines = page.snippet | | newline_to_br | strip_newlines | split: '<br />'%}{% for line in lines %}
-  {{ line }}{% endfor %}
-{% endif %}{% if page.description %}
-description: | {% assign lines = page.description | | newline_to_br | strip_newlines | split: '<br />'%}{% for line in lines %}
-  {{ line }}{% endfor %}
-{% endif %}
+  - {{ page.slug }}
 ---
-{{ page.content }}
 {% endcapture %}
   |
-  <a href="https://github.com/drpicox/drpicox.github.io/new/master/_notes?filename={{
-    page.slug}}-copy.md&value={{ file_value | truncate: 4096 | url_encode }}"
-    target="_blank">New Note</a>
+  <a href="https://github.com/drpicox/drpicox.github.io/new/master/{{ page.id }}?&value={{ file_value | truncate: 4096 | url_encode }}"
+    target="_blank">New Entry</a>
   {% endif %}
 </footer>

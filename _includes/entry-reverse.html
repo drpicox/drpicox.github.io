@@ -9,9 +9,9 @@
 {% if _reverse_entries.size > 0 %}
 <ul class="entries-tree">
   <input type="checkbox" id="reverse{{ g_id }}" class="toggle">
-  <label for="reverse{{ g_id }}">Reverse references <i class="material-icons"></i></label>
+  <label for="reverse{{ g_id }}">REVERSE REFERENCES <i class="material-icons"></i></label>
   
-  <small class="toggle-content">
+  <div class="toggle-content">
   {% for _reverse_entry in _reverse_entries %}
     <li>
       <a href="{{ site.baseurl }}{{ _reverse_entry.url }}" class="more">
@@ -22,6 +22,6 @@
       {% endif %}
     </li>
   {% endfor %}
-  </small>
+  </div>
 </ul>
 {% endif %}
