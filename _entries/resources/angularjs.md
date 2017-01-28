@@ -1,5 +1,6 @@
 ---
 title: AngularJS
+defines: angularjs
 image: 
   width: 93
   height: 99
