@@ -1,6 +1,8 @@
+{% unless entries_tree_html__content %}
+{% capture entries_tree_html__content %}
 {% assign _sorted_entries = site.entries | sort:"url" %}
 <ul class="entries-tree">
-  {% for _entry in _sorted_entries %}
+  {% for _entry in _sorted_entries %}    
     {% assign _next_entry = _sorted_entries[forloop.index] %}
     {% assign _dirpath = _entry.path | split:'/' | pop %}
     {% assign _dirname = _dirpath | join:'/' %}
@@ -29,3 +31,6 @@
     {% endif %}
   {% endfor %}
 </ul>
+{% endcapture %}
+{% endunless %}
+{{ entries_tree_html__content }}

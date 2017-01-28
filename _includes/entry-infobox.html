@@ -1,3 +1,5 @@
+{% assign _id = include.id %}
+
 {% capture infobox_content %}
 
   {% if page.image %}
@@ -17,12 +19,21 @@
     {% assign has_infobox = true %}
   {% endif %}
 
+  {% capture entry_disambiguation_content %}
+  {% include entry-disambiguation.html id=_id %}
+  {% endcapture %}
+  {% assign entry_disambiguation_content = entry_disambiguation_content | normalize_whitespace | lstrip %}
+  {% if entry_disambiguation_content != "" %}
+    {{ entry_disambiguation_content }}
+    {% assign has_infobox = true %}
+  {% endif %}
+
+
 {% endcapture %}
 
 {% if has_infobox %}
 <div class="entry-infobox">
   <div class="well tint-light no-margin">
-    <div class="text-center">Information</div>
     {{ infobox_content }}
   </div>
 </div>

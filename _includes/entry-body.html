@@ -13,7 +13,6 @@
     {% else %}
       <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | replace:'"','\"' }}" />
     {% endif %}
-    {% include entry-disambiguation.html %}
     <br>
   </div>
   <div class="hidden-desktop">{% include entry-infobox.html %}</div>
@@ -21,7 +20,5 @@
     {{ page.snippet | markdownify }}
     {{ content }}
   </div>
-  <br>
-  {% include entry-reverse.html %}
   <br>
 </article>

@@ -1,5 +1,9 @@
 .layout-row {
-  display: flex
+  display: flex;
+}
+.layout-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .justify-center {
@@ -18,6 +22,19 @@
     .flex-m-#{$i} {
       flex: #{$i};
       min-width: 0;
+    }
+  }
+}
+
+@for $i from -1 through 5 {
+  .order-#{$i} {
+    order: #{$i};
+  }
+}
+@media (max-width: $mobile-max) {
+  @for $i from -1 through 5 {
+    .order-m-#{$i} {
+      order: #{$i};
     }
   }
 }
