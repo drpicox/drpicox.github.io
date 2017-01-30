@@ -1,6 +1,7 @@
 ---
 title: "Updateable pattern or flux-for-angular"
 tags:
+  - drpx-updateable
   - angularjs
   - flux
   - patterns

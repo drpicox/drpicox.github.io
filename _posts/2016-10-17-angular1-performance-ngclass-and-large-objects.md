@@ -1,9 +1,10 @@
 ---
 title: "Angular1 Performance: ngClass and large objects"
 tags:
-  - angular1
-  - performance
+  - angularjs-ngclass-performance
   - contributions
+  - angularjs
+  - performance
   - benchpress
   - ngClass
   - $watch

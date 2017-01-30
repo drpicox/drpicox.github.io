@@ -1,0 +1,23 @@
+---
+title: Posts, new and updates
+layout: default
+---
+<div class="text-center">
+  <h1>Posts, new and updates</h1>
+</div>
+<div class="well">
+  <div class="container">
+    <ul>
+    {% for post in site.posts %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <small>({{ post.date | date: "%B %d, %Y" }})</small></li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<a href="{{ site.baseurl }}/">
+<div class="well tint-light">
+  « <span class="more">Back to Home</span>
+</div>
+</a>

@@ -1,8 +1,10 @@
 ---
 title: "drpx-transcludeto: multi-transclude"
 tags:
-  - angular
-  - modules
+  - drpx-transcludeto
+  - angularjs-extensions
+  - contributions
+  - angularjs
 date: 2015-05-06
 description: >
     Angular lets you to transclude html templates into your directives,

@@ -8,7 +8,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: update
+      layout: post
   - scope:
       path: ""
       type: entries
@@ -23,7 +23,8 @@ gems:
   - jekyll-seo-tag
 #  - jekyll-paginate
   - jekyll-sitemap
-
+  - jekyll-redirect-from
+  
 google_site_verification: QfXW9ibW_gwrtsViUn9usf-eQqU5OT45JV1aBm-cMBE
 
 logo: /assets/images/david.jpg

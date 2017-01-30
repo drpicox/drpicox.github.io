@@ -25,6 +25,16 @@ PhD., Engineer and Vicedean at the Official Catalan CS Society and CS enthusiast
 </div>
 <br>
 
+<h2>Latest posts</h2>
+
+<ul>
+{% for post in site.posts limit:10 %}
+  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <small>({{ post.date | date: "%B %d, %Y" }})</small></li>
+{% endfor %}
+  <li><a href="{{ site.baseurl }}/posts">See all »</a></li>
+</ul>
+
 <h2>Bio</h2>
 
 <p>
