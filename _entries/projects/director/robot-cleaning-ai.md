@@ -17,6 +17,7 @@ tags:
   - ai
   - genetic-algorithm
   - reinforcement-learning
+  - marina-gispert
   
 ---
 
