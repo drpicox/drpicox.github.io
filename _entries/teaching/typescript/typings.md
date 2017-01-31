@@ -1,5 +1,5 @@
 ---
-title: "Typescript typings and typings"
+title: "Typings"
 tags:
   - teaching
   - typescript
