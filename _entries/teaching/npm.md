@@ -1,5 +1,5 @@
 ---
-title: NPM
+title: npm
 description: >
   The NodeJS package manager.
   One of the most used package managers
