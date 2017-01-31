@@ -5,6 +5,7 @@ tags:
   - teaching
 description: >
   Angular 2 preserves the spirit of AngularJS 1.X and simplifies lot of boilerplate.
-  It also reduces the number of possible ways to implement making easier to create applications and the maintenance.
+  It also reduces the number of possible ways to implement things, making it easier 
+  applications construction and maintenance.
 website: https://angular.io
 ---
