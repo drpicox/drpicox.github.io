@@ -45,3 +45,6 @@ title: "David Rodenas' Home"
 twitter:
   username: drpicox
 
+markdown: kramdown
+highlighter: rouge
+
