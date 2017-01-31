@@ -8,8 +8,8 @@
 
 {% if _related_posts.size > 0 %}
 <ul class="entries-tree">
-  <input type="checkbox" id="reverse{{ g_id }}" class="toggle">
-  <label for="reverse{{ g_id }}">RELATED POSTS <i class="material-icons"></i></label>
+  <input type="checkbox" id="related_posts{{ g_id }}" class="toggle">
+  <label for="related_posts{{ g_id }}">RELATED POSTS <i class="material-icons"></i></label>
   
   <div class="toggle-content">
   {% for _reverse_post in _related_posts %}
