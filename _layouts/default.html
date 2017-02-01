@@ -13,7 +13,7 @@
     {% if jekyll.environment == 'production' %}
     <style amp-custom>
       {% capture styles_scss %}{% include styles.scss %}{% endcapture %}
-      {{ styles_scss | scssify | replace_first:'@charset "UTF-8";','' }}
+      {{ styles_scss | scssify | replace_first:'@charset "UTF-8";','' | normalize_whitespace | replace:', ',',' | replace:': ',':' | replace:'; ',';' | replace:'{ ','{' | replace:' {','{' | replace:' 0.',' .' | replace:',0.',',.'  | replace:':0.',':.' | replace:' ~ ','~' }}
     </style>
     {% else %}
     <link href="{{ site.baseurl }}/css/styles.css"
