@@ -1,5 +1,8 @@
 ---
 title: "OPC standardization for labeling"
+image: /assets/images/printer-plc.jpg
+image_width: 600
+image_height: 463
 website: "http://cataleg.upc.edu/record=b1292557~S1*cat"
 description: >
   This was developed by Natalia Girona while working
