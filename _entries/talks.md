@@ -1,10 +1,9 @@
 ---
 title: Talks
 defines: talks
-image:
-  src: /assets/images/david-empty-screen.jpg
-  width: 600
-  height: 477
+image: /assets/images/david-empty-screen.jpg
+image_width: 600
+image_height: 477
 description: >
   Along all my years I have made dozens of talks in 
   many different scenarios: universities, 

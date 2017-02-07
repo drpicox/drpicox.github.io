@@ -1,9 +1,8 @@
 ---
 title: Coffeescript
-image: 
-  width: 49
-  height: 40
-  src: /assets/images/coffeescript.png
+image_width: 49
+image_height: 40
+image: /assets/images/coffeescript.png
 url: http://coffeescript.org/
 source: https://github.com/jashkenas/coffee-script/
 tags:

@@ -1,9 +1,8 @@
 ---
 title: Twitter Bootstrap
-image: 
-  width: 96
-  height: 96
-  src: /assets/images/bootstrap.png
+image_width: 96
+image_height: 96
+image: /assets/images/bootstrap.png
 url: http://getbootstrap.com/
 source: https://github.com/twbs/bootstrap/
 relevance: 3

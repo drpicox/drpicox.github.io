@@ -1,10 +1,9 @@
 ---
 title: AngularJS
 defines: angularjs
-image: 
-  width: 93
-  height: 99
-  src: /assets/images/angularjs.png
+image_width: 93
+image_height: 99
+image: /assets/images/angularjs.png
 relevance: 3
 url: http://angularjs.org/
 source: https://github.com/angular/angular.js

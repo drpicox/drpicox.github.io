@@ -11,10 +11,9 @@ description: >
   A talk explaining how to and encouraging
   people to contribute and participate in 
   the creation of Angular.
-image:
-  src: /assets/images/angular1-meets-angular2.jpg
-  width: 638
-  height: 479
+image: /assets/images/angular1-meets-angular2.jpg
+image_width: 638
+image_height: 479
 
 ---
 

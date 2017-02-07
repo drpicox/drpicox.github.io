@@ -1,9 +1,8 @@
 ---
 title: Lucene
-image: 
-  width: 64
-  height: 84
-  src: /assets/images/lucene.png
+image_width: 64
+image_height: 84
+image: /assets/images/lucene.png
 url: http://lucene.apache.org/
 description: >
   Library for advanced indexing functionalities.

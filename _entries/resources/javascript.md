@@ -1,9 +1,8 @@
 ---
 title: Javascript
-image: 
-  width: 200
-  height: 200
-  src: /assets/images/javascript.png
+image_width: 200
+image_height: 200
+image: /assets/images/javascript.png
 description: >
   Javascript is the current
   standard of programming,

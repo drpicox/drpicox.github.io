@@ -1,9 +1,8 @@
 ---
 title: "Testing: The Bowling Game Kata"
-image:
-  src: /assets/images/bowling-game-kata-3.png
-  width: 702
-  height: 460
+image: /assets/images/bowling-game-kata-3.png
+image_width: 702
+image_height: 460
 tags:
   - talks
   - testing

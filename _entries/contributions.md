@@ -1,9 +1,8 @@
 ---
 title: Contributions
-image:
-  src: /assets/images/three-monitors-work.jpg
-  width: 500
-  height: 306
+image: /assets/images/three-monitors-work.jpg
+image_width: 500
+image_height: 306
 description: >
   Since I get used with github I have been contributing
   to multiple open source projects in many ways:

@@ -1,9 +1,8 @@
 ---
 title: "Testing Introduction Unconference"
-image:
-  src: /assets/images/misko-cost-of-fixing-the-bug.png
-  width: 641
-  height: 445
+image: /assets/images/misko-cost-of-fixing-the-bug.png
+image_width: 641
+image_height: 445
 tags:
   - talks
   - testing

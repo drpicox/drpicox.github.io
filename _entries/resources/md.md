@@ -1,9 +1,8 @@
 ---
 title: Markdown
-image: 
-  width: 200
-  height: 89
-  src: /assets/images/md.png
+image_width: 200
+image_height: 89
+image: /assets/images/md.png
 url: http://daringfireball.net/projects/markdown/
 tags:
   - web

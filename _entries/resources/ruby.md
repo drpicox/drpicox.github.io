@@ -1,9 +1,8 @@
 ---
 title: Ruby
-image: 
-  width: 100
-  height: 100
-  src: /assets/images/ruby.png
+image_width: 100
+image_height: 100
+image: /assets/images/ruby.png
 url: http://www.ruby-lang.org
 description: >
   Ruby is a programming language

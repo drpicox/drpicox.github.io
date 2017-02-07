@@ -1,9 +1,8 @@
 ---
 title: AngularJS Extensions
-image:
-  width: 93
-  height: 99
-  src: /assets/images/angularjs.png
+image_width: 93
+image_height: 99
+image: /assets/images/angularjs.png
 description: > 
   During my projects I have developed many
   Angular utilities. 

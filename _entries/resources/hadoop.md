@@ -1,9 +1,8 @@
 ---
 title: Hadoop
-image: 
-  width: 200
-  height: 153
-  src: /assets/images/hadoop.png
+image_width: 200
+image_height: 153
+image: /assets/images/hadoop.png
 url: http://hadoop.apache.org/
 description: >
   Hadoop is a key/value 

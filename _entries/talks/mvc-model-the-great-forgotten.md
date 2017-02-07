@@ -1,9 +1,8 @@
 ---
 title: "MVC: Model, the great forgotten"
-image:
-  src: /assets/images/what-is-a-model.jpg
-  width: 567
-  height: 395
+image: /assets/images/what-is-a-model.jpg
+image_width: 567
+image_height: 395
 tags:
   - talks
   - angularjs

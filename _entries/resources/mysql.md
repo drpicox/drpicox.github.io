@@ -1,9 +1,8 @@
 ---
 title: MySQL
-image: 
-  width: 112
-  height: 59
-  src: /assets/images/mysql.png
+image_width: 112
+image_height: 59
+image: /assets/images/mysql.png
 url: http://www.mysql.com/
 source: http://dev.mysql.com/downloads/mysql/
 description: >

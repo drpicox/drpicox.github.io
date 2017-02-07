@@ -1,9 +1,8 @@
 ---
 title: PostgreSQL
-image: 
-  width: 194
-  height: 200
-  src: /assets/images/postgresql.png
+image_width: 194
+image_height: 200
+image: /assets/images/postgresql.png
 url: http://postgresql.org
 source: http://www.postgresql.org/ftp/source/
 description: >

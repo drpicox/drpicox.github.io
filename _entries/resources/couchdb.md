@@ -1,9 +1,8 @@
 ---
 title: CouchDB
-image: 
-  width: 200
-  height: 129
-  src: /assets/images/couchdb.png
+image_width: 200
+image_height: 129
+image: /assets/images/couchdb.png
 url: http://couchdb.apache.org
 description: >
   CouchDB is a database oriented to documents

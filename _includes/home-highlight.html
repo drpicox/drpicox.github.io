@@ -9,13 +9,13 @@
   </h2>
 
   <p class="overflow-hidden">
-    {% assign _height = _entry.image.height %}
-    {% assign _width = _entry.image.width | times:160 | divided_by:_height %}
+    {% assign _height = _entry.image_height %}
+    {% assign _width = _entry.image_width | times:160 | divided_by:_height %}
     {% if _width > 270 %}
     {%   assign _width = 270 %}
     {% endif %}
     <a href="{{ site.baseurl }}{{ _entry.url }}">
-    <amp-img src="{{ site.baseurl }}{{ _entry.image.src }}" 
+    <amp-img src="{{ site.baseurl }}{{ _entry.image }}" 
       width="{{ _width }}" height="180"
       layout="fixed"></amp-img>
     </a>

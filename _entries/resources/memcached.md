@@ -1,9 +1,8 @@
 ---
 title: memcached
-image: 
-  width: 103
-  height: 103
-  src: /assets/images/memcached.png
+image_width: 103
+image_height: 103
+image: /assets/images/memcached.png
 url: http://memcached.org/
 source: https://github.com/memcached/memcached
 tags:

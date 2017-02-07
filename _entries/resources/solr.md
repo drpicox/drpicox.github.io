@@ -1,9 +1,8 @@
 ---
 title: Solr
-image: 
-  width: 200
-  height: 101
-  src: /assets/images/solr.png
+image_width: 200
+image_height: 101
+image: /assets/images/solr.png
 tags:
   - data
   - index

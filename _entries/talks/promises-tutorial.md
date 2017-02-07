@@ -1,9 +1,8 @@
 ---
 title: "Introduction to Promises"
-image:
-  src: /assets/images/promises-tutorial.jpg
-  width: 500
-  height: 362
+image: /assets/images/promises-tutorial.jpg
+image_width: 500
+image_height: 362
 tags:
   - talks
   - promises

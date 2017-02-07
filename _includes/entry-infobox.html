@@ -4,7 +4,7 @@
 
   {% if page.image %}
     <p class="layout-row justify-center">
-    {% include image.html image=page.image not_expand=true %}
+    {% include image.html entry=page not_expand=true %}
     </p>
     <meta itemprop="image" content="{{ site.url }}{{ site.baseurl }}{{ page.image.src }}">
     {% assign has_infobox = true %}

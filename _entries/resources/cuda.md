@@ -1,9 +1,8 @@
 ---
 title: nVIDIA CUDA
-image: 
-  width: 143
-  height: 132
-  src: /assets/images/cuda.png
+image_width: 143
+image_height: 132
+image: /assets/images/cuda.png
 url: http://www.nvidia.com/object/cuda_home_new.html
 description: >
   NVIDIA CUDA is a language

@@ -1,9 +1,8 @@
 ---
 title: PHP
-image: 
-  width: 121
-  height: 64
-  src: /assets/images/php.png
+image_width: 121
+image_height: 64
+image: /assets/images/php.png
 url: http://php.net/
 source: http://php.net/downloads.php
 tags:

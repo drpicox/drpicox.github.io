@@ -1,9 +1,8 @@
 ---
 title: Java
-image: 
-  width: 108
-  height: 201
-  src: /assets/images/java.png
+image_width: 108
+image_height: 201
+image: /assets/images/java.png
 relevance: 5
 url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 tags:

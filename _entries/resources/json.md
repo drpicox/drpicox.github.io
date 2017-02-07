@@ -1,9 +1,8 @@
 ---
 title: JSON
-image: 
-  width: 160
-  height: 160
-  src: /assets/images/json.png
+image_width: 160
+image_height: 160
+image: /assets/images/json.png
 url: http://json.org/
 description: >
   JSON is a data-interchange format.

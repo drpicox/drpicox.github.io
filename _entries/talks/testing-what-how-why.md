@@ -1,9 +1,8 @@
 ---
 title: "Testing: What, how and why"
-image:
-  src: /assets/images/coding-cost.jpg
-  width: 638
-  height: 479
+image: /assets/images/coding-cost.jpg
+image_width: 638
+image_height: 479
 tags:
   - talks
   - testing

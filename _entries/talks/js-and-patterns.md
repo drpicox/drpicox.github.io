@@ -1,9 +1,8 @@
 ---
 title: "JS and Patterns"
-image:
-  src: /assets/images/low-coupling.jpg
-  width: 638
-  height: 369
+image: /assets/images/low-coupling.jpg
+image_width: 638
+image_height: 369
 tags:
   - talks  
   - javascript

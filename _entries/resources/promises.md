@@ -1,9 +1,8 @@
 ---
 title: Promises
-image: 
-  width: 100
-  height: 100
-  src: /assets/images/promises.png
+image_width: 100
+image_height: 100
+image: /assets/images/promises.png
 tags:
   - apps
   - web

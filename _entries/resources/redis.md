@@ -1,9 +1,8 @@
 ---
 title: Redis
-image: 
-  width: 194
-  height: 169
-  src: /assets/images/redis.png
+image_width: 194
+image_height: 169
+image: /assets/images/redis.png
 url: http://redis.io/
 source: https://github.com/antirez/redis
 description: >

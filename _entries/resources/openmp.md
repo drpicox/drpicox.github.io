@@ -1,9 +1,8 @@
 ---
 title: OpenMP
-image: 
-  width: 200
-  height: 72
-  src: /assets/images/openmp.png
+image_width: 200
+image_height: 72
+image: /assets/images/openmp.png
 url: http://openmp.org/
 description: >
   It is a directive based programming language

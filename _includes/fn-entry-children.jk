@@ -4,7 +4,7 @@
 
 {% assign result = '' | split:'' %}
 {% for __child in site.entries %}
-{%  if __child.id contains __entry.id and __child != __entry %}
+{%  if __child.url contains __entry.url and __child != __entry %}
 {%    assign __child_path = __child.id | split:'/' %}
 {%    assign __child_level = __child_path.size %}
 {%    if __entry_level_p1 == __child_level %}

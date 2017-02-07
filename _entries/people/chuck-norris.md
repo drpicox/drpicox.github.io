@@ -1,9 +1,8 @@
 ---
 title: Chuck Norris
-image: 
-  width: 200
-  height: 200
-  src: /assets/images/chuck-norris.jpg
+image_width: 200
+image_height: 200
+image: /assets/images/chuck-norris.jpg
 description: >
     El entorno de pruebas es para mariquitas.
     The test environment is for ladybugs.

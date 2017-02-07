@@ -1,9 +1,8 @@
 ---
 title: GruntJS
-image: 
-  width: 153
-  height: 200
-  src: /assets/images/gruntjs.png
+image_width: 153
+image_height: 200
+image: /assets/images/gruntjs.png
 description: >
   GruntJS is an utility
   to create and compress

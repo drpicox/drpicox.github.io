@@ -1,9 +1,8 @@
 ---
 title: Mons Fractals
-image:
-  src: /assets/images/mons-fractals.jpg
-  width: 353
-  height: 355
+image: /assets/images/mons-fractals.jpg
+image_width: 353
+image_height: 355
 source: "https://github.com/drpicox/mons-fractals"
 website: "http://drpicox.github.io/mons-fractals"
 description: > 

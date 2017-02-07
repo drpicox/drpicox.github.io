@@ -1,9 +1,8 @@
 ---
 title: Cassandra
-image: 
-  width: 270
-  height: 139
-  src: /assets/images/cassandra.png
+image_width: 270
+image_height: 139
+image: /assets/images/cassandra.png
 url: http://cassandra.apache.org/
 source: http://cassandra.apache.org/download/
 tags: 

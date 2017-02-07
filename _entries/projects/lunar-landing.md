@@ -1,9 +1,8 @@
 ---
 title: Lunar Landing game
-image:
-  src: /assets/images/lunar-landing.png
-  width: 489
-  height: 329
+image: /assets/images/lunar-landing.png
+image_width: 489
+image_height: 329
 source: "https://github.com/drpicox/grunt-frontmatter"
 xwebsite: "http://drpicox.github.io/grunt-frontmatter"
 description: > 

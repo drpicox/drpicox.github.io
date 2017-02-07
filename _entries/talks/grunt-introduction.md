@@ -1,10 +1,9 @@
 ---
 title: "Introduction to Grunt"
 website: http://david-rodenas.com/tutorial-gruntjs-v1/#/grunt
-image: 
-  src: /assets/images/grunt-one-single-command.jpg
-  width: 763
-  height: 568
+image: /assets/images/grunt-one-single-command.jpg
+image_width: 763
+image_height: 568
 tags:
   - talks
   - gruntjs

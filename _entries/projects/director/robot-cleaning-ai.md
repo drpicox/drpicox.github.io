@@ -1,9 +1,8 @@
 ---
 title: Cleaning Robot AI
-image: 
-  src: /assets/images/robot-cleaning-ai.png
-  width: 221
-  height: 169
+image: /assets/images/robot-cleaning-ai.png
+image_width: 221
+image_height: 169
 website: "http://hdl.handle.net/2099.1/13129"
 relevance: 2
 description: >

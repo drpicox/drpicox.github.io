@@ -2,7 +2,7 @@
 title: AngularJS Tags
 description: > 
   A new simplified way to write
-  AngularJS code in a polymer like
+  AngularJS code in a Polymer like
   fashion 100% with angular.
 website: https://github.com/drpicox/ngtags
 tags:
@@ -13,7 +13,8 @@ tags:
   - npm
   - bower
   - grunt
-  - tools  
+  - tools
+  - polymer
 snippet: |
   ```html
   <angular-element name="hello-world">

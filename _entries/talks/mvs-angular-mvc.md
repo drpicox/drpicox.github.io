@@ -16,10 +16,9 @@ description: >
   that covers most of possible usecases,
   and leverages in Angular capacities
   to simplify it.
-image:
-  src: /assets/images/mvs-architecture.jpg
-  width: 739
-  height: 528
+image: /assets/images/mvs-architecture.jpg
+image_width: 739
+image_height: 528
 
 ---
 

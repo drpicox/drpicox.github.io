@@ -1,9 +1,8 @@
 ---
 title: Douglas Crockford
-image: 
-  src: /assets/images/douglas-crockford.jpg
-  width: 200
-  height: 200
+image: /assets/images/douglas-crockford.jpg
+image_width: 200
+image_height: 200
 url: "http://crockford.com/"
 tags:
   - people

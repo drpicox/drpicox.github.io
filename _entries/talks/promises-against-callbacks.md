@@ -1,9 +1,8 @@
 ---
 title: "Promises against callbacks"
-image:
-  src: /assets/images/use-promises.jpg
-  width: 819
-  height: 624
+image: /assets/images/use-promises.jpg
+image_width: 819
+image_height: 624
 tags:
   - talks
   - promises
@@ -34,18 +33,18 @@ Initial code:
 
 ```javascript
 function HttpBookFactory($timeout) {
-	var service = {
-		get: get,//(cb)
-	};
-	return service;
+    var service = {
+        get: get,//(cb)
+    };
+    return service;
 
-	function get(cb) {
-		console.debug('[http-book] remote get simulating...');
-		$timeout(function() { 
-			cb(bookMock);
-			console.debug('[http-book] remote get simulated.');
-		}, 3000);
-	}
+    function get(cb) {
+        console.debug('[http-book] remote get simulating...');
+        $timeout(function() { 
+            cb(bookMock);
+            console.debug('[http-book] remote get simulated.');
+        }, 3000);
+    }
 }
 ```
 
@@ -53,18 +52,18 @@ Initial callbacks buggy code code:
 
 ```javascript
 function HttpBookFactory($timeout) {
-	var service = {
-		get: get,//(cb)
-	};
-	return service;
+    var service = {
+        get: get,//(cb)
+    };
+    return service;
 
-	function get(cb) {
-		console.debug('[http-book] remote get simulating...');
-		$timeout(function() { 
-			cb(bookMock);
-			console.debug('[http-book] remote get simulated.');
-		}, 3000);
-	}
+    function get(cb) {
+        console.debug('[http-book] remote get simulating...');
+        $timeout(function() { 
+            cb(bookMock);
+            console.debug('[http-book] remote get simulated.');
+        }, 3000);
+    }
 }
 ```
 
@@ -72,45 +71,45 @@ Fixed callbacks code:
 
 ```javascript
 function HttpBook7Factory($timeout, $exceptionHandler) {
-	var service = {
-		get: get,//(cb)
-	};
-	var savedBook;
-	var cbQueue = [];
-	return service;
+    var service = {
+        get: get,//(cb)
+    };
+    var savedBook;
+    var cbQueue = [];
+    return service;
 
-	function get(aCb) {
-		if (!aCb) {
-			aCb = noop;
-		}
-		var cb = function(newBook) {
-			try {
-				aCb(newBook);
-			} catch (e) {
-				$exceptionHandler(e);
-			}
-		};
-		if (savedBook) {
-			$timeout(function() {
-				cb(savedBook);
-			});
-		} else {
-			cbQueue.push(cb);
-			if (cbQueue.length === 1) {
-				console.debug('[http-book7] remote get simulating...');
-				$timeout(function() {
-					savedBook = bookMock;
-					$timeout(function() {
-						cbQueue.forEach(function(cb) {
-							cb(bookMock);
-						});
-						cbQueue.length = 0;
-					});
-					console.debug('[http-book7] remote get simulated.');
-				}, 3000);
-			}
-		}
-	}
+    function get(aCb) {
+        if (!aCb) {
+            aCb = noop;
+        }
+        var cb = function(newBook) {
+            try {
+                aCb(newBook);
+            } catch (e) {
+                $exceptionHandler(e);
+            }
+        };
+        if (savedBook) {
+            $timeout(function() {
+                cb(savedBook);
+            });
+        } else {
+            cbQueue.push(cb);
+            if (cbQueue.length === 1) {
+                console.debug('[http-book7] remote get simulating...');
+                $timeout(function() {
+                    savedBook = bookMock;
+                    $timeout(function() {
+                        cbQueue.forEach(function(cb) {
+                            cb(bookMock);
+                        });
+                        cbQueue.length = 0;
+                    });
+                    console.debug('[http-book7] remote get simulated.');
+                }, 3000);
+            }
+        }
+    }
 }
 ```
 
@@ -119,22 +118,22 @@ Promises well working code:
 ```javascript
 /* @ngInject */
 function HttpBook8Factory($timeout) {
-	var service = {
-		get: get,//(): Promise<book>
-	};
-	var savedBook;
-	return service;
+    var service = {
+        get: get,//(): Promise<book>
+    };
+    var savedBook;
+    return service;
 
-	function get() {
-		if (!savedBook) {
-			console.debug('[http-book8] remote get simulating...');
-			savedBook = $timeout(function() {
-				console.debug('[http-book8] remote get simulated.');
-				return bookMock;
-			}, 3000);
-		}
-		return savedBook;
-	}
+    function get() {
+        if (!savedBook) {
+            console.debug('[http-book8] remote get simulating...');
+            savedBook = $timeout(function() {
+                console.debug('[http-book8] remote get simulated.');
+                return bookMock;
+            }, 3000);
+        }
+        return savedBook;
+    }
 }
 ```
 

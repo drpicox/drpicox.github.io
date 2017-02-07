@@ -1,9 +1,8 @@
 ---
 title: CSS3
-image: 
-  width: 365
-  height: 512
-  src: /assets/images/css3.png
+image_width: 365
+image_height: 512
+image: /assets/images/css3.png
 relevance: 4
 url: http://www.w3.org/Style/CSS/
 tags:

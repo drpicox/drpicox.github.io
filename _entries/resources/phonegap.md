@@ -1,9 +1,8 @@
 ---
 title: Phonegap
-image: 
-  width: 100
-  height: 100
-  src: /assets/images/phonegap.png
+image_width: 100
+image_height: 100
+image: /assets/images/phonegap.png
 url: http://phonegap.com/
 source: https://github.com/phonegap/phonegap
 relevance: 2

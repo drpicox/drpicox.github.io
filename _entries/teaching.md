@@ -10,10 +10,9 @@ description: >
   material that I use (many in short consultancy)
   but I expect to collect also material
   that I created for more extensive courses.
-image:
-  src: /assets/images/teaching.jpg
-  width: 705
-  height: 409
+image: /assets/images/teaching.jpg
+image_width: 705
+image_height: 409
 tags:
   - root
 ---

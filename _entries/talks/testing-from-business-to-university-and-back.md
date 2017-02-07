@@ -1,9 +1,8 @@
 ---
 title: "Testing: from business to university and back"
-image:
-  src: /assets/images/ban-singletons.jpg
-  width: 638
-  height: 479
+image: /assets/images/ban-singletons.jpg
+image_width: 638
+image_height: 479
 tags:
   - talks
   - testing

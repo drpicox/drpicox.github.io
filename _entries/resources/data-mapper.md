@@ -1,9 +1,8 @@
 ---
 title: DataMapper
-image: 
-  width: 200
-  height: 200
-  src: /assets/images/data-mapper.png
+image_width: 200
+image_height: 200
+image: /assets/images/data-mapper.png
 relevance: 3
 tags:
   - apps

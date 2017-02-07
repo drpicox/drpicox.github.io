@@ -1,6 +1,6 @@
-{% assign src = include.image.src %}
-{% assign width = include.image.width %}
-{% assign height = include.image.height %}
+{% assign src = include.entry.image %}
+{% assign width = include.entry.image_width %}
+{% assign height = include.entry.image_height %}
 {% assign not_expand = include.not_expand %}
 
 {% assign protocol = src | slice: 0,4 %}

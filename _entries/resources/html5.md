@@ -1,9 +1,8 @@
 ---
 title: HTML5
-image: 
-  width: 145
-  height: 200
-  src: /assets/images/html5.png
+image_width: 145
+image_height: 200
+image: /assets/images/html5.png
 relevance: 4
 url: http://www.w3.org/TR/html5/
 tags:
