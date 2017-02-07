@@ -12,8 +12,8 @@ description: >
   that I created for more extensive courses.
 image:
   src: /assets/images/teaching.jpg
-  width: 1000
-  height: 500
+  width: 705
+  height: 409
 tags:
   - root
 ---
