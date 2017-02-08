@@ -178,14 +178,14 @@ Thus:
 Useful Java API
 ---------------
 
-### [Timer](http://docs.oracle.com/javase/7/docs/api/java/util/Timer.html)
+### Class [Timer](http://docs.oracle.com/javase/7/docs/api/java/util/Timer.html){:target="_blank"}
 
 Timer is a the clock that activates TimerTasks. 
 Tasks can be added with the `schedule(...)` method, and all tasks can be 
 cancelled with the `cancel()` method. 
 
 
-### [TimerTask](http://docs.oracle.com/javase/7/docs/api/java/util/TimerTask.html)
+### Class [TimerTask](http://docs.oracle.com/javase/7/docs/api/java/util/TimerTask.html){:target="_blank"}
 
 Is a Task to perform. Override the `run()` method to execute your task.
 To register a task you can do:
@@ -203,7 +203,7 @@ timerQueue.schedule(new TimerTask() {
 ```
 
 
-### [Executors](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html)
+### Class [Executors](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html){:target="_blank"}
 
 Is a class that creates pool of threads that can be used to execute runnables.
 The most relevant method is `newCachedThreadPool()` which allows to create 
@@ -229,7 +229,7 @@ executorQueue.execute(new Runnable() {
 ```
 
 
-### [AtomicBoolean](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicBoolean.html)
+### Class [AtomicBoolean](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicBoolean.html){:target="_blank"}
 
 A boolean that can be modified concurrently in multiple threads safely.
 It has many atomic methods like `getAndSet()`,
@@ -292,7 +292,7 @@ class Foo {
 ```
     
 
-### [AtomicInteger](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicInteger.html)
+### Class [AtomicInteger](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicInteger.html){:target="_blank"}
 
 A integer value that can be modified concurrently in multiple threads safely.
 It has many atomic methods like `incrementAndGet()`,
@@ -352,7 +352,7 @@ class Foo {
 ```
 
 
-### [CopyOnWriteArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CopyOnWriteArrayList.html)
+### Class [CopyOnWriteArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CopyOnWriteArrayList.html){:target="_blank"}
 
 A list that can be modified concurrently in multiple threads safely.
 Every time that a thread modifies it, it creates a new copy of the array,
@@ -533,5 +533,5 @@ votes to become leader in an obsolete term
 (just because some thread/rmi was delayed, not your fault).
 
 
-(c) Dr. David Rodenas under GFDL 1.3 license (https://gnu.org/licenses/fdl.html)
+(c) Dr. David Rodenas under GFDL 1.3 license (https://gnu.org/licenses/fdl.html){:target="_blank"}
 
