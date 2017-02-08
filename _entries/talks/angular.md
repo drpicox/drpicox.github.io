@@ -1,8 +1,8 @@
 ---
 title: "Angular talks"
-image: /assets/images/angularjs.png
-image_width: 93
-image_height: 99
+image: /assets/images/the-doctor-is.jpg
+image_width: 600
+image_height: 539
 tags:
   - talks
   - angular

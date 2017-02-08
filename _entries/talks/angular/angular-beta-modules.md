@@ -6,14 +6,15 @@ tags:
   - community
   - github
   - typescript
+image: /assets/images/modules-in-angular-1.jpg
+image_width: 638
+image_height: 479
 description: >
   A talk without slides showing actual code 
   showing how to create Angular 2 modules
   and injection.
   Implemented in ES5 and Typescript.
-image: /assets/images/the-doctor-is.jpg
-image_width: 600
-image_height: 539
+website: http://www.slideshare.net/DavidRdenasPic/modules-in-angular-20-beta1
 ---
 
 This talk was given in the un-conference of AngularCamp in 2016.
