@@ -9,6 +9,8 @@ tags:
   - talks
   - nodejs
   - javascript
+  - conference
+  - organizer
 description: >
   2015 NodeJS conference
   host in Barcelona.

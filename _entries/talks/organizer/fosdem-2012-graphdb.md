@@ -10,6 +10,7 @@ tags:
   - community
   - fosdem
   - graphdb
+  - organizer
 description: > 
   In 2012 in collaboration with a colleague we setup
   and create the GraphDB track in the European Free 
