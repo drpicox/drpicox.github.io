@@ -11,6 +11,9 @@ description: >
   showing how to create Angular 2 modules
   and injection.
   Implemented in ES5 and Typescript.
+image: /assets/images/the-doctor-is.jpg
+image_width: 600
+image_height: 539
 ---
 
 This talk was given in the un-conference of AngularCamp in 2016.
