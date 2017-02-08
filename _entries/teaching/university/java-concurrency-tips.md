@@ -1,5 +1,5 @@
 ---
-title: Angular >= 2.X
+title: Tips for Java Concurrency
 tags: 
   - root
   - teaching
@@ -16,7 +16,7 @@ description: >
 
 
 Tips and suggestions about the implementation
-=============================================
+---------------------------------------------
 
 In this document you will find some tips and suggestions about
 how to implement the assigment, and also some very useful constructs
@@ -190,15 +190,17 @@ cancelled with the `cancel()` method.
 Is a Task to perform. Override the `run()` method to execute your task.
 To register a task you can do:
 
-    // only once, for example as instance member
-    Timer timerQueue = new Timer();
-    // one call for each timer
-    timerQueue.schedule(new TimerTask() {
-        @Override
-        public void run() {
-			triggerTimeout();
-		}
-    }, delay, period);
+```java
+// only once, for example as instance member
+Timer timerQueue = new Timer();
+// one call for each timer
+timerQueue.schedule(new TimerTask() {
+    @Override
+    public void run() {
+        triggerTimeout();
+    }
+}, delay, period);
+```
 
 
 ### [Executors](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html)
@@ -214,15 +216,17 @@ plain Threads because:
 
 To execute a new task in a separated thread can be done as:
 
-    // only once, for example as instance member
-    Executor executorQueue = Executors.newCachedThreadPool();
-    // one call for each function that must be run in a separated thread
-    executorQueue.execute(new Runnable() {
-        @Override
-		public void run() {
-            executeDelayedStuff();
-        }
-    });
+```java
+// only once, for example as instance member
+Executor executorQueue = Executors.newCachedThreadPool();
+// one call for each function that must be run in a separated thread
+executorQueue.execute(new Runnable() {
+    @Override
+    public void run() {
+        executeDelayedStuff();
+    }
+});
+```
 
 
 ### [AtomicBoolean](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicBoolean.html)
@@ -234,52 +238,58 @@ which in this case allows to get a value and set a new one atomically.
 Method `getAndSet(newValue)` does atomically 
 (very efficient instruction, about 100x faster than a synchronized):
 
-    boolean getAndSet(newValue) {
-        boolean oldValue = value;
-        value = newValue;
-        return oldValue;
-    }
+```java
+boolean getAndSet(newValue) {
+    boolean oldValue = value;
+    value = newValue;
+    return oldValue;
+}
+```
 
 An outline of use to detect the first thread to enter in a region:
 
-    // define in a single point (a function variable, for example)
-    final AtomicBoolean testVar = new AtomicBoolean(false);
-    // execute in multiple threads safely: i'm the first?
-    if (testVar.getAndSet(true) == false) {
-        firstHere();
-    }
+```java
+// define in a single point (a function variable, for example)
+final AtomicBoolean testVar = new AtomicBoolean(false);
+// execute in multiple threads safely: i'm the first?
+if (testVar.getAndSet(true) == false) {
+    firstHere();
+}
+```
     
 
 The same in a more complex example involving the executorQueue:
 
-    class Foo {
-        // the executor queue
-        final Executor executorQueue = Executors.newCachedThreadPool();
-        void firstMatters(Object[] things) {
-            final AtomicBoolean testVar = new AtomicBoolean(false);
-            // a loop to iterate things
-            for (int i = 0; i < things.length; i++) {
-                // this final makes thing visible in the anonymous inner class
-                final Object thing = things[i];
-                // run a large blocking function part in another thread
-                executorQueue.execute(new Runnable() {
-                    @Override
-	                public void run() {
-                        // variable large time execution
-                        executeDelayedStuff(thing);
-                        // first in finish?
-                        if (testVar.getAndSet(true) == false) {
-                            // is the first, only one
-                            firstHere();
-                        } else {
-                            // others will get true
-                        }
+```java
+class Foo {
+    // the executor queue
+    final Executor executorQueue = Executors.newCachedThreadPool();
+    void firstMatters(Object[] things) {
+        final AtomicBoolean testVar = new AtomicBoolean(false);
+        // a loop to iterate things
+        for (int i = 0; i < things.length; i++) {
+            // this final makes thing visible in the anonymous inner class
+            final Object thing = things[i];
+            // run a large blocking function part in another thread
+            executorQueue.execute(new Runnable() {
+                @Override
+                public void run() {
+                    // variable large time execution
+                    executeDelayedStuff(thing);
+                    // first in finish?
+                    if (testVar.getAndSet(true) == false) {
+                        // is the first, only one
+                        firstHere();
+                    } else {
+                        // others will get true
                     }
-                });
-            }
+                }
+            });
         }
-        // more methods...
     }
+    // more methods...
+}
+```
     
 
 ### [AtomicInteger](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicInteger.html)
@@ -292,48 +302,54 @@ If only this method is invoked, it will never return twice the same result.
 Method `getAndSet(newValue)` does atomically 
 (very efficient instruction, about 100x faster than a synchronized):
 
-    int incrementAndGet() {
-        value = value + 1;
-        return value;
-    }
+```java
+int incrementAndGet() {
+    value = value + 1;
+    return value;
+}
+```
 
 An example of use to detect the nth thread entering in the 
 
-    // define in a single point (a function variable, for example)
-    final AtomicInteger testVar = new AtomicInteger(0);
-    // execute in multiple threads safely: i'm the first?
-    if (testVar.incrementAndGet() == 3) {
-        imTheThird();
-    }
+```java
+// define in a single point (a function variable, for example)
+final AtomicInteger testVar = new AtomicInteger(0);
+// execute in multiple threads safely: i'm the first?
+if (testVar.incrementAndGet() == 3) {
+    imTheThird();
+}
+```
 
 The same in a more complex example involving the executorQueue:
 
-    class Foo {
-        // the executor queue
-        final Executor executorQueue = Executors.newCachedThreadPool();
-        void firstMatters(List things, final int nth) {
-            final AtomicInteger testVar = new AtomicInteger(0);
-            // a loop to iterate things, final makes thing visible (only foreach)
-            for (final Object thing : things) {
-                // run a large blocking function part in another thread
-                executorQueue.execute(new Runnable() {
-                    @Override
-	                public void run() {
-                        // variable large time execution
-                        executeDelayedStuff(thing);
-                        // is the third?
-                        if (testVar.incrementAndGet() == nth) {
-                            // is the nth, only one
-                            imTheNth(thing);
-                        } else {
-                            // others will be < nth or > nth
-                        }
+```java
+class Foo {
+    // the executor queue
+    final Executor executorQueue = Executors.newCachedThreadPool();
+    void firstMatters(List things, final int nth) {
+        final AtomicInteger testVar = new AtomicInteger(0);
+        // a loop to iterate things, final makes thing visible (only foreach)
+        for (final Object thing : things) {
+            // run a large blocking function part in another thread
+            executorQueue.execute(new Runnable() {
+                @Override
+                public void run() {
+                    // variable large time execution
+                    executeDelayedStuff(thing);
+                    // is the third?
+                    if (testVar.incrementAndGet() == nth) {
+                        // is the nth, only one
+                        imTheNth(thing);
+                    } else {
+                        // others will be < nth or > nth
                     }
-                });
-            }
+                }
+            });
         }
-        // more methods...
     }
+    // more methods...
+}
+```
 
 
 ### [CopyOnWriteArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CopyOnWriteArrayList.html)
@@ -359,30 +375,34 @@ Their are created using `final` variables and anonymous inner classes.
 An inner (non-static) class can access to all its enclosing object members:
 (it is possible because Java hides a constructor that includes an *instance* of Foo).
 
-    class Foo {
-        int member;
-        class InnerFoo {
-            void incrementMember() {
-               member++; 
-            }
+```java
+class Foo {
+    int member;
+    class InnerFoo {
+        void incrementMember() {
+            member++; 
         }
     }
+}
+```
 
 An anonymous inner class has access to all its enclosing object members
 (like any inner non-static class), but it also have access to all
 final arguments and variables of the current function that it is executed:
 
-    class Foo {
-        int member;
-        Runnable wizard(final int argument) {
-            final int variable = obtainAnyValue();
-            return new Runnable() {
-                public void run() {
-                    member += argument * variable;
-                }
-            };
-        }
+```java
+class Foo {
+    int member;
+    Runnable wizard(final int argument) {
+        final int variable = obtainAnyValue();
+        return new Runnable() {
+            public void run() {
+                member += argument * variable;
+            }
+        };
     }
+}
+```
 
 This is possible because Java includes in the constructor of the inner
 anonymous class (a new class of type `Runnable`) `argument` and `variable`
@@ -391,15 +411,17 @@ or from `variable`, it will no compile.
 
 But you can modify values if their are contained in an object:
 
-    class Foo {
-        Runnable incrementer(final AtomicInteger argument) {
-            return new Runnable() {
-                public void run() {
-                    argument.incrementAndGet();
-                }
-            };
-        }
+```java
+class Foo {
+    Runnable incrementer(final AtomicInteger argument) {
+        return new Runnable() {
+            public void run() {
+                argument.incrementAndGet();
+            }
+        };
     }
+}
+```
 
 Looking carefully `argument` is final, argument itself does not changes value,
 but the object, the `AtomicInteger` does. The same example will work with
@@ -437,16 +459,18 @@ To achieve this you can create a `guard`, a _final_ object just used
 to handle access to the state. The use of synchronized will ensure that
 two threads will not interfere (act as a mutex):
 
-    class Foo {
-        final Object guard = new Object();
-        State state;
-        void method() {
-            syncrhonized (guard) {
-                state.doStuff();
-            }
+```java
+class Foo {
+    final Object guard = new Object();
+    State state;
+    void method() {
+        syncrhonized (guard) {
+            state.doStuff();
         }
-        ...
-    };
+    }
+    ...
+};
+```
 
 Only things inside a synchronized (guard) will be safe, outside a guard
 nothing can be taken as true (anything can change at any moment).
@@ -459,30 +483,32 @@ Java Example of a timeout function body
 Putting all toghether in a single example, we can build the following
 skeleton to handle a timeout function:
 
-    class Foo {
+```java
+class Foo {
 
-        final Object guard = new Object();
-        final Executor executorQueue = Executors.newCachedThreadPool();
+    final Object guard = new Object();
+    final Executor executorQueue = Executors.newCachedThreadPool();
 
-        void method(final Object argument) {
-            final Object message;
-            synchronized (guard) {
-               message = messageFromState(argument);
-            }
-
-            for (final Host otherHost : otherServers) {
-                runnables.execute(new Runnable() {
-			        @Override public void run() {
-                        response = rmi.ask(otherHost, message);
-                        synchronized (guard) {
-                            applyToState(response);
-                        }
-                    }
-                });
-            }
+    void method(final Object argument) {
+        final Object message;
+        synchronized (guard) {
+            message = messageFromState(argument);
         }
 
+        for (final Host otherHost : otherServers) {
+            runnables.execute(new Runnable() {
+                @Override public void run() {
+                    response = rmi.ask(otherHost, message);
+                    synchronized (guard) {
+                        applyToState(response);
+                    }
+                }
+            });
+        }
     }
+
+}
+```
 
 
 Do not trust order rule
