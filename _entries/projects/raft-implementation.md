@@ -2,6 +2,9 @@
 title: RAFT implementation
 description: >
   RAFT is a consensus algorithm
+  that synchonizes the state
+  with full consistency between 
+  multiple servers.
 
 website: https://raft.github.io/raft.pdf
 source: https://github.com/drpicox/uoc-raft-2013p
