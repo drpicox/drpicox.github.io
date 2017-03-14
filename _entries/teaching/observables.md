@@ -1,4 +1,5 @@
 ---
+images: /assets/images/observables.svg
 tags:
   - observe
   - patterns
