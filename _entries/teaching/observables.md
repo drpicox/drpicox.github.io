@@ -17,7 +17,7 @@ Here I will present some of the basics and few recipes.
 
 ## Overview
 
-Observables are based in Haskell (first seen in Miranda) [lazy lists evaluation](https://wiki.haskell.org/Lazy_evaluation): the capacity of process infinite lists under demmand.
+Observables are based in Haskell (first seen in Miranda) [lazy lists evaluation](https://wiki.haskell.org/Lazy_evaluation){:target="_blank"}: the capacity of process infinite lists under demmand.
 
 The reason of this is to avoid dealing with side effects. For example, the following code:
 
