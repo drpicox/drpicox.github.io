@@ -1,5 +1,7 @@
 ---
 image: /assets/images/observables.svg
+image_width: 504
+image_height: 504
 tags:
   - observe
   - patterns
