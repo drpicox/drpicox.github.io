@@ -80,3 +80,68 @@ results.subscribe(result => alert(result));
 Now we have the exact same behaviour that the initial version: results are produced as numbers are introduced in the app.
 This is because the `map` method of the observable is lazy: it only executes when there are inputs available and results are required.
 
+## Recipes
+
+### Generator
+
+Generates a list of values each time that an even happens.
+
+```javascript
+function observeElementEvents(element, eventName) {
+  return new Observable(observer => {
+    // Create an event handler which sends data to the sink
+    let handler = event => observer.next(event);
+
+    // Attach the event handler
+    element.addEventListener(eventName, handler, true);
+
+    // Return a cleanup function which will cancel the event stream
+    return () => {
+      // Detach the event handler from the element
+      element.removeEventListener(eventName, handler, true);
+    };  
+  });
+}
+```
+
+### Observable State
+
+Generates a flow of values representing the changes of the state inside one service.
+
+```javascript
+class MyService {
+  constructor() {
+    this.state = new BehaviorSubject('initial state');
+  }
+  getState$() {
+    return this.state;
+  }
+  setState(value) {
+    this.state.next(value);
+  }
+}
+```
+
+### Observable Reducer State
+
+Like Observable state, but it uses a reducer to update the value.
+It helps to make sure that the value is always consistent.
+
+```javascript
+class MyService {
+  constructor() {
+    this.state = new BehaviorSubject(0)
+        .scan((r, fn) => fn(r));
+  }
+  getState$() {
+    return this.state;
+  }
+  decrement() {
+    this.state.next((n) => n - 1);
+  }
+  increment() {
+    this.state.next((n) => n + 1);
+  }
+}
+```
+
