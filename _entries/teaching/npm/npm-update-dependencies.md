@@ -13,10 +13,10 @@ date: 2016-09-04
 description: >
     Usually the package.json dependencies count is large
     and many times their dependencies become old.
-    Use npm-check-dependencies to update them.
+    Use npm-check-updates to update them.
 snippet: |
     ```bash
-    $ npm install -g npm-check-dependencies
+    $ npm install -g npm-check-updates
     $ ncu -u
     ```
 ---
@@ -40,7 +40,7 @@ and it checks for all updates available for you packages.
 Install the tool if you do not have installed it before:
 
 ```bash
-$ npm install -g npm-check-dependencies
+$ npm install -g npm-check-updates
 ```
 
 Go to the directory with the `package.json` of your project
