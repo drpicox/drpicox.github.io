@@ -23,3 +23,4 @@ snippet: |
 * **Flat** is better than _nested_.
 * **Sparse** is better than _dense_.
 * Big things out of small things
+* **Consistent** is better than _astonishment_.
