@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Grunt"
+title: "FOSDEM 2012"
 website: https://archive.fosdem.org/2012/
 image: /assets/images/fosdem.jpg
 image_width: 449
