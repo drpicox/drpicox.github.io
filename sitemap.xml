@@ -3,21 +3,22 @@
 <url> <loc>http://david-rodenas.com/blog/2019/10/12/welcome-again.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsComponentsEs2015/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsComponentsTypescript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/AngularJsNgClassPerformance/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsDesigners/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsNgClassPerformanceLargeObjects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/AngularJsNgClassPerformance/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsShoppingCartDemo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/BrowserifyEnvify/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Home/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/RaftImplementation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/JavaEnum/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/NpmOffline/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/SpringMockDice/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/RaftImplementation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/SpringMocks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/SpringMockTimer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/TcLs2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/TcLs2Release/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/TcLs2Branching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Teaching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/Testing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/TcLs2Release/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
