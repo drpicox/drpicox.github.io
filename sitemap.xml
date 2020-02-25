@@ -3,18 +3,18 @@
 <url> <loc>http://david-rodenas.com/blog/2018/02/09/why-you-should-start-writing-tests-as-they-were-documentation.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2018/06/29/the-myth-of-100-of-code-coverage.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2018/09/29/october-1st-catalonia-freedom-referendum.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/blog/2019/02/22/the-view-is-not-a-function.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2019/02/07/the-view-is-a-function.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/blog/2019/02/22/the-view-is-not-a-function.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2019/04/26/a-quick-puzzle-to-understand-the-testing-and-the-refactoring.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/blog/2019/10/12/welcome-again.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2020/01/12/the-unit-test-trap.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/blog/2020/01/21/unit-vs-programmer-vs-integration-test.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/blog/2019/10/12/welcome-again.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsComponentsEs2015/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsComponentsTypescript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsDesigners/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsNgClassPerformance/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://david-rodenas.com/AngularJsNgClassPerformanceLargeObjects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/AngularJsShoppingCartDemo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/AngularJsNgClassPerformanceLargeObjects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/BowlingGameKata/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/BrowserifyEnvify/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -34,4 +34,5 @@
 <url> <loc>http://david-rodenas.com/TcLs2Release/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Teaching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://david-rodenas.com/Testing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://david-rodenas.com/DefensiveProgramming/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
