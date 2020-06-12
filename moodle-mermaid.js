@@ -73,8 +73,8 @@ function showCheatsheet() {
 	mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 
 	var help = "<div>" +
-		"<button onclick='showCheatsheet();event.stopPropagation();event.preventDefault();return false'>Cheatsheet</button>"+
-		"<a href='https://mermaid-js.github.io/mermaid/#/classDiagram' target='_blank' title='"+cheatsheet+"'>"+
+		"<button style='margin-top:5px' onclick='showCheatsheet();event.stopPropagation();event.preventDefault();return false'>Cheatsheet</button>"+
+		" <a href='https://mermaid-js.github.io/mermaid/#/classDiagram' target='_blank' title='"+cheatsheet+"'>"+
 		"See format details</a>"+
 		"<div id='ksjdfklsd' />"+
 		"</div>";
