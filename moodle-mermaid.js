@@ -95,7 +95,7 @@ function showCheatsheet() {
 	}, 500);
 
 	function replaceContent(newContent) {
-		if (!newContent.split('\n')[0].test(/^[a-zA-Z]+$/))
+		if (!/^[a-zA-Z]+$/.test(newContent.split('\n')[0]))
 			newContent = diagram + '\n' + newContent;
 
 		var triggerChange = prevContent != content && content == newContent;
