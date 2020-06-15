@@ -69,6 +69,7 @@ function showCheatsheet() {
 	var prevContent = undefined;
 	var content = undefined;
 	var attachments;
+	var diagram = document.querySelector('script[src*=mermaid]').diagram || 'classDiagram';
 
 	mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 
@@ -81,21 +82,27 @@ function showCheatsheet() {
 
 	setInterval(function() {
 		var iframe = document.querySelector('iframe[id*=answer]');
-		if (!iframe) return;
+		if (!iframe) {
+			var textarea = document.querySelector('textarea[name*=answer]');
+			if (textarea) {
+				replaceContent(textarea.innerText);
+			}
+			return;
+		}
 		var element = iframe.contentWindow.document.querySelector('body[contenteditable]');
 		if (!element) return;
-		var newContent = 'classDiagram\n' + element.innerText;
-		replaceContent(newContent);
+		replaceContent(element.innerText);
 	}, 500);
 
 	function replaceContent(newContent) {
+		newContent = diagram + '\n' + newContent;
+
 		var triggerChange = prevContent != content && content == newContent;
 		prevContent = content;
 		content = newContent;
 		if (!triggerChange) return;
 
 		attachments = document.querySelector('.ablock .attachments');
-		console.log(newContent);
 		try {
 			var html = mermaid.render('nothing'+Date.now(), newContent);
 			attachments.innerHTML = help + html;
