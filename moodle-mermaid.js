@@ -85,7 +85,7 @@ function showCheatsheet() {
 		if (!iframe) {
 			var textarea = document.querySelector('textarea[name*=answer]');
 			if (textarea) {
-				replaceContent(textarea.innerText);
+				replaceContent(textarea.value);
 			}
 			return;
 		}
@@ -95,7 +95,8 @@ function showCheatsheet() {
 	}, 500);
 
 	function replaceContent(newContent) {
-		newContent = diagram + '\n' + newContent;
+		if (!newContent.split('\n')[0].test(/^[a-zA-Z]+$/))
+			newContent = diagram + '\n' + newContent;
 
 		var triggerChange = prevContent != content && content == newContent;
 		prevContent = content;
