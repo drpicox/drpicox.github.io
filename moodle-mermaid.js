@@ -41,25 +41,25 @@ void 0!==arguments[0]&&(ja.sequenceConfig=arguments[0]),t=arguments[1]):t=argume
 /*! Check if previously processed */if(a.getAttribute("data-processed"))return"continue";a.setAttribute("data-processed",!0);var o="mermaid-".concat(Date.now());n=i(n=a.innerHTML).trim().replace(/<br\s*\/?>/gi,"<br/>"),Ra.render(o,n,(function(t,n){a.innerHTML=t,void 0!==e&&e(o),n&&n(a)}),a)},o=0;o<t.length;o++)a(o)},initialize:function(t){void 0!==t.mermaid&&(void 0!==t.mermaid.startOnLoad&&(ja.startOnLoad=t.mermaid.startOnLoad),void 0!==t.mermaid.htmlLabels&&(ja.htmlLabels=t.mermaid.htmlLabels)),Ra.initialize(t),x.debug("Initializing mermaid ")},contentLoaded:Ba};e.default=ja}]).default}));
 //# sourceMappingURL=mermaid.min.js.map
 
-var cheatsheet = ""
-cheatsheet += "List --> Node\n"
-cheatsheet += "Animal <|-- Duck\n"
-cheatsheet += "Cart ..> Product\n"
-cheatsheet += "class Animal {\n"
-cheatsheet += "  +<<interface>>\n"
-cheatsheet += "  +born\n"
-cheatsheet += "  +/age\n"
-cheatsheet += "  +feed()\n"
-cheatsheet += "}\n"
-cheatsheet = cheatsheet.replace(/\>/g, '&gt;').replace(/\</g, '&lt;');
-
-
 function showCheatsheet() {
-	if (document.querySelector('#ksjdfklsd').innerHTML) {
-		document.querySelector('#ksjdfklsd').innerHTML = '';
+
+	var cheatsheet = ""
+	cheatsheet += "List --> Node\n"
+	cheatsheet += "Animal <|-- Duck\n"
+	cheatsheet += "Cart ..> Product\n"
+	cheatsheet += "class Animal {\n"
+	cheatsheet += "  +<<interface>>\n"
+	cheatsheet += "  +born\n"
+	cheatsheet += "  +/age\n"
+	cheatsheet += "  +feed()\n"
+	cheatsheet += "}\n"
+	cheatsheet = cheatsheet.replace(/\>/g, '&gt;').replace(/\</g, '&lt;');
+
+	if (document.querySelector('#mermaid-cheatsheet-452c57a1').innerHTML) {
+		document.querySelector('#mermaid-cheatsheet-452c57a1').innerHTML = '';
 		return;
 	}
-	document.querySelector('#ksjdfklsd').innerHTML = '<pre>' + cheatsheet + '</pre>';
+	document.querySelector('#mermaid-cheatsheet-452c57a1').innerHTML = '<pre>' + cheatsheet + '</pre>';
 }
 
 !(function(){
@@ -71,14 +71,33 @@ function showCheatsheet() {
 	var attachments;
 	var diagram = document.querySelector('script[src*=mermaid]').diagram || 'classDiagram';
 
+	var seq = 0;
 	mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
+	function mermaidRender(content) {
+		if (!/^[a-zA-Z]+$/.test(content.split('\n')[0]))
+			content = diagram + '\n' + content;
+
+		var mySeq = ++seq;
+		return mermaid.render('nothing-'+mySeq+'-'+Date.now(), content)
+	}
+
+	function insertAfter(newNode, existingNode) {
+	    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+	}
+
+	document.querySelectorAll('.mermaid').forEach(function(node) {
+		var graph = document.createElement('div');
+		graph.innerHTML = mermaidRender(node.innerText);
+		insertAfter(graph, node);
+	});
 
 	var help = "<div>" +
 		"<button style='margin-top:5px' onclick='showCheatsheet();event.stopPropagation();event.preventDefault();return false'>Cheatsheet</button>"+
-		" <a href='https://mermaid-js.github.io/mermaid/#/classDiagram' target='_blank' title='"+cheatsheet+"'>"+
+		" <a href='https://mermaid-js.github.io/mermaid/#/classDiagram' target='_blank'>"+
 		"See format details</a>"+
-		"<div id='ksjdfklsd' />"+
+		"<div id='mermaid-cheatsheet-452c57a1' />"+
 		"</div>";
+
 
 	setInterval(function() {
 		var iframe = document.querySelector('iframe[id*=answer]');
@@ -95,9 +114,6 @@ function showCheatsheet() {
 	}, 500);
 
 	function replaceContent(newContent) {
-		if (!/^[a-zA-Z]+$/.test(newContent.split('\n')[0]))
-			newContent = diagram + '\n' + newContent;
-
 		var triggerChange = prevContent != content && content == newContent;
 		prevContent = content;
 		content = newContent;
@@ -105,7 +121,7 @@ function showCheatsheet() {
 
 		attachments = document.querySelector('.ablock .attachments');
 		try {
-			var html = mermaid.render('nothing'+Date.now(), newContent);
+			var html = mermaidRender(newContent);
 			attachments.innerHTML = help + html;
 		} catch (e) {
 			attachments.innerHTML = help + '<pre>' + e + '</pre>';
