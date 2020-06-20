@@ -83,10 +83,11 @@ mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 		var a = document.createElement('input');
 		var b = document.createElement('input');
 		var c = document.createElement('input');
+		var values = [2,4,8];
 		var names = ['a','b','c'];
 		[a,b,c].forEach(function(i, idx) {
 			i.type = 'number';
-			i.value = 0;
+			i.value = values[idx];
 			i.size = 2;
 			i.min = -99;
 			i.max = 99;
