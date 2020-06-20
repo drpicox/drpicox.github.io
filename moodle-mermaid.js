@@ -126,9 +126,6 @@ mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 		node.appendChild(log);
 	});
 
-	console.log('STOP')
-	mermaid = null;
-
 	var seq = 0;
 	function mermaidRender(content) {
 		if (!/^[a-zA-Z]+$/.test(content.split('\n')[0]))
