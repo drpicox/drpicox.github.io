@@ -64,7 +64,7 @@ function showCheatsheet() {
 
 mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 
-!(function(){
+!setTimeout(function(){
 	if (window.XUML_LOADED) return;
 	window.XUML_LOADED = true;
 
@@ -185,4 +185,4 @@ mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 	}
 
 
-})()
+}, 2000)
