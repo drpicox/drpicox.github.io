@@ -146,6 +146,14 @@ mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 		insertAfter(graph, node);
 	});
 
+	document.querySelectorAll('.manualgraded.completed .ablock .answer .qtype_essay_response.readonly').forEach(function(node) {
+		var graph = document.createElement('div');
+		try {
+			graph.innerHTML = mermaidRender(node.innerText);
+			insertAfter(graph, node);
+		} catch (e) {}
+	});
+
 	var help = "<div>" +
 		"<button style='margin-top:5px' onclick='showCheatsheet();event.stopPropagation();event.preventDefault();return false'>Cheatsheet</button>"+
 		" <a href='https://mermaid-js.github.io/mermaid/#/classDiagram' target='_blank'>"+
