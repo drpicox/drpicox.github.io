@@ -146,7 +146,7 @@ mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 		insertAfter(graph, node);
 	});
 
-	document.querySelectorAll('.manualgraded.completed .ablock .answer .qtype_essay_response.readonly').forEach(function(node) {
+	document.querySelectorAll('.manualgraded.complete .ablock .answer .qtype_essay_response.readonly').forEach(function(node) {
 		var graph = document.createElement('div');
 		try {
 			graph.innerHTML = mermaidRender(node.innerText);
