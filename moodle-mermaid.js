@@ -65,6 +65,11 @@ function showCheatsheet() {
 mermaid.mermaidAPI.initialize({startOnLoad:false,theme: "forest"});
 
 !setTimeout(function(){
+	var style = document.createElement('style');
+	style.textContent = '#extensionStart { fill: white !important; }';
+	document.head.appendChild(style);
+
+
 	if (window.XUML_LOADED) return;
 	window.XUML_LOADED = true;
 
