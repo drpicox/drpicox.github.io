@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worlds — David Rodenas</title>
+<meta name="description" content="The fractal planet generator of 1999, in the browser, with the dials exposed.">
+<link rel="canonical" href="https://david-rodenas.com/worlds/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Worlds — David Rodenas">
+<meta property="og:description" content="The fractal planet generator of 1999, in the browser, with the dials exposed.">
+<meta property="og:url" content="https://david-rodenas.com/worlds/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-Bf_96pAc.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home">
+    <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
+  </a>
+  <div>
+    <a class="brand" href="/">@drpicox</a>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/" aria-current="page">WORLDS</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd worlds &amp;&amp; cat *</p>
+<h1 id="worlds">Worlds</h1>
+<p><a href="https://david-rodenas.com/mons-fractals/" target="_blank" rel="noopener noreferrer">Mons fractals</a> was a university graphics assignment from before the year 2000: Java 1.1.8 on MS-DOS, a pipeline of filters that grew a planet and wrote it out as VRML for a browser plugin to fly around. This is the same pipeline, in TypeScript, with nothing underneath it, and the dials on the outside so you can play.</p>
+<div class="app" data-app="worlds"></div>
+<p>Drag the world to turn it; let it go and it keeps turning. Every dial is one of the filters:</p>
+<ul><li><strong>Seed</strong> picks the world. The same seed always grows the same one.</li><li><strong>Detail</strong> is how many times every edge is split in two. Each round has four times the triangles of the one before.</li><li><strong>Roughness</strong> is how far a new midpoint may move, as a fraction of the edge it came from. The 1999 default was 0.1; a little more makes for better mountains at this size.</li><li><strong>Sea</strong> is the share of the surface under water. The sea is a minimum radius: everything below it is raised up to it.</li></ul>
+<p>The pipeline runs in order, and the order is the meaning: raise the land, work out the climate, put in the sea, and only then paint. Paint first and there is nothing to paint.</p>
+
+</main>
+<section class="terminal" hidden>
+<div class="screen" aria-live="polite"></div>
+<form class="prompt"><span class="ps1">~/worlds $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
+</section>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="spacer"></span>
+  <a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+  <a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</footer>
+</div>
+<script type="module" src="/assets/main-CMjh05En.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Debt Simulator — David Rodenas</title>
+<meta name="description" content="How shortcuts create compound productivity losses over time.">
+<link rel="canonical" href="https://david-rodenas.com/simulators/technical-debt/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Debt Simulator — David Rodenas">
+<meta property="og:description" content="How shortcuts create compound productivity losses over time.">
+<meta property="og:url" content="https://david-rodenas.com/simulators/technical-debt/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-Bf_96pAc.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home">
+    <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
+  </a>
+  <div>
+    <a class="brand" href="/">@drpicox</a>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/" aria-current="page">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd simulators/technical-debt &amp;&amp; cat *</p>
+<h1 id="technical-debt-simulator">Technical Debt Simulator</h1>
+<p>The compound effect of technical debt on productivity. Taking shortcuts saves time at first, and creates interest that slows every feature after.</p>
+<p>The simulator models two teams building the same features:</p>
+<ol><li><strong>Clean development</strong>: a consistent pace, no shortcuts, steady productivity.</li><li><strong>Debt-driven development</strong>: an initial boost from shortcuts, then a compound slowdown.</li></ol>
+<div class="app" data-app="technical-debt"></div>
+<h2 id="what-the-dials-do">What the dials do</h2>
+<ul><li><strong>Base time</strong>: how long a feature takes when it is done properly.</li><li><strong>Shortcuts</strong>: how much of that time a shortcut saves, at first.</li><li><strong>Interest</strong>: how much dearer each shortcut feature makes the next one.</li><li><strong>Timeline</strong>: how far ahead to look.</li></ul>
+<h2 id="what-it-shows">What it shows</h2>
+<p>The moment when clean development overtakes debt-driven development in total features is the break-even point. Short-term gains become long-term losses; the higher the interest, the sooner. Zero interest is the only case where the shortcut wins, and zero interest is not a thing that happens to real code: skipped tests, quick fixes and accumulated complexity are all paid for by whoever touches the code next.</p>
+<h2 id="real-world-implications">Real-world implications</h2>
+<p>This is what happens in projects that skip tests, documentation or design, take quick fixes instead of proper solutions, and let complexity accumulate. The hidden cost is not the shortcut. It is every change that comes after it.</p>
+
+</main>
+<section class="terminal" hidden>
+<div class="screen" aria-live="polite"></div>
+<form class="prompt"><span class="ps1">~/simulators/technical-debt $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
+</section>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="spacer"></span>
+  <a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+  <a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</footer>
+</div>
+<script type="module" src="/assets/main-CMjh05En.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

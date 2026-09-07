@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bowling Game Kata — David Rodenas</title>
+<meta name="description" content="Robert C. Martin's kata, with slides and a repository to do it in JavaScript or Java.">
+<link rel="canonical" href="https://david-rodenas.com/kata/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Bowling Game Kata — David Rodenas">
+<meta property="og:description" content="Robert C. Martin's kata, with slides and a repository to do it in JavaScript or Java.">
+<meta property="og:url" content="https://david-rodenas.com/kata/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-Bf_96pAc.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home">
+    <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
+  </a>
+  <div>
+    <a class="brand" href="/">@drpicox</a>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/kata/" aria-current="page">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd kata &amp;&amp; cat *</p>
+<h1 id="the-bowling-game-kata">The Bowling Game Kata</h1>
+<p>Robert C. Martin published the Bowling Game Kata in 2005 at <a href="http://www.butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata" target="_blank" rel="noopener noreferrer">butunclebob.com</a>.</p>
+<p>He describes the kata intention as:</p>
+<blockquote>A kata is meant to be memorized. Students of a kata study it as a form, not as a conclusion. It is not the conclusion of the kata that matters, it's the steps that lead to the conclusion. If you want to lean to think the way I think, to design the way I design, then you must learn to react to minutia the way I react. Following this form will help you to do that. As you learn the form, and repeat it, and repeat it, you will condition your mind and body to respond the way I respond to the minute factors that lead to design decisions. — Robert C. Martin</blockquote>
+<p>It contrasts with other katas that you might know. It is not an exercise of the resolution of a problem; it is the study of each step to create a solution.</p>
+<p>The intention is to show and learn TDD. This kata is a profound study of the TDD. It presents a list of steps that you must follow in a TDD development.</p>
+<p>The way of the kata is simple: repeat step by step, innovate nothing, replicate what you see. Be careful, do not add extra steps; do not skip any step.</p>
+<p>Although you have the code, do not copy blindly. Try to understand each step; try to see the beauty. Enjoy how the code takes form and how the test transforms itself. Learn how tests leverage in the code and how the code leverages on tests. Code changing the internal representation step by step, first adding the new representation, then adding the setters, changing the getters, and finally removing the old code. And all in green.</p>
+<p>And repeat, and repeat. Once you have finished the kata, wait a week, and repeat it. Then, wait a few weeks and repeat. Then wait a month and repeat. And then, repeat the kata twice a while.</p>
+<h2 id="updated-kata">Updated kata</h2>
+<p>Here you have the slides and the instructions to do the kata in JavaScript and Java.</p>
+<ol><li>Download the slides for <a href="/docs/BowlingGameKata-JS.pdf">JavaScript</a> or <a href="/docs/BowlingGameKata-Java.pdf">Java</a></li><li>Clone the repository at <a href="https://classroom.github.com/a/jLHCISqT" target="_blank" rel="noopener noreferrer">JavaScript</a> or <a href="https://classroom.github.com/a/BC1YAdho" target="_blank" rel="noopener noreferrer">Java</a></li><li>Follow the steps of the kata</li></ol>
+<p>There are three sections in the slides:</p>
+<ul><li>The Kata analysis: it replicates the study of a developer of the problem.</li><li>TDD Overview: it explains what is TDD</li><li>The Kata</li></ul>
+<p>The last section is the exercise itself. Each slide is meaningful by itself and deserves a moment of attention. If you look carefully, some slides have a message on the top right in orange: «commit X.» It starts at zero and increments in one each time that appears. Some slides also have a green or a red bar; it represents the current state of tests. Red if tests are failing, green if tests pass after the current slide.</p>
+<p>The code is in a git repository. It starts in the «commit 0,» and it expects from you to replicate each slide in it. Be careful, and go slide by slide. Each time that you finish copying the changes of a slide verify two things: the commit number and the test bar status. If the test bar status matches the condition of your current tests, and there is a commit number, then commit the git repository with the commit number as a message. Once you have finished it, remember to push changes.</p>
+
+</main>
+<section class="terminal" hidden>
+<div class="screen" aria-live="polite"></div>
+<form class="prompt"><span class="ps1">~/kata $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
+</section>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="spacer"></span>
+  <a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+  <a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</footer>
+</div>
+<script type="module" src="/assets/main-CMjh05En.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

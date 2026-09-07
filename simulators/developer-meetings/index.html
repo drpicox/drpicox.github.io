@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer Meetings Simulator — David Rodenas</title>
+<meta name="description" content="How the kind and timing of meetings affect focus, fatigue and how many features a week finishes.">
+<link rel="canonical" href="https://david-rodenas.com/simulators/developer-meetings/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developer Meetings Simulator — David Rodenas">
+<meta property="og:description" content="How the kind and timing of meetings affect focus, fatigue and how many features a week finishes.">
+<meta property="og:url" content="https://david-rodenas.com/simulators/developer-meetings/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-Bf_96pAc.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home">
+    <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
+  </a>
+  <div>
+    <a class="brand" href="/">@drpicox</a>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/" aria-current="page">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd simulators/developer-meetings &amp;&amp; cat *</p>
+<h1 id="developer-meetings-simulator">Developer Meetings Simulator</h1>
+<p>How different meeting types and schedules, through their effect on focus and fatigue, change what a developer delivers over several weeks.</p>
+<h2 id="how-it-works">How it works</h2>
+<ol><li><strong>Focus and fatigue</strong>: each hour of work adds to both. What gets done in that hour is the difference, clamped between 0 and 100.</li><li><strong>Meetings</strong> produce nothing, and move focus and fatigue by what that kind of meeting does to a person. Lunch resets both; a planning session drains focus and adds fatigue.</li><li><strong>A feature</strong> is finished when the hours add up to its size. Finishing one costs the focus that was built up for it.</li><li><strong>Weeks</strong> are five days of eight hours, 9:00 to 17:00.</li></ol>
+<h2 id="the-simulation">The simulation</h2>
+<p>Pick a meeting type, then click and drag on the calendar to schedule it. Click a meeting to remove it. Everything recalculates as you change it.</p>
+<div class="app" data-app="developer-meetings"></div>
+<h2 id="things-to-try">Things to try</h2>
+<ul><li><strong>High focus, low fatigue</strong>: focus 75, fatigue 10, and few meetings. Watch the features pile up.</li><li><strong>A meeting-heavy week</strong>: several boring meetings a day. Watch the compound effect on delivery.</li><li><strong>No lunch</strong>: remove the lunches and watch fatigue build through the afternoon.</li><li><strong>Planning on Monday</strong>: put the sprint planning first thing, and compare with spreading it through the week.</li></ul>
+<h2 id="what-it-tends-to-show">What it tends to show</h2>
+<p>Breaks that reduce fatigue pay for themselves. Meetings that break focus cost more than their length. Where a disruptive meeting sits in the day matters as much as whether it happens. And a consistent rhythm beats an erratic one.</p>
+
+</main>
+<section class="terminal" hidden>
+<div class="screen" aria-live="polite"></div>
+<form class="prompt"><span class="ps1">~/simulators/developer-meetings $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
+</section>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="spacer"></span>
+  <a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+  <a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</footer>
+</div>
+<script type="module" src="/assets/main-CMjh05En.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
