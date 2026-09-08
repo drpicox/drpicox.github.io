@@ -67,9 +67,10 @@ are mine.
 
 \`$compileProvider.commentDirectivesEnabled()\` and
 \`$compileProvider.cssClassDirectivesEnabled()\` went into the AngularJS
-compiler on 8 August 2016 -- 1,115 lines across eight files -- and they are
-still there. They shipped in 1.5.9 and 1.6.0 and they are in 1.8.3, the last
-release the framework ever had, in April 2022. The commit message says what
+compiler on 8 August 2016 -- 1,115 lines across eight files -- and they were
+never taken out. They shipped in 1.5.9 and 1.6.0 that same year, and six years
+of releases later they are still in 1.8.3, the last one the framework had, in
+April 2022. The commit message says what
 they were for: *this can result in a compilation speed-up of around 10%*. They
 are [in the compiler](https://github.com/angular/angular.js/blob/master/src/ng/compile.js)
 today; [the change itself](https://github.com/angular/angular.js/commit/4c2964d01b55ebb279ea526ae9f44343e513bb8f)
@@ -423,8 +424,9 @@ the canon:
 
 > I made its compiler faster.
 
-Two performance changes in the AngularJS compiler are mine, and they are in
-1.8.3, the last release the framework ever had. So is my implementation of
+Two performance changes in the AngularJS compiler are mine. They shipped in
+2016 and were never taken out: six years of releases later they are still in
+1.8.3, the last one the framework had. So is my implementation of
 \`$componentController\`, the helper its testing module gives you to unit-test a
 component. So are two benchmark suites I wrote when maintainers asked for
 numbers they could check -- one of which measured the \`ngClass\` rewrite built

@@ -32,7 +32,7 @@
 <main>
 <p class="ran"><span class="ps1">~ $</span> cd code &amp;&amp; cat *</p>
 <h1 id="two-public-apis-of-angularjs-are-mine">Two public APIs<br>of AngularJS<br>are mine.</h1>
-<p><code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code> went into the AngularJS compiler on 8 August 2016 — 1,115 lines across eight files — and they are still there. They shipped in 1.5.9 and 1.6.0 and they are in 1.8.3, the last release the framework ever had, in April 2022. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today; <a href="https://github.com/angular/angular.js/commit/4c2964d01b55ebb279ea526ae9f44343e513bb8f" target="_blank" rel="noopener noreferrer">the change itself</a> and <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">the argument that got it in</a> are both there to read.</p>
+<p><code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code> went into the AngularJS compiler on 8 August 2016 — 1,115 lines across eight files — and they were never taken out. They shipped in 1.5.9 and 1.6.0 that same year, and six years of releases later they are still in 1.8.3, the last one the framework had, in April 2022. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today; <a href="https://github.com/angular/angular.js/commit/4c2964d01b55ebb279ea526ae9f44343e513bb8f" target="_blank" rel="noopener noreferrer">the change itself</a> and <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">the argument that got it in</a> are both there to read.</p>
 <pre><code>app.config(<span class="hl-k">function</span> ($compileProvider) {
   <span class="hl-c">// Nobody writes directives as comments or classes</span>
   <span class="hl-c">// any more: stop the compiler looking for them.</span>
@@ -91,7 +91,7 @@
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-C8p4Txcy.js"></script>
+<script type="module" src="/assets/main-Dv1Q7Goz.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
