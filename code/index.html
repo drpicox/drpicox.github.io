@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two public APIs of AngularJS are mine — David Rodenas</title>
+<meta name="description" content="One pull request merged into the AngularJS compiler, two provider options still in the framework's final release, and the benchmark written to argue for them.">
+<link rel="canonical" href="https://david-rodenas.com/code/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Two public APIs of AngularJS are mine — David Rodenas">
+<meta property="og:description" content="One pull request merged into the AngularJS compiler, two provider options still in the framework's final release, and the benchmark written to argue for them.">
+<meta property="og:url" content="https://david-rodenas.com/code/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-BZRr-iIq.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home">
+    <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
+  </a>
+  <div>
+    <a class="brand" href="/">@drpicox</a>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/code/" aria-current="page">CODE</a><a class="navlink" href="/talks/">TALKS</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd code &amp;&amp; cat *</p>
+<h1 id="two-public-apis-of-angularjs-are-mine">Two public APIs<br>of AngularJS<br>are mine.</h1>
+<p>In 2016 I opened thirteen pull requests against <code>angular/angular.js</code>. One of them was merged, by a core maintainer, on 8 August 2016: 1,115 lines across eight files, adding <code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code>. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>.</p>
+<p>Both are still there. They shipped in AngularJS 1.5.9 and 1.6.0, and they are in 1.8.3 — the last release the framework ever had, in April 2022. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today, and the argument that got them in is <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">in the pull request</a>.</p>
+<h2 id="the-benchmark-is-the-part-i-would-keep">The benchmark is the part I would keep</h2>
+<p>A maintainer asked, reasonably, for numbers he could check. So I wrote a benchmark for the compiler in benchpress — AngularJS's own measuring harness -- and posted what it said: about 12% off compiling Bootstrap's carousel template, about 10% off its theme. That is the whole of the case; there is no larger figure, and I have seen larger ones attributed to me.</p>
+<p>The benchmark outlasted the argument. <code>benchmarks/bootstrap-compile-bp/</code> is still in the repository, and so is a second one I wrote for <code>ngClass</code>. So is the documentation: the <em>Disable comment and css class directives</em> section of AngularJS's <strong>Running in Production</strong> guide is mine.</p>
+<h2 id="ngref-which-is-mine-and-is-not">ngRef, which is mine and is not</h2>
+<p>The <code>ngRef</code> directive shipped in AngularJS 1.7.1 in June 2018 — a way to publish a controller or an element into scope. I proposed it in February 2016. It took two and a quarter years and fifty-eight comments, and in the end a maintainer rebased my work, changed two things about it, and merged that instead. The commit is his. The message is this:</p>
+<blockquote>Thanks to @drpicox for the original implementation: PR #14080.</blockquote>
+<h2 id="and-the-one-that-did-not-land">And the one that did not land</h2>
+<p>I spent months on the performance of <code>ngClass</code>. All three of those pull requests were closed unmerged, and the improvement that shipped in 1.6.1 was written by someone else. It is worth being exact about, because the version I have seen on my own old CV is not: there is no thirty per cent, and there is no hundred. What there is, is the commit message of the change that did ship:</p>
+<blockquote>In large based on #14404. Kudos to @drpicox for the initial idea and a big part of the implementation.</blockquote>
+<p>The changelog entry for that release links to my pull request. One <code>ngClass</code> change is mine outright and unglamorous: a fix for watching an array with an object inside it, in 1.5.5, backported to 1.4.11.</p>
+<h2 id="the-count-plainly">The count, plainly</h2>
+<p>Thirteen pull requests to the framework. <strong>One merged.</strong> Six commits on the default branch. Four releases carrying code I wrote, and two more crediting it by name. That is a smaller number than a CV would like and a larger one than most people get, and the reason it is worth a page is not the arithmetic: it is that I went into the compiler of a framework I did not own, measured the thing I thought was slow, and convinced the people who did own it.</p>
+<h2 id="elsewhere">Elsewhere</h2>
+<ul><li><a href="https://github.com/Reactive-Extensions/RxJS/pull/1177" target="_blank" rel="noopener noreferrer">RxJS</a> — merged.</li><li><a href="https://github.com/erikras/ducks-modular-redux" target="_blank" rel="noopener noreferrer">ducks-modular-redux</a> — merged, and the canonical repository for the Ducks pattern lists two of my implementations in its README: <code>ducks-reducer</code> and <code>ducks-middleware</code>.</li><li>Merged, too, into webpack's documentation site, <code>rollupify</code>, <code>kata-log</code>, <code>jest-runner-eslint</code> and <code>fetch-intercept</code>.</li></ul>
+<p>Forty pull requests to repositories that are not mine. Eleven of them merged.</p>
+
+</main>
+<section class="terminal" hidden>
+<div class="screen" aria-live="polite"></div>
+<form class="prompt"><span class="ps1">~/code $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
+</section>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<script type="module" src="/assets/main-CKMzREJ1.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
