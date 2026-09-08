@@ -15,7 +15,7 @@
 <script>try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-BZRr-iIq.css">
+<link rel="stylesheet" href="/assets/main-BTOxhxsw.css">
 </head>
 <body>
 <div class="container">
@@ -25,55 +25,59 @@
   </a>
   <div>
     <a class="brand" href="/">@drpicox</a>
-    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/code/" aria-current="page">CODE</a><a class="navlink" href="/talks/">TALKS</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/code/" aria-current="page">CODE</a><a class="navlink" href="/talks/">TALKS</a><a class="navlink" href="/teaching/">TEACHING</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
   </div>
   <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
 </header>
 <main>
 <p class="ran"><span class="ps1">~ $</span> cd code &amp;&amp; cat *</p>
 <h1 id="two-public-apis-of-angularjs-are-mine">Two public APIs<br>of AngularJS<br>are mine.</h1>
-<p><code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code> went into the AngularJS compiler on 8 August 2016 — 1,115 lines across eight files — and they are still there. They shipped in 1.5.9 and 1.6.0 and they are in 1.8.3, the last release the framework ever had, in April 2022. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today, and the argument that got them in is <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">in the pull request</a>.</p>
-<pre><code>app.config(function ($compileProvider) {
-  // Nobody writes directives as comments or CSS classes any more,
-  // so stop the compiler looking for them in every node.
-  $compileProvider.commentDirectivesEnabled(false);
-  $compileProvider.cssClassDirectivesEnabled(false);
+<p><code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code> went into the AngularJS compiler on 8 August 2016 — 1,115 lines across eight files — and they are still there. They shipped in 1.5.9 and 1.6.0 and they are in 1.8.3, the last release the framework ever had, in April 2022. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today; <a href="https://github.com/angular/angular.js/commit/4c2964d01b55ebb279ea526ae9f44343e513bb8f" target="_blank" rel="noopener noreferrer">the change itself</a> and <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">the argument that got it in</a> are both there to read.</p>
+<pre><code>app.config(<span class="hl-k">function</span> ($compileProvider) {
+  <span class="hl-c">// Nobody writes directives as comments or classes</span>
+  <span class="hl-c">// any more: stop the compiler looking for them.</span>
+  $compileProvider.commentDirectivesEnabled(<span class="hl-k">false</span>);
+  $compileProvider.cssClassDirectivesEnabled(<span class="hl-k">false</span>);
 });</code></pre>
 <h2 id="where-i-worked">Where I worked</h2>
 <p>Not on the documentation. Of the lines I put into AngularJS, thirty-four are documentation, and they describe the option I had just added. The rest went into the parts of a framework that people are careful about letting you touch:</p>
 <dl><dt>The compiler</dt><dd>Two performance changes in <code>src/ng/compile.js</code>, both listed under <em>Performance Improvements</em> in the changelog, in <a href="https://github.com/angular/angular.js/pull/14848" target="_blank" rel="noopener noreferrer">1.5.8</a> and <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">1.5.9</a>. Both still in the released bundle.</dd><dt><code>ngClass</code></dt><dd><a href="https://github.com/angular/angular.js/pull/14405" target="_blank" rel="noopener noreferrer">A fix to how it watches</a>, in 1.5.5 and backported to 1.4.11. <a href="https://github.com/angular/angular.js/commit/7b2ed4ae41956656079c6e411ccf4012aaf611f6" target="_blank" rel="noopener noreferrer">A test suite</a>. <a href="https://github.com/angular/angular.js/pull/15243" target="_blank" rel="noopener noreferrer">A benchmark</a>. And <a href="https://github.com/angular/angular.js/pull/14404" target="_blank" rel="noopener noreferrer">the idea and much of the implementation</a> behind the rewrite that shipped in 1.6.1 — the one with the big number.</dd><dt>The testing module</dt><dd><a href="https://github.com/angular/angular.js/commit/72b96ef57a28743e2dfed523701cc2e88e3b473b" target="_blank" rel="noopener noreferrer">The implementation</a> of <code>$componentController</code>, the helper <code>ngMock</code> gives you to unit-test a component's controller without compiling any DOM. Mine since 1.5.0-rc.1, and still mine, verbatim, in 1.8.3.</dd><dt>The benchmarks</dt><dd>Two benchpress suites, <a href="https://github.com/angular/angular.js/tree/master/benchmarks/bootstrap-compile-bp" target="_blank" rel="noopener noreferrer"><code>bootstrap-compile-bp</code></a> and <a href="https://github.com/angular/angular.js/tree/master/benchmarks/ng-class-bp" target="_blank" rel="noopener noreferrer"><code>ng-class-bp</code></a>, both written because a maintainer asked for numbers he could check. Both still in the repository.</dd><dt>A directive</dt><dd><a href="https://github.com/angular/angular.js/blob/master/src/ng/directive/ngRef.js" target="_blank" rel="noopener noreferrer"><code>ngRef</code></a>, which I <a href="https://github.com/angular/angular.js/pull/14080" target="_blank" rel="noopener noreferrer">proposed as <code>ngAs</code></a> in February 2016 and which <a href="https://github.com/angular/angular.js/commit/bf841d35120bf3c4655fde46af4105c85a0f1cdc" target="_blank" rel="noopener noreferrer">shipped</a> in June 2018 with my name in the commit.</dd></dl>
 <h2 id="the-compiler">The compiler</h2>
 <p>A maintainer asked, reasonably, for numbers he could check. So I wrote a benchmark for the compiler in benchpress — AngularJS's own measuring harness — and posted what it said: about 12% off compiling Bootstrap's carousel template, about 10% off its theme. Ten per cent is what this change is worth, and I have seen much larger figures attributed to me for it. The large number is real, but it belongs further down this page and to a different change.</p>
-<p><a href="https://github.com/angular/angular.js/commit/3aedb1a70d9f925cf866ed7ba07f59c7eb13baa3" target="_blank" rel="noopener noreferrer">The second compiler change</a> is smaller and I like it more: a <code>try/catch</code> inside the function that collected comment directives was stopping V8 from optimising the whole function, so I moved it into a function of its own. Nineteen lines. The comment I left explaining why is still in the source.</p>
+<p><a href="https://github.com/angular/angular.js/commit/3aedb1a70d9f925cf866ed7ba07f59c7eb13baa3" target="_blank" rel="noopener noreferrer">The second compiler change</a> is smaller and I like it more: a <code>try/catch</code> inside the function that collected comment directives was stopping V8 from optimising the whole function, so I moved it into a function of its own. Nineteen lines, and measured on a customer's code over two hundred runs, <a href="https://github.com/angular/angular.js/pull/14848" target="_blank" rel="noopener noreferrer">about 5% off parsing and compiling</a>. It shipped in 1.5.8. The comment I left explaining why is still in the source.</p>
 <h2 id="ngclass-and-the-hundredfold-number">ngClass, and the hundredfold number</h2>
 <p><code>ng-class=&quot;{lent: book.lendTo}&quot;</code> needs exactly one thing from <code>book.lendTo</code>: whether it is there. But <code>lendTo</code> might be a person, and a person has books, and those books have people. AngularJS was deep-watching the expression — copying that whole graph and comparing the copy — on every digest, for every element on the page. The cost was proportional to your data, and as I wrote in the pull request at the time, the data could be big enough to take seconds to copy.</p>
 <p>Everyone who knew this wrote the second line instead, so the watcher saw a boolean:</p>
-<pre><code>&lt;li ng-class=&quot;{ lent: book.lendTo }&quot;&gt;    &lt;!-- copies the whole person --&gt;
-&lt;li ng-class=&quot;{ lent: !!book.lendTo }&quot;&gt;  &lt;!-- copies true --&gt;</code></pre>
+<pre><code><span class="hl-c">&lt;!-- copies the person, their books, their people --&gt;</span>
+&lt;<span class="hl-t">li</span> <span class="hl-a">ng-class</span>=<span class="hl-s">&quot;{ lent: book.lendTo }&quot;</span>&gt;
+
+<span class="hl-c">&lt;!-- copies true --&gt;</span>
+&lt;<span class="hl-t">li</span> <span class="hl-a">ng-class</span>=<span class="hl-s">&quot;{ lent: !!book.lendTo }&quot;</span>&gt;</code></pre>
 <p>Everyone who did not know spent the afternoon finding out why the page had frozen, and the answer was a <code>!!</code> somebody had forgotten — or had never heard of. The fix makes the first line cost what the second one does, so the <code>!!</code> stopped being a thing you had to know. That is the whole of it, and it is why it was worth months.</p>
 <p>It shipped in 1.6.1, in <a href="https://github.com/angular/angular.js/commit/b82097085d53ad89940828d3c0825518569b1e4a" target="_blank" rel="noopener noreferrer">a commit</a> written by another maintainer on top of <a href="https://github.com/angular/angular.js/pull/14404" target="_blank" rel="noopener noreferrer">mine</a>, and the changelog entry for it links to my pull request. His commit message:</p>
-<blockquote>In large based on #14404. Kudos to @drpicox for the initial idea and a big part of the implementation.</blockquote>
+<blockquote>&quot;In large based on #14404. Kudos to @drpicox for the initial idea and a big part of the implementation.&quot; — Georgios Kalpakas, <a href="https://github.com/angular/angular.js/commit/b82097085d53ad89940828d3c0825518569b1e4a" target="_blank" rel="noopener noreferrer">in the commit that shipped it</a></blockquote>
 <p>He asked for a benchmark, so I wrote that too: <a href="https://github.com/angular/angular.js/pull/15243" target="_blank" rel="noopener noreferrer"><code>ng-class-bp</code></a>, reviewed and merged into AngularJS's own benchmark suite, where it still is. It has the case twice: once written the way everyone writes it, and once with the <code>!!</code>. On a single element bound to a large object the fix measured <strong>more than a hundred times faster</strong> — about 1.5 milliseconds a digest down to between 0.02 and 0.08, which is to say down to what the <code>!!</code> had been buying by hand. On long lists, five to ten times, from seven or thirteen milliseconds down to about one.</p>
 <p>Those are the numbers I posted, from the framework's benchmark, and the maintainers took them and shipped the change. The same benchmark also says that on data already written the careful way, by hand, the new code is about 25% <em>slower</em>. Which is the honest summary of the whole thing: it does automatically what an experienced Angular programmer would have done manually, and it is worth having for the same reason type inference is.</p>
 <h2 id="the-testing-module">The testing module</h2>
 <p><code>$componentController</code> is how you unit-test an AngularJS component: give it the component's name and it hands you the controller, with its bindings, without compiling a template or touching the DOM. It is the API the component guide teaches.</p>
-<pre><code>it(&quot;greets whoever it is given&quot;, inject(function ($componentController) {
-  var ctrl = $componentController(&quot;greeting&quot;, null, { name: &quot;Ada&quot; });
-  expect(ctrl.text()).toBe(&quot;Hello, Ada&quot;);
+<pre><code>it(<span class="hl-s">&quot;greets&quot;</span>, inject(<span class="hl-k">function</span> ($componentController) {
+  <span class="hl-k">var</span> bindings = { name: <span class="hl-s">&quot;Ada&quot;</span> };
+  <span class="hl-k">var</span> hello = $componentController(<span class="hl-s">&quot;hello&quot;</span>, {}, bindings);
+  expect(hello.text()).toBe(<span class="hl-s">&quot;Hello, Ada&quot;</span>);
 }));</code></pre>
 <p>I did not invent it. A maintainer added it on 10 January 2016. Two days later I rewrote how it worked, for two reasons. His version kept a registry inside the production compiler purely so that a test helper could read it — test-only code in <code>angular.min.js</code> — and mine derives the same thing from the injector, entirely inside the testing module. And if two directives shared a name, his picked whichever had been registered last; mine filters for the one that is a component, and refuses if there is not exactly one. That second point came out of <a href="https://github.com/angular/angular.js/pull/13732" target="_blank" rel="noopener noreferrer">the review</a>, where the objection to my version turned out to be a bug in the existing one, and the design that settled it is the code that shipped.</p>
 <p>It shipped in 1.5.0-rc.1, so the production bundle never carried the extra bytes in any public release, and it is the implementation in <code>angular-mocks.js</code> at 1.8.3, comments included. It is <a href="https://github.com/angular/angular.js/blob/master/src/ngMock/angular-mocks.js" target="_blank" rel="noopener noreferrer">there today</a>.</p>
 <h2 id="ngref-and-how-long-it-took">ngRef, and how long it took</h2>
 <p><code>ngRef</code> publishes a controller, or an element, into scope, so that the template around a component can talk to it:</p>
-<pre><code>&lt;todo-list ng-ref=&quot;todos&quot;&gt;&lt;/todo-list&gt;
-&lt;p&gt;{{ todos.remaining() }} left&lt;/p&gt;</code></pre>
+<pre><code>&lt;<span class="hl-t">todo-list</span> <span class="hl-a">ng-ref</span>=<span class="hl-s">&quot;todos&quot;</span>&gt;&lt;/<span class="hl-t">todo-list</span>&gt;
+&lt;<span class="hl-t">p</span>&gt;{{ todos.remaining() }} left&lt;/<span class="hl-t">p</span>&gt;</code></pre>
 <p>I <a href="https://github.com/angular/angular.js/pull/14080" target="_blank" rel="noopener noreferrer">proposed it</a> on 18 February 2016. It was discussed for two years and three months and fifty-eight comments. On 1 June 2018 my pull request was closed. Four days later a maintainer <a href="https://github.com/angular/angular.js/pull/16511" target="_blank" rel="noopener noreferrer">opened his own</a>, rebased from mine with two changes, and merged that. The directive shipped in 1.7.1 three days after that. His commit message:</p>
-<blockquote>Thanks to @drpicox for the original implementation: PR #14080.</blockquote>
+<blockquote>&quot;Thanks to @drpicox for the original implementation: PR #14080.&quot; — Martin Staffa, <a href="https://github.com/angular/angular.js/commit/bf841d35120bf3c4655fde46af4105c85a0f1cdc" target="_blank" rel="noopener noreferrer">in the commit</a></blockquote>
 <h2 id="whose-name-is-on-the-commit">Whose name is on the commit</h2>
 <p>There is no count of anything on this page, and this is why. On that project a maintainer would take your pull request, rebase it, and land it himself:</p>
-<blockquote>@drpicox I can also make these changes, so just tell me if you'll do it or I should. :) — <a href="https://github.com/angular/angular.js/pull/14850#issuecomment-234206359" target="_blank" rel="noopener noreferrer">a maintainer, July 2016</a></blockquote>
+<blockquote>&quot;@drpicox I can also make these changes, so just tell me if you'll do it or I should. :)&quot; — Martin Staffa, <a href="https://github.com/angular/angular.js/pull/14850#issuecomment-234206359" target="_blank" rel="noopener noreferrer">July 2016</a></blockquote>
 <p>Every commit of mine on the main branch was put there by a maintainer's hand, and GitHub records almost all of my pull requests as never merged — two of them my own scaffolding for another. The merge button measures who pressed it. What it does not measure, one of them wrote down while turning down a different idea of mine:</p>
-<blockquote>But totally 👍 for all the great ideas and work that you've been putting in to this and other features lately-ish. Really great stuff! — <a href="https://github.com/angular/angular.js/pull/15112" target="_blank" rel="noopener noreferrer">another, September 2016</a></blockquote>
+<blockquote>&quot;But totally 👍 for all the great ideas and work that you've been putting in to this and other features lately-ish. Really great stuff!&quot; — Georgios Kalpakas, <a href="https://github.com/angular/angular.js/pull/15112" target="_blank" rel="noopener noreferrer">September 2016</a></blockquote>
 <h2 id="elsewhere">Elsewhere</h2>
 <ul><li><a href="https://github.com/Reactive-Extensions/RxJS/pull/1177" target="_blank" rel="noopener noreferrer">RxJS</a> — merged.</li><li><a href="https://github.com/erikras/ducks-modular-redux" target="_blank" rel="noopener noreferrer">ducks-modular-redux</a> — merged, and the canonical repository for the Ducks pattern lists two of my implementations in its README: <code>ducks-reducer</code> and <code>ducks-middleware</code>.</li><li>Merged, too, into webpack's documentation site, <code>rollupify</code>, <code>kata-log</code>, <code>jest-runner-eslint</code> and <code>fetch-intercept</code>.</li></ul>
 
@@ -87,7 +91,7 @@
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-C4GhzcsO.js"></script>
+<script type="module" src="/assets/main-C8p4Txcy.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
