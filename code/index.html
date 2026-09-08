@@ -34,8 +34,8 @@
 <h1 id="two-public-apis-of-angularjs-are-mine">Two public APIs<br>of AngularJS<br>are mine.</h1>
 <p><code>$compileProvider.commentDirectivesEnabled()</code> and <code>$compileProvider.cssClassDirectivesEnabled()</code> went into the AngularJS compiler on 8 August 2016 — 1,115 lines across eight files — and they are still there. They shipped in 1.5.9 and 1.6.0 and they are in 1.8.3, the last release the framework ever had, in April 2022. The commit message says what they were for: <em>this can result in a compilation speed-up of around 10%</em>. They are <a href="https://github.com/angular/angular.js/blob/master/src/ng/compile.js" target="_blank" rel="noopener noreferrer">in the compiler</a> today, and the argument that got them in is <a href="https://github.com/angular/angular.js/pull/14850" target="_blank" rel="noopener noreferrer">in the pull request</a>.</p>
 <pre><code>app.config(function ($compileProvider) {
-  // Nobody writes directives as &lt;!-- comments --&gt; or as CSS classes any more,
-  // so stop the compiler looking for them in every node it visits.
+  // Nobody writes directives as comments or CSS classes any more,
+  // so stop the compiler looking for them in every node.
   $compileProvider.commentDirectivesEnabled(false);
   $compileProvider.cssClassDirectivesEnabled(false);
 });</code></pre>
@@ -48,8 +48,8 @@
 <h2 id="ngclass-and-the-hundredfold-number">ngClass, and the hundredfold number</h2>
 <p><code>ng-class=&quot;{lent: book.lendTo}&quot;</code> needs exactly one thing from <code>book.lendTo</code>: whether it is there. But <code>lendTo</code> might be a person, and a person has books, and those books have people. AngularJS was deep-watching the expression — copying that whole graph and comparing the copy — on every digest, for every element on the page. The cost was proportional to your data, and as I wrote in the pull request at the time, the data could be big enough to take seconds to copy.</p>
 <p>Everyone who knew this wrote the second line instead, so the watcher saw a boolean:</p>
-<pre><code>&lt;li ng-class=&quot;{ lent: book.lendTo }&quot;&gt;     &lt;!-- copies the person, and their books, every digest --&gt;
-&lt;li ng-class=&quot;{ lent: !!book.lendTo }&quot;&gt;   &lt;!-- copies true --&gt;</code></pre>
+<pre><code>&lt;li ng-class=&quot;{ lent: book.lendTo }&quot;&gt;    &lt;!-- copies the whole person --&gt;
+&lt;li ng-class=&quot;{ lent: !!book.lendTo }&quot;&gt;  &lt;!-- copies true --&gt;</code></pre>
 <p>Everyone who did not know spent the afternoon finding out why the page had frozen, and the answer was a <code>!!</code> somebody had forgotten — or had never heard of. The fix makes the first line cost what the second one does, so the <code>!!</code> stopped being a thing you had to know. That is the whole of it, and it is why it was worth months.</p>
 <p>It shipped in 1.6.1, in <a href="https://github.com/angular/angular.js/commit/b82097085d53ad89940828d3c0825518569b1e4a" target="_blank" rel="noopener noreferrer">a commit</a> written by another maintainer on top of <a href="https://github.com/angular/angular.js/pull/14404" target="_blank" rel="noopener noreferrer">mine</a>, and the changelog entry for it links to my pull request. His commit message:</p>
 <blockquote>In large based on #14404. Kudos to @drpicox for the initial idea and a big part of the implementation.</blockquote>
@@ -87,7 +87,7 @@
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-nAFltqTi.js"></script>
+<script type="module" src="/assets/main-C4GhzcsO.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
