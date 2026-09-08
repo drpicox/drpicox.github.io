@@ -41,9 +41,8 @@
 <ul><li><a href="https://medium.com/p/bd110ddab732" target="_blank" rel="noopener noreferrer">The JavaScript framework war is over</a></li><li><a href="https://drpicox.medium.com/software-development-is-a-beautiful-mess-45edab1fab73" target="_blank" rel="noopener noreferrer">Software Development Is A Beautiful Mess</a></li><li><a href="https://drpicox.medium.com/scrum-vs-extreme-programming-was-xp-right-all-along-1bb1061e9e6b" target="_blank" rel="noopener noreferrer">Scrum vs Extreme Programming: Was XP Right All Along?</a></li><li><a href="https://medium.com/better-programming/confirmed-code-coverage-is-a-useless-management-metric-35afa05e8549" target="_blank" rel="noopener noreferrer">Confirmed: Code Coverage Is a Useless Management Metric</a></li><li><a href="https://drpicox.medium.com/the-craziest-piece-of-software-ive-ever-seen-4605085ceb5b" target="_blank" rel="noopener noreferrer">The Craziest Piece of Software I've Ever Seen</a></li><li><a href="https://drpicox.medium.com/what-are-micro-frontends-for-aad66e9c2cf8" target="_blank" rel="noopener noreferrer">What Are Micro-Frontends Really For?</a></li></ul>
 <p><a href="/essays/">Twenty of them, with a line on each.</a></p>
 <h2 id="two-public-apis-of-angularjs-are-mine">Two public APIs of AngularJS are mine</h2>
-<blockquote>One of thirteen. It is the one that got in.</blockquote>
-<p>In 2016 a core maintainer merged a pull request of mine into the AngularJS compiler: <code>$compileProvider.commentDirectivesEnabled()</code> and <code>cssClassDirectivesEnabled()</code>, still in 1.8.3, the last release the framework ever had. He had asked for numbers he could check, so I wrote the benchmark that produced them, and that is still in the repository too.</p>
-<p>A second maintainer put my name in the history a second time, for work of mine that shipped under his. <a href="/code/">The whole account, including what did not land.</a></p>
+<blockquote>I made its compiler faster.</blockquote>
+<p>Two performance changes in the AngularJS compiler are mine, and they are in 1.8.3, the last release the framework ever had. So is my implementation of <code>$componentController</code>, the helper its testing module gives you to unit-test a component. So are two benchmark suites I wrote when maintainers asked for numbers they could check — one of which measured the <code>ngClass</code> rewrite built on my work at more than a hundred times faster on the case that mattered. None of it is documentation. <a href="/code/">The whole account.</a></p>
 <h2 id="the-world-at-the-top">The world at the top</h2>
 <p>The mark in the header is not a picture. It is a planet, grown the moment this page opened, by the pipeline of a program I wrote before the year 2000 for a university graphics course: <a href="https://david-rodenas.com/mons-fractals/" target="_blank" rel="noopener noreferrer">Mons fractals</a>, Java 1.1.8 on MS-DOS, writing worlds out as VRML.</p>
 <p>It is a pipeline of filters, and the order is part of the meaning. Start from an icosahedron. Split every edge and push each new midpoint out or in by a fraction of the edge it came from, so the first rounds carve continents and the last ones only roughen a slope. Put in the sea as a minimum radius: everything below it is raised up to it, which is why a coastline reads as a coastline and not as a change of colour. Work out the climate from height above the sea and from latitude, so that a summit is white wherever it stands, the way the Himalaya is. Only then paint it. Paint first and you get a ball of one colour.</p>
@@ -59,7 +58,7 @@
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-CKMzREJ1.js"></script>
+<script type="module" src="/assets/main-BUoKQnrF.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
