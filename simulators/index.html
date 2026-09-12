@@ -12,10 +12,10 @@
 <meta property="og:url" content="https://david-rodenas.com/simulators/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="/favicon.png">
-<script>try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-BIWaf7-5.css">
+<link rel="stylesheet" href="/assets/main-BzABNo2n.css">
 </head>
 <body>
 <div class="container">
@@ -23,30 +23,34 @@
   <a class="mark" href="/" aria-label="Home">
     <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
   </a>
-  <div>
-    <a class="brand" href="/">@drpicox</a>
-    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/code/">CODE</a><a class="navlink" href="/talks/">TALKS</a><a class="navlink" href="/teaching/">TEACHING</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/" aria-current="page">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/code/">code/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/simulators/" aria-current="page">simulators/</a><a class="navlink" href="/worlds/">worlds/</a></nav>
   </div>
   <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
 </header>
 <main>
-<p class="ran"><span class="ps1">~ $</span> cd simulators &amp;&amp; cat *</p>
+<p class="ran"><span class="ps1">~ $</span> cd simulators &amp;&amp; cat README.md</p>
 <h1 id="simulators">Simulators</h1>
 <p>Software development concepts like technical debt or team dynamics are abstract and hard to visualise. These two are not lectures: they are small models you can turn the dials of and watch.</p>
 <ul><li><a href="/simulators/technical-debt/">Technical debt</a> — how shortcuts create compound productivity losses over time: the true cost of a shortcut, the break-even point between clean and debt-driven development, and what the interest rate does to it.</li><li><a href="/simulators/developer-meetings/">Developer meetings</a> — how the kind and the timing of meetings affect a developer's focus and fatigue, and with them how many features a week actually finishes. Paint a calendar and see.</li></ul>
 <p>Use <code>ls</code> to see them, or <code>cat technical-debt</code> to read one here.</p>
-<ul class="listing"><li><a href="/simulators/technical-debt/">Technical Debt Simulator</a> <span class="summary">How shortcuts create compound productivity losses over time.</span></li><li><a href="/simulators/developer-meetings/">Developer Meetings Simulator</a> <span class="summary">How the kind and timing of meetings affect focus, fatigue and how many features a week finishes.</span></li></ul>
+<p class="ran"><span class="ps1">~/simulators $</span> ls</p>
+<ul class="listing"><li><a class="entry" href="/simulators/technical-debt/"><code>technical-debt/</code><span class="title">Technical Debt Simulator</span><span class="summary">How shortcuts create compound productivity losses over time.</span></a></li><li><a class="entry" href="/simulators/developer-meetings/"><code>developer-meetings/</code><span class="title">Developer Meetings Simulator</span><span class="summary">How the kind and timing of meetings affect focus, fatigue and how many features a week finishes.</span></a></li></ul>
 </main>
-<section class="terminal" hidden>
 <div class="screen" aria-live="polite"></div>
-<form class="prompt"><span class="ps1">~/simulators $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
-</section>
+<p class="ran end"><span class="ps1">~/simulators $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
 <footer class="site-footer">
   <span>&copy; 2026 David Rodenas</span>
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-JdDsNymS.js"></script>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/simulators $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-ByshqtDq.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

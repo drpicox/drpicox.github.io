@@ -12,10 +12,10 @@
 <meta property="og:url" content="https://david-rodenas.com/talks/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="/favicon.png">
-<script>try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-BIWaf7-5.css">
+<link rel="stylesheet" href="/assets/main-BzABNo2n.css">
 </head>
 <body>
 <div class="container">
@@ -23,14 +23,14 @@
   <a class="mark" href="/" aria-label="Home">
     <canvas class="planet" width="160" height="160" aria-hidden="true"></canvas>
   </a>
-  <div>
-    <a class="brand" href="/">@drpicox</a>
-    <nav><a class="navlink" href="/book/">BOOK</a><a class="navlink" href="/essays/">ESSAYS</a><a class="navlink" href="/code/">CODE</a><a class="navlink" href="/talks/" aria-current="page">TALKS</a><a class="navlink" href="/teaching/">TEACHING</a><a class="navlink" href="/kata/">KATA</a><a class="navlink" href="/simulators/">SIMULATORS</a><a class="navlink" href="/worlds/">WORLDS</a></nav>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/code/">code/</a><a class="navlink" href="/talks/" aria-current="page">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a></nav>
   </div>
   <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
 </header>
 <main>
-<p class="ran"><span class="ps1">~ $</span> cd talks &amp;&amp; cat *</p>
+<p class="ran"><span class="ps1">~ $</span> cd talks &amp;&amp; cat README.md</p>
 <h1 id="twenty-one-years-of-standing-up-and-explaining">Twenty-one years<br>of standing up<br>and explaining.</h1>
 <p>The archive holds more than sixty decks between 2013 and 2024, and about forty occasions I can date and name. The early ones were written as repositories, so they could be read and run, and they are still on GitHub: <a href="https://github.com/drpicox/tutorial-gruntjs-v1" target="_blank" rel="noopener noreferrer">GruntJS</a>, <a href="https://github.com/drpicox/tutorial-promises-v1" target="_blank" rel="noopener noreferrer">Promises</a>, <a href="https://github.com/drpicox/tutorial-jspatterns-v1" target="_blank" rel="noopener noreferrer">JS &amp; Patterns</a>, <a href="https://github.com/drpicox/tutorial-angulardesigners-v1" target="_blank" rel="noopener noreferrer">AngularJS for designers</a>. Most of the rest were written for a room.</p>
 <h2 id="the-one-i-am-proudest-of-and-never-put-on-a-cv">The one I am proudest of, and never put on a CV</h2>
@@ -47,16 +47,19 @@
 <dl><dt>2022-10-15</dt><dd><strong>Algorismes i Intel·ligència Artificial, influència en la vida quotidiana</strong> — the opening talk of the XXII Fòrum TIC Social, the open-air evening that Llefi@net, the citizens' network of Llefià, has held in Plaça Trafalgar in Badalona every summer since 2000. <a href="https://llefia.org/wpforum/wp-content/uploads/sites/10/2022/10/Algorismes_i_IA_a-_la_vida_quotidiana.pdf" target="_blank" rel="noopener noreferrer">The slides</a> and <a href="https://llefia.org/blog/2022/11/19/cronica-xxii-forum-tic-social-de-badalona/" target="_blank" rel="noopener noreferrer">their account of the evening</a> are on llefia.org.</dd><dt>2024-07-06</dt><dd><strong>Impacte social de la Intel·ligència Artificial</strong>, the same forum two summers on, in conversation with Ariel Guersenzvaig and Xavier Vinaixa — and the talk that followed, on screens at school, whose slides I wrote with Marina Gispert. <a href="https://llefia.org/blog/2024/07/07/documents-i-videos-xxiii-forum-tic-social-2024/" target="_blank" rel="noopener noreferrer">Documents and video.</a></dd><dt>2025-02-05</dt><dd><strong>Els nostres fills no són un experiment</strong>, invited to <em>III Jornada. L'educació a debat</em>, at the Universitat Pompeu Fabra. <a href="https://youtu.be/4i-mpwbL7Fg" target="_blank" rel="noopener noreferrer">The session is on the university's channel.</a></dd><dt>2025 → 2026</dt><dd><strong>Vols una galeta?</strong> — Sabadell, Barcelona, Altafulla, Sant Celoni, Teià, el Masnou. It grew from 125 slides to 188, and then I cut it to 54, which took eight drafts of the script and is the version I would give again.</dd><dt>2026-03-27</dt><dd><strong>Qui crIA els teus fills?</strong>, Escolàpies, el Masnou. Commissioned and paid for by the parents' association — the only one anybody has ever paid me for. They then recommended me to the town council, which is how the last one happened.</dd></dl>
 
 </main>
-<section class="terminal" hidden>
 <div class="screen" aria-live="polite"></div>
-<form class="prompt"><span class="ps1">~/talks $</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="help"></form>
-</section>
+<p class="ran end"><span class="ps1">~/talks $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
 <footer class="site-footer">
   <span>&copy; 2026 David Rodenas</span>
   <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 </div>
-<script type="module" src="/assets/main-JdDsNymS.js"></script>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/talks $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-ByshqtDq.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
