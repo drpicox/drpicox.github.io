@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The next word — David Rodenas</title>
+<meta name="description" content="A language model with everything taken away but the idea: count which word follows which, then throw the dice.">
+<link rel="canonical" href="https://david-rodenas.com/projects/next-word/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The next word — David Rodenas">
+<meta property="og:description" content="A language model with everything taken away but the idea: count which word follows which, then throw the dice.">
+<meta property="og:url" content="https://david-rodenas.com/projects/next-word/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-BR8e-NJf.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/code/">code/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/" aria-current="page">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd projects/next-word &amp;&amp; cat README.md</p>
+<h1 id="the-next-word">The next word</h1>
+<p>A language model does one thing: given the words so far, it says what may come next, and how likely. Everything else is how well it says it. This one says it as badly as possible, so that the whole of it can be seen. It reads a text, counts which word followed which, and throws dice weighted by the counts.</p>
+<div class="app" data-app="next-word"><div class="next-word"><p class="written"><mark>the</mark><span class="caret"></span></p><h4>What may come next</h4><ol class="offered"><li><button type="button" data-word="cat" title="seen 3 of 8 times: 38% as learnt"><span class="word">cat</span><span class="chance" style="--p:0.375"></span><span class="figure">38%</span></button></li><li><button type="button" data-word="dog" title="seen 3 of 8 times: 38% as learnt"><span class="word">dog</span><span class="chance" style="--p:0.375"></span><span class="figure">38%</span></button></li><li><button type="button" data-word="car" title="seen 2 of 8 times: 25% as learnt"><span class="word">car</span><span class="chance" style="--p:0.250"></span><span class="figure">25%</span></button></li></ol><table class="learnt"><caption>What it learnt: 24 transitions between 15 words</caption><thead><tr><th>after</th><th>comes</th><th>seen</th><th>chance</th></tr></thead><tbody><tr class="now"><td>the</td><td>cat</td><td>3</td><td>38%</td></tr><tr class="now"><td>the</td><td>dog</td><td>3</td><td>38%</td></tr><tr class="now"><td>the</td><td>car</td><td>2</td><td>25%</td></tr><tr><td>.</td><td>the</td><td>7</td><td>100%</td></tr><tr><td>happy</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>glad</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>sleeps</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>plays</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>eats</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>runs</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>fast</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>goes</td><td>far</td><td>1</td><td>100%</td></tr><tr><td>far</td><td>.</td><td>1</td><td>100%</td></tr><tr><td>car</td><td>is</td><td>1</td><td>50%</td></tr><tr><td>car</td><td>goes</td><td>1</td><td>50%</td></tr><tr><td>cat</td><td>is</td><td>1</td><td>33%</td></tr><tr><td>cat</td><td>sleeps</td><td>1</td><td>33%</td></tr><tr><td>cat</td><td>eats</td><td>1</td><td>33%</td></tr><tr><td>is</td><td>happy</td><td>1</td><td>33%</td></tr><tr><td>is</td><td>glad</td><td>1</td><td>33%</td></tr><tr><td>is</td><td>fast</td><td>1</td><td>33%</td></tr><tr><td>dog</td><td>is</td><td>1</td><td>33%</td></tr><tr><td>dog</td><td>plays</td><td>1</td><td>33%</td></tr><tr><td>dog</td><td>runs</td><td>1</td><td>33%</td></tr></tbody></table></div></div>
+<p>Press <strong>next word</strong> and it throws the dice once. Press a word it offers and you are the dice. Press <strong>write</strong> and watch it go.</p>
+<h2 id="things-to-try">Things to try</h2>
+<ul><li><strong>Count it yourself.</strong> In the eight short sentences, <em>the</em> is followed by <em>cat</em> three times, <em>dog</em> three times and <em>car</em> twice. Those are the chances it offers, and there is nothing else inside.</li><li><strong>Turn the temperature down to 0</strong> and it always says the likeliest thing, and soon goes round in a circle. <strong>Turn it up to 2</strong> and the unlikely words get their turn. It is the same dial the real ones have, doing the same sum.</li><li><strong>Let it read this website</strong>, and look two or three words back instead of one. One word back it babbles; three words back it starts quoting the pages it read, because so long a context has usually been seen only once. More memory needs more text: that trade is the whole history of the field.</li><li><strong>Start from a word it never saw.</strong> It takes the nearest word it knows, by counting letters. A real model avoids the problem by cutting words into pieces.</li></ul>
+<h2 id="what-it-is-not">What it is not</h2>
+<p>A real model does not keep a table. It would need a row for every run of thousands of words ever written, and nearly every row would be empty. It squeezes the table into a network that answers for contexts nobody has seen, because they resemble ones somebody has — which is where everything interesting, and everything that goes wrong, comes from. But the question put to it is this one, and the answer is used this way: a list of chances, a dial, and dice.</p>
+<h2 id="where-it-comes-from">Where it comes from</h2>
+<p>The first version is from February 2026, made to be shown in a talk rather than explained: <a href="https://david-rodenas.com/next-word-generator/" target="_blank" rel="noopener noreferrer">the original, with its Catalan texts</a>. This one is written again for this site, with nothing underneath it.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/projects/next-word $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/projects/next-word $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-OAdbMiIB.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
