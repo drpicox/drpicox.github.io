@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graph matching on a desktop — David Rodenas</title>
+<meta name="description" content="Universitat Rovira i Virgili, 2009–2011. Two computer-vision algorithms rewritten for a multi-core processor and a graphics card, up to thirty-five times faster without changing the result by a bit.">
+<link rel="canonical" href="https://david-rodenas.com/research/graph-matching/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graph matching on a desktop — David Rodenas">
+<meta property="og:description" content="Universitat Rovira i Virgili, 2009–2011. Two computer-vision algorithms rewritten for a multi-core processor and a graphics card, up to thirty-five times faster without changing the result by a bit.">
+<meta property="og:url" content="https://david-rodenas.com/research/graph-matching/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-DJH1x-dx.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/" aria-current="page">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd research/graph-matching &amp;&amp; cat README.md</p>
+<h1 id="graph-matching-on-a-desktop">Graph matching on a desktop</h1>
+<p>The second half of <a href="/research/">the thesis</a>, at the Universitat Rovira i Virgili between 2009 and 2011: the <a href="/research/parallel-tools/">tools of the first half</a>, put to work on a problem that needed them.</p>
+<p>Computer vision likes to describe things as graphs: a house is a roof, a door, two windows, and how they touch. Comparing two graphs exactly is exponential in their size, and even the good approximations were too slow to use outside a laboratory.</p>
+<p>I took two of those algorithms, graduated assignment for a pair of graphs and for the common labelling of many, and rewrote them for what a desktop had become: a multi-core processor beside a graphics card. The method is what the first half had taught. Transform the equations, not the code — splitting, tiling and reordering loops in a notation close to the mathematics — so that the program falls into the same two levels of parallelism, and the result does not change by a single bit. Up to about thirty-five times faster than the serial version, on hardware chosen for its low power consumption: close to real time, which is what a robot or a fingerprint reader needs.</p>
+<p>Both are first-author papers in Springer's Lecture Notes in Computer Science: <a href="https://doi.org/10.1007/978-3-642-21257-4_63" target="_blank" rel="noopener noreferrer">IbPRIA 2011</a> and <a href="https://doi.org/10.1007/978-3-642-20844-7_14" target="_blank" rel="noopener noreferrer">GbR 2011</a>.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/research/graph-matching $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/research/graph-matching $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-Be9UP8ha.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

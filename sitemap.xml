@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://david-rodenas.com/</loc></url>
+  <url><loc>https://david-rodenas.com/open-source/angularjs/</loc></url>
   <url><loc>https://david-rodenas.com/book/</loc></url>
   <url><loc>https://david-rodenas.com/projects/next-word/</loc></url>
   <url><loc>https://david-rodenas.com/open-data/no2/</loc></url>
+  <url><loc>https://david-rodenas.com/research/parallel-tools/</loc></url>
   <url><loc>https://david-rodenas.com/teaching/raft/</loc></url>
   <url><loc>https://david-rodenas.com/simulators/technical-debt/</loc></url>
   <url><loc>https://david-rodenas.com/simulators/developer-meetings/</loc></url>
   <url><loc>https://david-rodenas.com/essays/</loc></url>
+  <url><loc>https://david-rodenas.com/research/graph-matching/</loc></url>
   <url><loc>https://david-rodenas.com/open-data/hot-nights/</loc></url>
+  <url><loc>https://david-rodenas.com/open-source/packages/</loc></url>
   <url><loc>https://david-rodenas.com/projects/rocinante/</loc></url>
-  <url><loc>https://david-rodenas.com/code/</loc></url>
-  <url><loc>https://david-rodenas.com/projects/packages/</loc></url>
+  <url><loc>https://david-rodenas.com/open-source/</loc></url>
   <url><loc>https://david-rodenas.com/talks/</loc></url>
   <url><loc>https://david-rodenas.com/teaching/</loc></url>
   <url><loc>https://david-rodenas.com/kata/</loc></url>
