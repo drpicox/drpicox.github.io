@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops into zones — David Rodenas</title>
+<meta name="description" content="The method of the thesis, step by step. Two loop transformations and two annotations turn a serial algorithm into one shaped like a graphics card, without changing what it computes.">
+<link rel="canonical" href="https://david-rodenas.com/research/loops-into-zones/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Loops into zones — David Rodenas">
+<meta property="og:description" content="The method of the thesis, step by step. Two loop transformations and two annotations turn a serial algorithm into one shaped like a graphics card, without changing what it computes.">
+<meta property="og:url" content="https://david-rodenas.com/research/loops-into-zones/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-D2l5p9P-.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/" aria-current="page">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd research/loops-into-zones &amp;&amp; cat README.md</p>
+<h1 id="loops-into-zones">Loops into zones</h1>
+<p>A graphics card is not many processors. It is two kinds of parallelism, one inside the other. Outside, <strong>blocks</strong>: many of them, loosely coupled, which should hardly talk to each other. Inside each block, <strong>threads</strong>: tightly coupled, in step, sharing a small memory that is private to the block and very fast. A program is quick on a card when its work has that same shape, and slow, whatever else is done to it, when it has not.</p>
+<p>I had met that shape before. The NAS multi-zone benchmarks, which had scaled so well <a href="/research/parallel-tools/">on Cyclops and over distributed memory</a>, are built the same way: coarse zones outside that barely communicate, fine loops inside each. So the method of the second half of the thesis is one sentence: <strong>take the algorithm you have and make it multi-zone</strong>. The rest is how to do that to an algorithm nobody wrote that way, without changing what it computes.</p>
+<h2 id="the-algorithm">The algorithm</h2>
+<p>Graduated assignment matches two graphs by refining a matrix of probabilities, <code>P[a,i]</code>: how likely it is that vertex <code>a</code> of one graph is vertex <code>i</code> of the other. Each round computes, for every pair,</p>
+<pre><code>Q[a,i] = sum over b, j of  P[b,j] · C[a,i,b,j]
+P[a,i] = exp(β · Q[a,i])</code></pre>
+<p>where <code>C</code> says how compatible matching <code>a</code> with <code>i</code> is with matching <code>b</code> with <code>j</code>. Four nested loops over the vertices, <code>R⁴</code> products a round. As it stands, every thread wants all of <code>P</code> and all of <code>C</code>, and nothing fits in a block's memory.</p>
+<h2 id="step-one-tile-the-loops">Step one: tile the loops</h2>
+<p>Replace each index by a tile and a position inside it: <code>a = c·B + d</code>, <code>i = k·B + l</code>. One loop over <code>a</code> becomes two, over <code>c</code> and <code>d</code>:</p>
+<pre><code>for c in 0 .. R/B:            ← which tile
+  for d in 1 .. B:            ← where in it
+    for k in 0 .. R/B:
+      for l in 1 .. B:
+        a = c·B + d
+        i = k·B + l
+        P[a,i] = exp(β · Q[a,i])</code></pre>
+<p>Nothing has changed: the same assignments happen, in the same order. But the matrices are now visibly cut into sub-matrices of <code>B × B</code>, and a sub-matrix is something that fits in a block. These are the zones.</p>
+<h2 id="step-two-reorder-the-loops">Step two: reorder the loops</h2>
+<p>Now move the loops until the nest has the card's shape: the tile loops outside, the position loops inside.</p>
+<pre><code>for c in 0 .. R/B:            ← blocks
+  for k in 0 .. R/B:          ← blocks
+    for d in 1 .. B:          ← threads
+      for l in 1 .. B:        ← threads
+        P[a,i] = exp(β · Q[a,i])</code></pre>
+<p>The sum inside <code>Q</code> gets the same two steps, with <code>b = e·B + f</code> and <code>j = u·B + v</code>: tiles <code>e</code>, <code>u</code> outside, positions <code>f</code>, <code>v</code> inside. And <code>C</code> is replaced by what it is made of — the adjacency of each graph and the compatibility of their attributes — because four small factors can each be fetched a sub-matrix at a time, and one four-dimensional <code>C</code> cannot.</p>
+<p>Reordering is where a programmer knows what a compiler does not: that these iterations do not depend on each other. Compilers tile and reorder loops by themselves when they can prove it is safe, and here they cannot.</p>
+<h2 id="step-three-say-it-in-the-margin">Step three: say it in the margin</h2>
+<p>The loops now have the right shape; what is left is to say which is which. Two annotations, in the manner of OpenMP:</p>
+<pre><code>#pragma hy parallel for [into(threads)] [reduction(OP:r)]
+#pragma hy parallel fetch(m : sizes : origin : indexes [: permutation])</code></pre>
+<p><code>parallel for</code> alone spreads a loop across blocks; with <code>into(threads)</code>, across the threads of a block. <code>parallel fetch</code> copies a sub-matrix of <code>m</code> into the block's private memory and redirects every access inside the statement to the copy, in whatever order of dimensions keeps the accesses contiguous; if the statement writes to it, it is flushed back. It comes from the <code>peek</code> of <a href="/research/parallel-tools/">the stream compiler</a> of the first half.</p>
+<p>On a processor, <code>into(threads)</code> and <code>fetch</code> are ignored and the rest is OpenMP. <strong>The same source is the CPU version and the GPU version</strong>, which is what the whole thesis had been after: a serial program, still readable, with its parallelism written beside it.</p>
+<h2 id="one-algorithm-two-parallelisations">One algorithm, two parallelisations</h2>
+<p>The method does not give one answer, and that turned out to be a result.</p>
+<dl><dt>Large graphs</dt><dd>The graph does not fit in a block. Tile it, as above, and let blocks work on different sub-matrices. It scales with the size of the graph — up to 1,024 vertices, where the serial version was estimated at forty-two days and not run — and is poor on small graphs, which do not have enough tiles to fill a card.</dd><dt>Many small graphs</dt><dd>A whole graph fits in a block. So a block is a graph: the outer level is many matchings at once that never talk to each other, the inner level is one matching. That is a multi-zone program exactly, and it is the one <a href="/research/graph-matching/">measured against OpenMP and one thread</a>.</dd></dl>
+<p>The common labelling of many graphs is a different algorithm, and the method carried over: reordering to find loops that several parts of it shared and merge them into tightly coupled kernels, and fission to split what did not belong together. Of the tile sizes tried, <code>B = 8</code> was the best for CUDA.</p>
+<h2 id="what-it-does-not-change">What it does not change</h2>
+<p>The result. Tiling and reordering move the same operations around; they do not approximate, drop or relax anything, and the thesis reports the parallel versions giving the same values as the serial one. That matters more than the speed: a faster algorithm that answers slightly differently is a new algorithm, and has to be validated again by the people who trusted the old one. This one does not.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/research/loops-into-zones $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/research/loops-into-zones $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-DKMi39UY.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
