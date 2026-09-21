@@ -47,7 +47,39 @@
 <p>So the implementation follows a recipe simple enough to be followed by someone who cannot yet reason about interleavings, and still concurrent:</p>
 <figure class="flow"><svg class="flow" viewBox="0 0 242.8 416" width="242.8" height="416" style="max-width: 100%; height: auto" role="img"><defs><marker id="arrow-1mqbmjv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs><path class="edge" d="M121.4,75 C121.4,97 121.4,97 121.4,119" marker-end="url(#arrow-1mqbmjv)"/><path class="edge" d="M121.4,186 C121.4,208 121.4,208 121.4,230" marker-end="url(#arrow-1mqbmjv)"/><path class="edge" d="M121.4,297 C121.4,319 121.4,319 121.4,341" marker-end="url(#arrow-1mqbmjv)"/><text class="edge-label" x="121.4" y="319" text-anchor="middle" dominant-baseline="middle">something changed</text><g class="node"><rect x="31.4" y="8" width="180" height="67" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="121.4" y="28">1 · inside the guard</tspan><tspan x="121.4" y="45">check who you are</tspan><tspan x="121.4" y="62">copy what you need</tspan></text></g><g class="node"><rect x="27.5" y="119" width="187.8" height="67" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="121.4" y="139">2 · outside the guard</tspan><tspan x="121.4" y="156">compute, wait, talk</tspan><tspan x="121.4" y="173">to the network</tspan></text></g><g class="node"><rect x="8" y="230" width="226.8" height="67" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="121.4" y="250">3 · inside the guard again</tspan><tspan x="121.4" y="267">check nothing changed</tspan><tspan x="121.4" y="284">only then write</tspan></text></g><g class="node"><rect x="47" y="341" width="148.8" height="67" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="121.4" y="361">give up quietly</tspan><tspan x="121.4" y="378">the next timeout</tspan><tspan x="121.4" y="395">will try again</tspan></text></g></svg></figure>
 <ol><li><strong>One guard for all the state.</strong> Not a lock per field: one. Take it, check that you are still what you think you are — <em>only leaders send heartbeats</em> — and copy everything you are about to need into local variables that nothing else can touch.</li><li><strong>Let go before doing anything slow.</strong> Never hold the guard across the network. The remote call runs with the copies, on another thread, for as long as it takes, and the server goes on answering everyone else.</li><li><strong>Take the guard again, and trust nothing.</strong> The answer arrives in a world that has moved. Am I still the leader? Is it still the same term? Is this follower's index still where I left it? If any answer is no, drop the result and return. There is nothing to undo, because nothing was written.</li></ol>
-<p>That is the whole of it, and the code says so in its own comments: <em>gather common info (from iteration to iteration may become rotten)</em> going in, and <em>execute inside the guard, any sent data could be changed and must be reevaluated</em> coming back.</p>
+<p>Here it is in the leader's heartbeat, shortened but in the code's own words and with its own comments:</p>
+<pre><code>synchronized (GUARD) {
+    // only leaders perform heartbeats
+    if (state != RaftState.LEADER) return;
+
+    // gather common info (from iteration to iteration may become rotten)
+    term = persistentState.getCurrentTerm();
+    prevLogIndex = nextIndexes.get(otherServer) - 1;
+    prevLogTerm = persistentState.getTerm(prevLogIndex);
+    entries = prevLogIndex &gt; -1 ? persistentState.getLogEntries(prevLogIndex+1) : new ArrayList&lt;LogEntry&gt;();
+    commitIndex = this.commitIndex;
+}
+
+// send the message (and listen the answer) in concurrent
+executorQueue.execute(new Runnable() {
+    public void run() {
+        AppendEntriesResponse response = RMIsd.getInstance()
+            .appendEntries(otherServer, term, leaderId, prevLogIndex, prevLogTerm, entries, commitIndex);
+
+        // execute inside the guard, any sent data could be changed and must be reevaluated
+        synchronized (GUARD) {
+            // still leader?
+            if (state != RaftState.LEADER) return;
+            // term changed?
+            if (term != persistentState.getCurrentTerm()) return;
+            // prevLogIndex changed?
+            if (nextIndexes.get(otherServer) - 1 != prevLogIndex) return;
+
+            // … only now is anything written
+        }
+    }
+});</code></pre>
+<p>That is the whole of it. The two comments that matter are the code's own: <em>gather common info (from iteration to iteration may become rotten)</em> going in, and <em>execute inside the guard, any sent data could be changed and must be reevaluated</em> coming back.</p>
 <h2 id="why-it-works">Why it works</h2>
 <p>It removes the two things a beginner gets wrong. There is one lock, so there is no order of locks to get wrong and no deadlock. And no lock is held while waiting, so nothing stalls behind a slow server. What is left is the one real difficulty, stale data, and the recipe turns it from something to reason about into something to check: a list of <code>if</code>s at the top of step three.</p>
 <p>It costs something. Work is sometimes thrown away, and it leans on Raft being built the same way — terms and indices are exactly the version numbers step three needs. But that is not a coincidence to apologise for. Optimistic concurrency, compare-and-swap, a database's <code>UPDATE … WHERE version = ?</code>: read, work outside, write only if nothing moved. It is the pattern most concurrent code that works turns out to have.</p>
@@ -66,7 +98,7 @@
 <form class="prompt"><span class="ps1">~/teaching/raft $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-FLJukzDn.js"></script>
+<script type="module" src="/assets/main-BxED_u_n.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
