@@ -872,7 +872,7 @@ spread for one thesis: a runtime, a simulator, a compiler, and an algorithm.
 
 ## The tools: UPC and the Barcelona Supercomputing Center, 2003–2008
 
-OpenMP on many cores :: IBM's Cyclops put 32 cores and 128 hardware threads on one chip, with small caches. A first port of OpenMP to it had scaled poorly. I found why: the threads' stacks were fighting over the same cache lines. I fixed it twice, once in the runtime and once as a change proposed to the hardware, and showed speed-ups above 80 on the multi-zone benchmarks, where the port before it had reached 15. Written with IBM T.J. Watson Research; I am first author. [IPDPS 2005](https://doi.org/10.1109/IPDPS.2005.317).
+OpenMP on many cores :: IBM's Cyclops put 32 cores and 128 hardware threads on one chip, with small caches. A first port of OpenMP to it had scaled poorly. I found why: the threads' stacks were fighting over the same cache lines. I fixed it twice, once in the runtime and once as a change proposed to the hardware, and showed scalability 40% to 100% better than the earlier port, and speed-ups above 80 on the multi-zone benchmarks. Written with IBM T.J. Watson Research; I am first author. [IPDPS 2005](https://doi.org/10.1109/IPDPS.2005.317).
 OpenMP without shared memory :: The same annotated programs running on a cluster, over software distributed shared memory instead of MPI. It works, and it works best on programs with two levels of parallelism, coarse outside and fine inside. That observation came back six years later.
 A simulator of a heterogeneous chip :: CellSim, a modular simulator of the Cell processor. It is team work and I am its third author. What is mine is the base and its modularity, and above all the protocol by which modules talk to each other purely as memory accesses, so that any of them can be connected to any other. My thesis calls that protocol its best contribution.
 A compiler for streams :: In the European project ACOTES, with NXP, IBM Haifa, INRIA and STMicroelectronics: annotations that turn a serial C program into a pipeline of tasks passing data along. Two clauses, \`input\` and \`output\`, are enough. I wrote the ACOTES phase of the BSC's Mercurium compiler — the compiler itself is not mine — with its runtime library and a tracing library. [SAMOS 2007](https://doi.org/10.1007/978-3-540-73625-7_13), and the consortium's paper in the [International Journal of Parallel Programming](https://doi.org/10.1007/s10766-010-0132-7).
@@ -909,7 +909,8 @@ is published with its proofs.
 And it left a habit. Everything I have built since for other engineers — a
 platform, a test harness, a course — starts from the question this started
 from: not what the machine can do, but what the person in front of it can be
-expected to get right.
+expected to get right. A small case of it: [the recipe for concurrency](/teaching/raft/) I
+wrote a consensus algorithm by, so that students could.
 
 The thesis lists sixteen publications. The record:
 [the thesis, at Dialnet](https://dialnet.unirioja.es/servlet/tesis?codigo=99231),
@@ -1207,6 +1208,73 @@ The 2021 and 2022 templates are public:
 [classroom--cities-game--2021](https://github.com/drpicox/classroom--cities-game--2021)
 and
 [classroom--cards-game--2022](https://github.com/drpicox/classroom--cards-game--2022).
+`},{file:"teaching/raft.md",markdown:`---
+title: Raft, and a recipe for concurrency
+summary: A consensus algorithm as a laboratory assignment in 2013, and the three-step recipe that lets someone who has never written concurrent code get it right.
+order: 1
+---
+
+# Raft, and a recipe for concurrency
+
+In the autumn of 2013 the distributed systems laboratory at the UOC set its
+students a consensus algorithm to implement: Raft, which was then a draft
+going round, a year away from being presented. I worked on that laboratory,
+and [my implementation is public](https://github.com/drpicox/uoc-raft-2013p):
+one Java class over the course's skeleton, dated October 2013.
+
+Raft was designed to be understandable, and it is. The hard part of the
+assignment is somewhere else. A server is doing four things at once —
+timing out, asking for votes, answering other servers' requests, replicating
+its log — every one of them reads and writes the same few fields, and between
+any two lines the network may hand it a message that makes it a different
+kind of server. Most of the students had never written a concurrent program.
+
+## The recipe
+
+So the implementation follows a recipe simple enough to be followed by
+someone who cannot yet reason about interleavings, and still concurrent:
+
+\`\`\`flow
+lock1[1 · inside the guard\\ncheck who you are\\ncopy what you need] --> out[2 · outside the guard\\ncompute, wait, talk\\nto the network]
+out --> lock2[3 · inside the guard again\\ncheck nothing changed\\nonly then write]
+lock2 -->|something changed| drop[give up quietly\\nthe next timeout\\nwill try again]
+\`\`\`
+
+1. **One guard for all the state.** Not a lock per field: one. Take it,
+   check that you are still what you think you are — *only leaders send
+   heartbeats* — and copy everything you are about to need into local
+   variables that nothing else can touch.
+2. **Let go before doing anything slow.** Never hold the guard across the
+   network. The remote call runs with the copies, on another thread, for as
+   long as it takes, and the server goes on answering everyone else.
+3. **Take the guard again, and trust nothing.** The answer arrives in a world
+   that has moved. Am I still the leader? Is it still the same term? Is this
+   follower's index still where I left it? If any answer is no, drop the
+   result and return. There is nothing to undo, because nothing was written.
+
+That is the whole of it, and the code says so in its own comments: *gather
+common info (from iteration to iteration may become rotten)* going in, and
+*execute inside the guard, any sent data could be changed and must be
+reevaluated* coming back.
+
+## Why it works
+
+It removes the two things a beginner gets wrong. There is one lock, so there
+is no order of locks to get wrong and no deadlock. And no lock is held while
+waiting, so nothing stalls behind a slow server. What is left is the one real
+difficulty, stale data, and the recipe turns it from something to reason
+about into something to check: a list of \`if\`s at the top of step three.
+
+It costs something. Work is sometimes thrown away, and it leans on Raft
+being built the same way — terms and indices are exactly the version numbers
+step three needs. But that is not a coincidence to apologise for. Optimistic
+concurrency, compare-and-swap, a database's \`UPDATE … WHERE version = ?\`:
+read, work outside, write only if nothing moved. It is the pattern most
+concurrent code that works turns out to have.
+
+Making parallel machines usable by people who are not parallel programmers
+was [what my PhD was about](/research/). This was the same problem, with
+students in place of scientists.
 `},{file:"worlds/index.md",markdown:`---
 title: Worlds
 summary: The fractal planet generator of 1999, in the browser, with the dials exposed.
