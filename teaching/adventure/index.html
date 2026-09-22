@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sixty-four rooms — David Rodenas</title>
+<meta name="description" content="UPC, 2007. A text adventure as the lab of a first-year course, built so that four traversal-and-search schemas were all a student needed. Playable.">
+<link rel="canonical" href="https://david-rodenas.com/teaching/adventure/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sixty-four rooms — David Rodenas">
+<meta property="og:description" content="UPC, 2007. A text adventure as the lab of a first-year course, built so that four traversal-and-search schemas were all a student needed. Playable.">
+<meta property="og:url" content="https://david-rodenas.com/teaching/adventure/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-DyaNVuGJ.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/" aria-current="page">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd teaching/adventure &amp;&amp; cat README.md</p>
+<h1 id="sixty-four-rooms">Sixty-four rooms</h1>
+<p>In the autumn of 2007 I taught the lab of <em>Introducció als Ordinadors</em> at the UPC: first year, first term, first programs in C. The lab was a text adventure. It is small — one file of C, six hundred lines, and three text files it reads at the start — and it is playable, here, exactly as it was:</p>
+<div class="app" data-app="adventure"><div class="adventure"><div class="map" role="img" aria-label="The map: 1 of 64 rooms seen"><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell seen here" title="Bienvenida">Bienvenida</span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span><span class="cell" title=""></span></div><div class="seen"><h4>===== Bienvenida =====</h4><p>Bienvenido a este juego de aventura. <br>Esta es la habitacion de bienvenida, donde aprenderas a moverte. <br>Los comandos son:<br> 'norte',<br> 'sur',<br> 'este',<br> 'oeste'. <br>Prueba de ir a la siguiente habitacion al 'este', y volver al 'oeste'.</p><p class="item">Hay: diario</p><p class="exits">Salidas: este.</p><p class="status">(0,0)|  16&gt;</p></div></div></div>
+<p>The words are the game's, in Spanish, as they were written for the class: <code>norte</code>, <code>sur</code>, <code>este</code>, <code>oeste</code>, <code>coger</code>, <code>atacar</code>. The English ones work too. You start in the south-west corner with sixteen points of life and nothing in your hands, and the pantry is one room away through a door you have no key for. The map fills in as you go.</p>
+<h2 id="four-schemas-and-nothing-else">Four schemas, and nothing else</h2>
+<p>A first-year student cannot yet hold a program in their head. What they can hold is a recipe. So the course taught <strong>four schemas</strong> and the lab was designed so that four schemas were all it took:</p>
+<pre><code>traversal, without a mark        search, without a mark
+  first();                         found = 0;
+  while (more()) {                 first();
+    e = get();                     while (more() &amp;&amp; !found) {
+    treat(e);                        e = get();
+    next();                          if (is_it(e)) { treat(e); found = 1; }
+  }                                  next();
+  finish();                        }
+                                   finish();</code></pre>
+<p>and the same two again <em>with a mark</em>, for a sequence that ends in a sentinel rather than a count — a file, a line ending in a full stop. Every problem in the lab is one of the four, with <code>first</code>, <code>more</code>, <code>get</code>, <code>treat</code> and <code>is_it</code> filled in for the case at hand: reading the items file is a traversal with a mark (end of file); finding the monster a room names is a search over a list; the game loop itself is a traversal with a mark, the mark being the word <code>salir</code>. The theory sheet said so in as many words: <em>decide which of the four it is, then replace each operation for the case</em>.</p>
+<p>The data structures followed the same rule. A list is an array and a count. A room is a record: a name, a description, four exits, what it holds. The world is a matrix of rooms, eight by eight, so that <em>north</em> is <code>i + 1</code> and <em>east</em> is <code>j + 1</code> and there is no graph to traverse, only a grid to index.</p>
+<h2 id="the-map-came-first">The map came first</h2>
+<p>I drew the map on squared paper before anything else, so that it would be worth exploring: the house in the south-west corner, the orchard and the farm along the south, the river across the middle, the forest to the north-east and the caves to the north-west, and the pantry — the goal — one locked door from where you start. Then I typed it into <code>habitaciones.txt</code>, one room at a time, each with its four exits and what it holds.</p>
+<p>Everything the game knows is in those three files, and a student could change any of it without touching the C: add a room, move a monster, invent a weapon. The program reads them with <code>fscanf</code> and a format string, which is its own small lesson in what a sequence is.</p>
+<h2 id="what-it-does-not-do">What it does not do</h2>
+<p>Kill you. The check on the player's life is in the source, commented out: a first-year lab is not the place to lose. So the numbers were never balanced for survival, and the last fight, as it happens, costs exactly the sixteen points there are. A door you open stays open only from the side you opened it. And one line of the rooms file had a typo that left the bridge in the forest without its gnome; here the gnome is on his bridge, which is the one thing changed.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/teaching/adventure $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/teaching/adventure $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-DN6Yc0bb.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
