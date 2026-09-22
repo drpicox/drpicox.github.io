@@ -289,7 +289,7 @@ of it is documentation. [The whole account.](/open-source/angularjs/)
 ## The world at the top
 
 The mark in the header is not a picture. It is a planet, grown the moment this
-page opened, by the pipeline of a program I wrote before the year 2000 for a
+page opened, by the pipeline of a program I wrote around 2000 for a
 university graphics course: [Mons fractals](https://david-rodenas.com/mons-fractals/),
 Java 1.1.8 on MS-DOS, writing worlds out as VRML.
 
@@ -732,7 +732,7 @@ or built on.
 
 Elsewhere on this site, and just as public:
 
-- [Worlds](/worlds/) -- the fractal planet generator of 1999, [Mons fractals](https://github.com/drpicox/mons-fractals), rewritten here with its dials outside.
+- [Worlds](/worlds/) -- the fractal planet generator from around 2000, [Mons fractals](https://github.com/drpicox/mons-fractals), rewritten here with its dials outside.
 - [Raft, and a recipe for concurrency](/teaching/raft/) -- [a consensus algorithm in one Java class](https://github.com/drpicox/uoc-raft-2013p), from the year before its paper was presented.
 - [Research](/research/) -- the tools of my thesis were released under the GPL: the [stream compiler](https://github.com/drpicox/acotescc), its [runtime](https://github.com/drpicox/acolib) and a [tracing library](https://github.com/drpicox/mintaka).
 - [The next word](/projects/next-word/) and [a relativistic rocket](/projects/rocinante/) -- two small things rewritten for this site, each with its original a link away.
@@ -2043,7 +2043,7 @@ and
 [classroom--cards-game--2022](https://github.com/drpicox/classroom--cards-game--2022).
 `},{file:"worlds/index.md",markdown:`---
 title: Worlds
-summary: The fractal planet generator of 1999, in the browser, with the dials exposed.
+summary: The fractal planet generator from around 2000, in the browser, with the dials exposed.
 order: 8
 theme: dark
 sky: stars
@@ -2052,7 +2052,7 @@ sky: stars
 # Worlds
 
 [Mons fractals](https://david-rodenas.com/mons-fractals/) was a university
-graphics assignment from before the year 2000: Java 1.1.8 on MS-DOS, a pipeline
+graphics assignment from around 2000: Java 1.1.8 on MS-DOS, a pipeline
 of filters that grew a planet and wrote it out as VRML for a browser plugin to
 fly around. This is the same pipeline, in TypeScript, with nothing underneath
 it, and the dials on the outside so you can play.
@@ -2064,7 +2064,7 @@ the filters:
 
 - **Seed** picks the world. The same seed always grows the same one.
 - **Detail** is how many times every edge is split in two. Each round has four times the triangles of the one before; six rounds are 81,920.
-- **Roughness** is how far a new midpoint may move, as a fraction of the edge it came from. The 1999 default was 0.1; a little more makes for better mountains at this size, and a lot more makes something that is not a planet.
+- **Roughness** is how far a new midpoint may move, as a fraction of the edge it came from. The original default was 0.1; a little more makes for better mountains at this size, and a lot more makes something that is not a planet.
 - **Sea** is the share of the surface under water. The sea is a minimum radius: everything below it is raised up to it.
 
 The pipeline runs in order, and the order is the meaning: raise the land, put
