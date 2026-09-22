@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The program that finished before the professor left — David Rodenas</title>
+<meta name="description" content="A Prolog parser for a field guide to birds, 1999, and the one idea that made it instant where everyone else's took twenty minutes.">
+<link rel="canonical" href="https://david-rodenas.com/projects/bird-cards/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The program that finished before the professor left — David Rodenas">
+<meta property="og:description" content="A Prolog parser for a field guide to birds, 1999, and the one idea that made it instant where everyone else's took twenty minutes.">
+<meta property="og:url" content="https://david-rodenas.com/projects/bird-cards/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-DyaNVuGJ.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/" aria-current="page">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd projects/bird-cards &amp;&amp; cat README.md</p>
+<h1 id="the-program-that-finished-before-the-professor-left">The program that finished before the professor left</h1>
+<p><em>Tècniques i Mètodes d'Intel·ligència Artificial</em>, FIB, June 1999. The lab was a parser: a field guide to birds, one card per species written in ordinary Spanish sentences, to be read by a Prolog program and turned into facts a program could ask questions of.</p>
+<pre><code>Nombre: Abubilla, Upupa epops.
+
+Identificación: Plumaje pardo-rosado; en vuelo alas y cola blancas y
+negras, muy anchas; moño rosado, con puntas negras y largo pico…</code></pre>
+<p>becomes</p>
+<pre><code>nombre(vulgar([abubilla]), cientifico([upupa, epops]))
+identificacion([plumaje([plumaje, pardo-rosado]), vuelo([vuelo]),
+                alas([alas]), cola([cola, blancas, y, negras, muy, anchas]), …])</code></pre>
+<p>The day it was due, the professor came round with a floppy of test cards, handed it over, and started to walk away, because with everyone else's program the test took ten or twenty minutes to run. We put the disk in, looked at what was on it, ran the program, and called after him before he had reached the door. It was done.</p>
+<h2 id="what-the-code-says-happened">What the code says happened</h2>
+<p>I remembered the reason as <em>a different kind of grammar</em>. Twenty-seven years later the ten versions are still on a floppy — <code>T1.PL</code> to <code>TF.PL</code>, the eighth to the fourteenth of June — and a classmate's beside them, so it can be checked. Both are the same size and both are DCGs, Prolog's grammar rules. The difference is the shape of the rules.</p>
+<p>The other program looks for <strong>keys inside a sentence</strong>: it walks the words, and at each one asks whether it is a key, or a superkey with keys inside it, or a separator, and on failure it backs up and tries another reading —</p>
+<pre><code>s_SuperClave(<span class="hl-a">F</span>)        <span class="hl-k">--&gt;</span> s_LClaves(<span class="hl-a">F</span>, [], <span class="hl-a">Ffin</span>, <span class="hl-a">_</span>), s_SuperClave(<span class="hl-a">Ffin</span>).
+s_SuperClave([<span class="hl-a">F</span>|<span class="hl-a">Ffin</span>]) <span class="hl-k">--&gt;</span> t_SuperClave(<span class="hl-a">_</span>, <span class="hl-a">F</span>, <span class="hl-a">Fdins</span>), s_VariasClaves(<span class="hl-a">Fdins</span>, []), s_SuperClave(<span class="hl-a">Ffin</span>).
+s_SuperClave(<span class="hl-a">F</span>)        <span class="hl-k">--&gt;</span> s_LPalabras(<span class="hl-a">Lp</span>, <span class="hl-a">Lf</span>), s_SuperClave_F1(<span class="hl-a">F</span>, <span class="hl-a">Lp</span>, <span class="hl-a">Lf</span>).</code></pre>
+<p>Three alternatives for the same head, none of which can be told apart without reading ahead, so Prolog tries them in turn and, deep inside a long card, tries them again and again. That is what a twenty-minute run is.</p>
+<p>Mine decides at the <strong>first word</strong>:</p>
+<pre><code>s_UnaFicha(<span class="hl-a">F</span>) <span class="hl-k">--&gt;</span> s_Identificacion(<span class="hl-a">F</span>).
+s_UnaFicha(<span class="hl-a">F</span>) <span class="hl-k">--&gt;</span> s_Nidificacion(<span class="hl-a">F</span>).
+s_UnaFicha(<span class="hl-a">F</span>) <span class="hl-k">--&gt;</span> s_Alimentacion(<span class="hl-a">F</span>).
+s_UnaFicha(<span class="hl-a">F</span>) <span class="hl-k">--&gt;</span> s_Habitat(<span class="hl-a">F</span>).
+s_UnaFicha(<span class="hl-a">F</span>) <span class="hl-k">--&gt;</span> s_Nombre(<span class="hl-a">F</span>).
+
+s_Nombre(nombre(vulgar(<span class="hl-a">Lv</span>), cientifico(<span class="hl-a">Lc</span>)))
+    <span class="hl-k">--&gt;</span> t_Nombre, t_DosPuntos, s_NomPalabras(<span class="hl-a">Lv</span>), s_NomSeparador, s_NomPalabras(<span class="hl-a">Lc</span>), s_Punto_PotserNula.</code></pre>
+<p>Every alternative of <code>s_UnaFicha</code> begins with a terminal that no other begins with — <code>Nombre</code>, <code>Identificación</code>, <code>Alimentación</code> — so the first token picks the rule and nothing is ever tried twice. Inside each rule the same holds: lists are read by &quot;one more, or none&quot; pairs that never need to look back, and <code>analisis</code> cuts, with <code>!</code>, at the first parse. A compiler person would say the grammar is LL(1) by construction. I did not know the name; I had rewritten the facts the cards had to become until a grammar that never backtracked could produce them, which is the other half of the trick.</p>
+<p>It is the same lesson as the one the thesis taught later about <a href="/research/loops-into-zones/">loops</a>: the algorithm was not made faster. It was rewritten so that the machine underneath — here, Prolog's search — had nothing to search.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/projects/bird-cards $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/projects/bird-cards $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-Mqmd6Zrg.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
