@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-CSNMj1g8.css">
+<link rel="stylesheet" href="/assets/main-B7LcUXAl.css">
 </head>
 <body>
 <div class="container">
@@ -45,32 +45,32 @@
 <p>The stream programming model of the European project ACOTES, which is <a href="/research/parallel-tools/">the compiler I wrote</a> at the Barcelona Supercomputing Center, does it the way OpenMP does loops: <strong>the program stays, and the pipeline is written in its margin</strong>. What follows are the examples of the poster it was presented with at HiPEAC's summer school in 2008, which I signed with Roger Ferrer, Xavier Martorell and Eduard Ayguadé.</p>
 <h2 id="from-plain-c-one-line-at-a-time">From plain C, one line at a time</h2>
 <p>A program that turns capitals into small letters:</p>
-<pre><code>int main()
+<pre><code><span class="hl-k">int</span> main()
 {
-  char c;
+  <span class="hl-k">char</span> c;
 
-  while (fread(&amp;c, sizeof(c), 1, stdin)) {
+  <span class="hl-k">while</span> (fread(&amp;c, <span class="hl-k">sizeof</span>(c), <span class="hl-n">1</span>, stdin)) {
 
-    if ('A' &lt;= c &amp;&amp; c &lt;= 'Z')
-      c= c - 'A' + 'a';
+    <span class="hl-k">if</span> (<span class="hl-s">'A'</span> &lt;= c &amp;&amp; c &lt;= <span class="hl-s">'Z'</span>)
+      c= c - <span class="hl-s">'A'</span> + <span class="hl-s">'a'</span>;
 
-    fwrite(&amp;c, sizeof(c), 1, stdout);
+    fwrite(&amp;c, <span class="hl-k">sizeof</span>(c), <span class="hl-n">1</span>, stdout);
   }
-  return 0;
+  <span class="hl-k">return</span> <span class="hl-n">0</span>;
 }</code></pre>
 <p>First say where the stream is. One line, and the program still runs exactly as it did, because a compiler that does not know the annotation ignores it:</p>
-<pre><code>  #pragma acotes taskgroup
-  while (fread(&amp;c, sizeof(c), 1, stdin)) {</code></pre>
+<pre><code>  <span class="hl-a">#pragma acotes taskgroup</span>
+  <span class="hl-k">while</span> (fread(&amp;c, <span class="hl-k">sizeof</span>(c), <span class="hl-n">1</span>, stdin)) {</code></pre>
 <p>Then say what the stages are, and what each takes in and gives out:</p>
-<pre><code>  #pragma acotes taskgroup
-  while (fread(&amp;c, sizeof(c), 1, stdin)) {
+<pre><code>  <span class="hl-a">#pragma acotes taskgroup</span>
+  <span class="hl-k">while</span> (fread(&amp;c, <span class="hl-k">sizeof</span>(c), <span class="hl-n">1</span>, stdin)) {
 
-    #pragma acotes task input(c) output(c)
-    if ('A' &lt;= c &amp;&amp; c &lt;= 'Z')
-      c= c - 'A' + 'a';
+    <span class="hl-a">#pragma acotes task input(c) output(c)</span>
+    <span class="hl-k">if</span> (<span class="hl-s">'A'</span> &lt;= c &amp;&amp; c &lt;= <span class="hl-s">'Z'</span>)
+      c= c - <span class="hl-s">'A'</span> + <span class="hl-s">'a'</span>;
 
-    #pragma acotes task input(c)
-    fwrite(&amp;c, sizeof(c), 1, stdout);
+    <span class="hl-a">#pragma acotes task input(c)</span>
+    fwrite(&amp;c, <span class="hl-k">sizeof</span>(c), <span class="hl-n">1</span>, stdout);
   }</code></pre>
 <p>That is the whole of it. From <code>input</code> and <code>output</code> the compiler isolates each task's code, works out who feeds whom, and builds the graph:</p>
 <figure class="flow"><svg class="flow" viewBox="0 0 141.4 254" width="141.4" height="254" style="max-width: 100%; height: auto" role="img"><defs><marker id="arrow-1e6072q" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs><path class="edge" d="M70.7,58 C70.7,80 70.7,80 70.7,102" marker-end="url(#arrow-1e6072q)"/><text class="edge-label" x="70.7" y="80" text-anchor="middle" dominant-baseline="middle">c</text><path class="edge" d="M70.7,152 C70.7,174 70.7,174 70.7,196" marker-end="url(#arrow-1e6072q)"/><text class="edge-label" x="70.7" y="174" text-anchor="middle" dominant-baseline="middle">c</text><g class="node"><rect x="27.5" y="8" width="86.4" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="70.7" y="28">the loop</tspan><tspan x="70.7" y="45">fread</tspan></text></g><g class="node"><rect x="8" y="102" width="125.4" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="70.7" y="122">task</tspan><tspan x="70.7" y="139">to lower case</tspan></text></g><g class="node"><rect x="35.3" y="196" width="70.8" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="70.7" y="216">task</tspan><tspan x="70.7" y="233">fwrite</tspan></text></g></svg></figure>
@@ -78,7 +78,7 @@
 <p>The point of doing it a line at a time is that the program works after every line. It can be debugged serially, the annotations can be switched off, and the code that was already written and trusted is still the code.</p>
 <h2 id="a-task-with-a-memory">A task with a memory</h2>
 <p>Real filters remember things. A task's variables are its own, and the annotation says how they start and how they end:</p>
-<pre><code>  #pragma acotes task input(v) output(o) \
+<pre><code>  <span class="hl-a">#pragma acotes task input(v) output(o) \</span>
           copyinstate(stats) copyoutstate(stats) \
           initializestate(buff) finalizestate(buff)
   {
@@ -86,24 +86,24 @@
     stats++;
   }</code></pre>
 <p>And a filter that needs the last few values does not have to keep them itself. <code>peek</code> gives the task a window on its input stream, so the task stays without state and nothing is copied:</p>
-<pre><code>  #pragma acotes task copyinstate(i, a[3]) input(v) output(o)
+<pre><code>  <span class="hl-a">#pragma acotes task copyinstate(i, a[3]) input(v) output(o)</span>
   {
-    #pragma acotes peek(v;a)
+    <span class="hl-a">#pragma acotes peek(v;a)</span>
     {
-      a[2]= a[1];  a[1]= a[0];  a[0]= v;
+      a[<span class="hl-n">2</span>]= a[<span class="hl-n">1</span>];  a[<span class="hl-n">1</span>]= a[<span class="hl-n">0</span>];  a[<span class="hl-n">0</span>]= v;
     }
-    o= a[0]*.25 + a[1]*.5 + a[2]*.25;
+    o= a[<span class="hl-n">0</span>]*.<span class="hl-n">25</span> + a[<span class="hl-n">1</span>]*.<span class="hl-n">5</span> + a[<span class="hl-n">2</span>]*.<span class="hl-n">25</span>;
   }</code></pre>
 <h2 id="splitting-a-task-that-is-too-slow">Splitting a task that is too slow</h2>
 <p>A pipeline runs at the speed of its slowest stage. When one task is the bottleneck, it is split: <code>team(3)</code> makes three instances of it, a replicator deals the input out among them and a merger puts the results back in order.</p>
-<pre><code>  #pragma acotes task team(3) copyinstate(a[3]) inputreplicate(c) output(o)
+<pre><code>  <span class="hl-a">#pragma acotes task team(3) copyinstate(a[3]) inputreplicate(c) output(o)</span>
   {
-    #pragma acotes teamreplicate
+    <span class="hl-a">#pragma acotes teamreplicate</span>
     h(c, a)
 
     o= ffd(c, a);
   }</code></pre>
-<figure class="flow"><svg class="flow" viewBox="0 0 518.4 391" width="518.4" height="391" style="max-width: 100%; height: auto" role="img"><defs><marker id="arrow-bmjyq0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs><path class="edge" d="M259.2,58 C259.2,80 259.2,80 259.2,102" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 82.4,157 82.4,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 259.2,157 259.2,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 436,157 436,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M82.4,212 C82.4,234 82.4,234 82.4,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,212 C259.2,234 82.4,234 82.4,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M436,212 C436,234 82.4,234 82.4,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M82.4,289 C82.4,311 82.4,311 82.4,333" marker-end="url(#arrow-bmjyq0)"/><g class="node"><rect x="216" y="8" width="86.4" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="28">the loop</tspan><tspan x="259.2" y="45">fread</tspan></text></g><g class="node"><rect x="208.2" y="102" width="102" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="122">replicator</tspan></text></g><g class="node"><rect x="8" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="82.4" y="199">ffd · instance 1</tspan></text></g><g class="node"><rect x="184.8" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="199">ffd · instance 2</tspan></text></g><g class="node"><rect x="361.6" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="436" y="199">ffd · instance 3</tspan></text></g><g class="node"><rect x="47" y="256" width="70.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="82.4" y="276">merger</tspan></text></g><g class="node"><rect x="47" y="333" width="70.8" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="82.4" y="353">task</tspan><tspan x="82.4" y="370">fwrite</tspan></text></g></svg></figure>
+<figure class="flow"><svg class="flow" viewBox="0 0 518.4 391" width="518.4" height="391" style="max-width: 100%; height: auto" role="img"><defs><marker id="arrow-bmjyq0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs><path class="edge" d="M259.2,58 C259.2,80 259.2,80 259.2,102" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 82.4,157 82.4,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 259.2,157 259.2,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,135 C259.2,157 436,157 436,179" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M82.4,212 C82.4,234 259.2,234 259.2,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,212 C259.2,234 259.2,234 259.2,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M436,212 C436,234 259.2,234 259.2,256" marker-end="url(#arrow-bmjyq0)"/><path class="edge" d="M259.2,289 C259.2,311 259.2,311 259.2,333" marker-end="url(#arrow-bmjyq0)"/><g class="node"><rect x="216" y="8" width="86.4" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="28">the loop</tspan><tspan x="259.2" y="45">fread</tspan></text></g><g class="node"><rect x="208.2" y="102" width="102" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="122">replicator</tspan></text></g><g class="node"><rect x="8" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="82.4" y="199">ffd · instance 1</tspan></text></g><g class="node"><rect x="184.8" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="199">ffd · instance 2</tspan></text></g><g class="node"><rect x="361.6" y="179" width="148.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="436" y="199">ffd · instance 3</tspan></text></g><g class="node"><rect x="223.8" y="256" width="70.8" height="33" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="276">merger</tspan></text></g><g class="node"><rect x="223.8" y="333" width="70.8" height="50" rx="4"/><text text-anchor="middle" dominant-baseline="middle"><tspan x="259.2" y="353">task</tspan><tspan x="259.2" y="370">fwrite</tspan></text></g></svg></figure>
 <p>The difficulty is that the task has state, and three copies of a task with state compute three different things. <code>teamreplicate</code> marks the part that updates the state, and that part runs in <em>every</em> instance for <em>every</em> value, so each copy's state stays exactly what the single task's would have been; only the expensive part is shared out. Data parallelism, from a task that was not data-parallel.</p>
 <p>A loop that is already in the program can be used the same way: <code>forreplicate(i)</code> turns its iterations into instances, and a <code>port</code> says which elements of an array go to which. And tasks that are not in a pipeline at all — a microphone being played while a keyboard changes the volume — can share a value with <code>async</code>, <code>update</code> and <code>check</code>, the programmer deciding when it is looked at.</p>
 <h2 id="what-it-measured">What it measured</h2>
@@ -126,7 +126,7 @@
 <form class="prompt"><span class="ps1">~/research/streams-by-annotation $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-dG1K8mKV.js"></script>
+<script type="module" src="/assets/main-Dg74bttA.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
