@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A maze you could not fly over — David Rodenas</title>
+<meta name="description" content="A VRML maze generator from May 2001, a depth-first dig with spheres that jump you across the walls, grown again here room for room from the same seeds, and what the spheres did that nobody noticed.">
+<link rel="canonical" href="https://david-rodenas.com/projects/maze/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A maze you could not fly over — David Rodenas">
+<meta property="og:description" content="A VRML maze generator from May 2001, a depth-first dig with spheres that jump you across the walls, grown again here room for room from the same seeds, and what the spheres did that nobody noticed.">
+<meta property="og:url" content="https://david-rodenas.com/projects/maze/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-BfDn0Qqw.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/" aria-current="page">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd projects/maze &amp;&amp; cat README.md</p>
+<h1 id="a-maze-you-could-not-fly-over">A maze you could not fly over</h1>
+<p><em>Realitat Virtual i Geometria</em>, FIB, spring 2001, with Toni Preciado. The course was VRML, the language the web of 2000 was going to walk around in: a scene is a text file, and a plug-in in the browser lets you move through it. Our project was a maze. Not one drawn by hand: a Java program, <code>LaberintoSimple</code>, that grew one of any size and wrote it out as a VRML world, a floor for every room and a wall wherever two rooms were not joined.</p>
+<div class="app" data-app="maze"><div class="maze-app"><div class="figure"><svg class="maze" role="img" aria-label="A 7 by 7 maze with 4 spheres." viewBox="0 0 78 78"><path class="walls" d="M4 64v10M14 74h10M24 74h10M34 74h10M44 74h10M54 74h10M64 74h10M64 64v10M74 64v10M4 64h10M4 54v10M14 64h10M24 64h10M24 54v10M34 64h10M44 64h10M54 54v10M74 54v10M4 54h10M4 44v10M14 44v10M24 54h10M24 44v10M34 54h10M54 54h10M54 44v10M74 44v10M4 34v10M14 34v10M24 34v10M34 44h10M44 44h10M54 34v10M64 44h10M64 34v10M74 34v10M4 24v10M24 34h10M24 24v10M34 34h10M44 24v10M54 24v10M74 24v10M4 14v10M14 24h10M14 14v10M24 24h10M44 24h10M44 14v10M54 24h10M74 14v10M4 4v10M4 4h10M14 4v10M14 4h10M24 14h10M24 4h10M34 14h10M34 4h10M44 4h10M54 14h10M54 4h10M64 14h10M74 4v10"/><circle class="sphere" cx="29" cy="29" r="3"/><text class="letter" x="29" y="29">a</text><circle class="sphere" cx="9" cy="59" r="3"/><text class="letter" x="9" y="59">a</text><circle class="sphere" cx="19" cy="39" r="3"/><text class="letter" x="19" y="39">b</text><circle class="sphere" cx="29" cy="59" r="3"/><text class="letter" x="29" y="59">b</text></svg></div><p class="status">The way out is 19 rooms long, and touches no sphere.</p></div></div>
+<p>That is the maze the program wrote on 20 May 2001, seven rooms a side, from seed 543: the file it produced, <code>test.wrl</code>, is still there, and the maze above is grown again from the same seed and checked against it wall for wall. North is at the top, the way in is at the bottom left and the way out at the top right. <strong>Walk the camera</strong> follows the route the program dug the rooms in; <strong>another</strong> grows a new one.</p>
+<h2 id="the-dig">The dig</h2>
+<p>Start in the corner. From the room you are in, try the neighbours in turn; for each one nobody has dug yet, knock down the wall between you and dig from there. When there is nowhere left to go, step back and try the next neighbour of the room before. That is a depth-first search, and since every room is entered exactly once, from exactly one other, the result is a tree: one way, and only one, between any two rooms. The report that went with it says it plainly: <em>&quot;todos los laberintos tienen una única solución&quot;</em>, and from anywhere you can reach anywhere.</p>
+<p>The steps back are kept too. The program wrote the whole route, back-tracks and all, into the VRML as an animation, and a camera rode along it: pick <em>Cam DFS</em> in the viewer and you watched the maze being dug, room by room. The report offers it as the first of the two games — a replacement for the Windows OpenGL screensaver — and the second as solving the maze on foot.</p>
+<p>One thing about &quot;try the neighbours in turn&quot;: the order is not shuffled. The program picks one of three fixed orders — north, east, west, south; west, south, east, north; or south, east, west, north — so of the twenty-four ways to order four directions it only ever uses three. The mazes do not look it.</p>
+<h2 id="the-spheres">The spheres</h2>
+<p>A week after the first version, the program learnt to cheat. In one room in ten, before digging on, it picks a room anywhere in the maze. If nobody has dug that room yet, it puts a green sphere in both, joins them, and digs on from the far one. In the viewer the sphere was a link, meant to take you to its pair through every wall in between. The maze above marks both ends of a jump with the same letter.</p>
+<pre><code><span class="hl-k">public</span> <span class="hl-k">void</span> generar(<span class="hl-k">int</span> x, <span class="hl-k">int</span> y)
+{
+    <span class="hl-k">int</span> orden;
+
+    anadirDFS(x, y);
+    <span class="hl-k">if</span> (random.nextInt(<span class="hl-n">10</span>) &lt; <span class="hl-n">1</span>)
+        generarHLink(x, y);
+
+    orden = random.nextInt(<span class="hl-n">3</span>);
+    <span class="hl-k">switch</span> (orden)
+    {
+        <span class="hl-k">case</span> <span class="hl-n">0</span>:  generarNorte(x, y); generarEste(x, y); generarOeste(x, y); generarSur(x, y);   <span class="hl-k">break</span>;
+        <span class="hl-k">case</span> <span class="hl-n">1</span>:  generarOeste(x, y); generarSur(x, y);  generarEste(x, y);  generarNorte(x, y); <span class="hl-k">break</span>;
+        <span class="hl-k">default</span>: generarSur(x, y);   generarEste(x, y); generarOeste(x, y); generarNorte(x, y); <span class="hl-k">break</span>;
+    }
+}
+
+<span class="hl-k">public</span> <span class="hl-k">void</span> generarHLink(<span class="hl-k">int</span> x, <span class="hl-k">int</span> y)
+{
+    <span class="hl-k">int</span> x2 = random.nextInt(w);
+    <span class="hl-k">int</span> y2 = random.nextInt(h);
+
+    <span class="hl-k">if</span> (laberinto[x2][y2] != <span class="hl-n">0</span>)
+        <span class="hl-k">return</span>;
+
+    laberinto[x][y] |= CNX_HLINK;
+    laberinto[x2][y2] = CNX_HLINK;
+    hLinks[x][y] = <span class="hl-k">new</span> Pt(x2, y2);
+    hLinks[x2][y2] = <span class="hl-k">new</span> Pt(x, y);
+
+    generar(x2, y2);
+    anadirDFS(x, y);
+}</code></pre>
+<p>That is <code>LaberintoSimple.java</code>, with the four <code>switch</code> cases set a line each. In English, name for name:</p>
+<pre><code><span class="hl-k">public</span> <span class="hl-k">void</span> dig(<span class="hl-k">int</span> x, <span class="hl-k">int</span> y)
+{
+    <span class="hl-k">int</span> order;
+
+    rememberStep(x, y);
+    <span class="hl-k">if</span> (random.nextInt(<span class="hl-n">10</span>) &lt; <span class="hl-n">1</span>)
+        digSphere(x, y);
+
+    order = random.nextInt(<span class="hl-n">3</span>);
+    <span class="hl-k">switch</span> (order)
+    {
+        <span class="hl-k">case</span> <span class="hl-n">0</span>:  digNorth(x, y); digEast(x, y);  digWest(x, y);  digSouth(x, y); <span class="hl-k">break</span>;
+        <span class="hl-k">case</span> <span class="hl-n">1</span>:  digWest(x, y);  digSouth(x, y); digEast(x, y);  digNorth(x, y); <span class="hl-k">break</span>;
+        <span class="hl-k">default</span>: digSouth(x, y); digEast(x, y);  digWest(x, y);  digNorth(x, y); <span class="hl-k">break</span>;
+    }
+}
+
+<span class="hl-k">public</span> <span class="hl-k">void</span> digSphere(<span class="hl-k">int</span> x, <span class="hl-k">int</span> y)
+{
+    <span class="hl-k">int</span> x2 = random.nextInt(width);
+    <span class="hl-k">int</span> y2 = random.nextInt(height);
+
+    <span class="hl-k">if</span> (maze[x2][y2] != <span class="hl-n">0</span>)
+        <span class="hl-k">return</span>;
+
+    maze[x][y] |= HAS_SPHERE;
+    maze[x2][y2] = HAS_SPHERE;
+    sphereTo[x][y] = <span class="hl-k">new</span> Point(x2, y2);
+    sphereTo[x2][y2] = <span class="hl-k">new</span> Point(x, y);
+
+    dig(x2, y2);
+    rememberStep(x, y);
+}</code></pre>
+<p>A jump is just another way into an undug room, so the maze is still a tree and still has one way through. But now the tree is no longer flat. The report: <em>&quot;El laberinto es de dos dimensiones (en ningún momento hay que subir ningún piso), pero dado que hay partes incomunicadas tan solo alcanzables con los hipervínculos se puede considerar que está en 3 dimensiones.&quot;</em> Two dimensions you can walk, and a third you can only jump along. That was the point. A maze in VRML has a weakness a maze on paper does not: you can leave the floor and look down. We added fog, which also made large scenes faster, and the spheres, and with those a maze could not be solved from above, because from above there is no seeing where a sphere goes.</p>
+<p>The report names five files, <code>mini.wrl</code>, <code>med.wrl</code>, <code>gran.wrl</code>, <code>mm.wrl</code> and <code>10k.wrl</code>, <em>&quot;el más complicado y con diferencia&quot;</em>. They did not survive; the program did, so the dial above goes to thirty a side, which is plenty on a screen. Untick the spheres and you have the version of 13 May, which never rolled for them.</p>
+<h2 id="what-the-spheres-did-that-nobody-noticed">What the spheres did that nobody noticed</h2>
+<p>Run the Java today and it grows the same mazes it grew then — the page's generator is checked against it — and it shows two things the report does not.</p>
+<p><strong>Some spheres lead nowhere.</strong> When the room a sphere lands in rolls a sphere of its own, the program overwrites that room's pair. The new pair works both ways; the first sphere now points at a viewpoint nobody wrote. And since the rooms behind it were reached only through that sphere, they are cut off, way out included if it was among them. In the first thousand seven-by-seven mazes the Java grows, 133 have a dead sphere and 117 have no way out at all; at twenty a side, it is most of them. The maze of 20 May happens to be one of the lucky ones. On the page a dead sphere is a dashed circle with a cross, and <strong>show the way out</strong> says when there is none.</p>
+<p><strong>The live ones all land in the same place.</strong> Each sphere carries the viewpoint it jumps to, but the viewpoint is written without a position, and VRML puts a viewpoint without one at its default, (0, 0, 10). Every link in the file takes you to that one spot, on a wall a few steps north of the way in. Here a sphere joins the rooms it was meant to join, which is what the report describes.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/projects/maze $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/projects/maze $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-uMWYEmyq.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
