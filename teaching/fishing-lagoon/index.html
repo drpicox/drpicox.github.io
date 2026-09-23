@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The fishing lagoon — David Rodenas</title>
+<meta name="description" content="A lab from 2018 where the assignment is a commons: a lagoon whose fish breed if left alone, bots that share it, and a tit-for-tat that only cooperates with those who do. Play it, and seat your own bot.">
+<link rel="canonical" href="https://david-rodenas.com/teaching/fishing-lagoon/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The fishing lagoon — David Rodenas">
+<meta property="og:description" content="A lab from 2018 where the assignment is a commons: a lagoon whose fish breed if left alone, bots that share it, and a tit-for-tat that only cooperates with those who do. Play it, and seat your own bot.">
+<meta property="og:url" content="https://david-rodenas.com/teaching/fishing-lagoon/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-BdS0ZC5G.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/" aria-current="page">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd teaching/fishing-lagoon &amp;&amp; cat README.md</p>
+<h1 id="the-fishing-lagoon">The fishing lagoon</h1>
+<p>Tecnocampus, spring 2018, <em>Laboratori de Software 1</em>. Eighteen years after <a href="/projects/fish-market/">the fish auction</a> I set a class the same shape of problem turned inside out. There, buyers competed for fish somebody else had caught. Here, the fish are still in the water, they breed if they are left alone, and the bots have to decide how much to take from a lagoon they share. The starter is public: <a href="https://github.com/drpicox/fishing-lagoon-starter" target="_blank" rel="noopener noreferrer">fishing-lagoon-starter</a>.</p>
+<p>The rules fit in a paragraph. A round is a lagoon with some fish in it and a number of weeks. Before the round, each bot hands in its orders for every week — a number of fish, or a rest — knowing who else is on the lagoon and what happened in earlier rounds, but not what the others will order now. Each week the lagoon serves the smallest order first, whole, and splits what is there between equal orders when it does not stretch; then the fish that are left breed, half as many again. A bot's score is what it caught.</p>
+<div class="app" data-app="lagoon"><div class="lagoon"><p class="lot">The lagoon has <b>100 fish</b>, and 10 weeks ahead. Nobody has been out yet.</p><table class="board"><caption>The season has not started</caption><thead><tr><th>bot</th><th>last round</th><th>season</th></tr></thead><tbody><tr><th scope="row">One</th><td>0</td><td class="profit"><span class="bar" style="--p:0.000"></span>0</td></tr><tr><th scope="row">Power</th><td>0</td><td class="profit"><span class="bar" style="--p:0.000"></span>0</td></tr><tr><th scope="row">10%</th><td>0</td><td class="profit"><span class="bar" style="--p:0.000"></span>0</td></tr><tr><th scope="row">Tit for tat</th><td>0</td><td class="profit"><span class="bar" style="--p:0.000"></span>0</td></tr><tr><th scope="row">Tat for tit</th><td>0</td><td class="profit"><span class="bar" style="--p:0.000"></span>0</td></tr></tbody></table></div></div>
+<p><strong>Play a round</strong> and the board shows the week by week: what each bot caught, in grey when it got less than it asked for, and what was left in the water. <strong>Play five</strong> and the season builds; the tit-for-tats remember. The 40% bot starts on the bank. <strong>Seat your own bot</strong> below and it plays too.</p>
+<h2 id="what-there-is-to-see">What there is to see</h2>
+<p>Three fish left alone become four, six, nine, thirteen, nineteen, twenty-eight, forty-two, sixty-three, ninety-four. A hundred fished by nobody for nine weeks are over three thousand in the tenth. So the most a lagoon can give is everyone resting until the last week and splitting what grew — and every fish taken early is one that would have bred.</p>
+<p>Play the first round as it is set. The lagoon grows all round, to about six hundred, and the two tit-for-tats rest and take their share the last week. But the bot that takes 10% of what it believes is there ends the round with the most, nearly three times what either of them got: it fed on their patience, a tenth a week of a lagoon they were letting grow. And in the last week, when the tit-for-tats finally order, the smaller orders are served first — they always are — and the two of them split what is left: a quarter of what they had planned on.</p>
+<p>Now tick <strong>40%</strong> and play again. It takes forty the first week and the lagoon is empty by the third; nobody catches anything after that, not the bot that only ever asked for one. Play a second round and watch the two tit-for-tats: they take a full share from the first week now, and the 40% bot ends with half of what it got before. That is the strategy the starter shipped as the one worth beating. <strong>Tit for tat</strong> rests every week but the last and takes one share. But whoever took a full share or more in the first week of a round is a traitor, for good, and on a lagoon with a traitor tit for tat takes a full share every week itself, so that the traitor cannot grow rich on its patience. Two of them cooperate; against a greedy bot they take back what they can. Its test is the first week only, which is why it never turns on Power, which rests the first week and takes everything in the last two — the kind of hole a student finds by losing to it.</p>
+<h2 id="why-a-software-lab">Why a software lab</h2>
+<p>The subject was software, not game theory. What a student had to build was the strategy behind an interface of three methods — where to sit, what to order, what to learn from the round — against a server the class shared, and the lagoon itself came with its tests: the breeding sequence, the smallest order served first, a bot that fishes more than there is. The commons was there so that the strategy was worth testing: a bot's orders depend on what it believes the lagoon will hold, and that belief is a small simulation of the rules, which is wrong the first time everyone writes it.</p>
+<h2 id="your-own-bot">Your own bot</h2>
+<p>Under the board is an editor with the body of a JavaScript function. It is given <code>fish</code>, what the lagoon starts with; <code>weeks</code>; <code>bots</code>, the names on the lagoon; <code>me</code>; and <code>rounds</code>, every round played so far, each with everyone's orders, the weeks as they went, and the totals. It returns your orders: one number a week, 0 to rest. It starts out as the cooperative half of tit for tat, so the first bot you seat is a good neighbour — the first thing to try is being a bad one, and then watching what the two tit-for-tats do to you in the round after. A mistake in it is shown in the engine's own words and your bot rests that round. It runs in your browser and stays there.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/teaching/fishing-lagoon $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/teaching/fishing-lagoon $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-BQGySX7z.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
