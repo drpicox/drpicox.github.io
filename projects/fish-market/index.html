@@ -67,7 +67,26 @@
     <span class="hl-k">if</span> (gananciaActual &gt;= ganancia &amp;&amp; canIBid)
         bid(precio);
 }</code></pre>
-<p>That is <code>Vicente.java</code>, less a line that printed. The one dial is <code>eficacia</code>, 0.9: the credit of the others is counted at 90%, on the assumption that they will not manage to spend it all. Less money chasing the same fish means a higher clearing margin, so 0.9 is a measure of greed. The dial above the board is that number. Turn it down and Vicente asks for more and buys less; turn it to 100% and he asks exactly what the room can pay.</p>
+<p>That is <code>Vicente.java</code>, less a line that printed. In English, name for name:</p>
+<pre><code><span class="hl-k">private</span> <span class="hl-k">void</span> recomputeMargin()
+{
+    margin = fishLeft - moneyLeft;
+    margin /= moneyLeft;
+}
+
+<span class="hl-k">public</span> <span class="hl-k">void</span> onOffer(Good g, <span class="hl-k">double</span> price)
+{
+    <span class="hl-k">double</span> value;
+    <span class="hl-k">double</span> marginNow;
+    value = g.getResalePrice();
+    marginNow = value - price;
+    marginNow /= price;
+    <span class="hl-k">if</span> (marginNow &lt;= <span class="hl-n">0</span>)
+        <span class="hl-k">return</span>;
+    <span class="hl-k">if</span> (marginNow &gt;= margin &amp;&amp; canIBid)
+        bid(price);
+}</code></pre>
+<p><code>fishLeft</code> is <code>sumValor</code>, the resale value of what is still on the floor; <code>moneyLeft</code> is <code>sumCredito</code>, the credit in the room counted at 90%. The one dial is <code>eficacia</code>, 0.9: the credit of the others is counted at 90%, on the assumption that they will not manage to spend it all. Less money chasing the same fish means a higher clearing margin, so 0.9 is a measure of greed. The dial above the board is that number. Turn it down and Vicente asks for more and buys less; turn it to 100% and he asks exactly what the room can pay.</p>
 <h2 id="why-it-wins">Why it wins</h2>
 <p>Watch a morning with the dial at 50% money. The two naive buyers act first: the hasty one takes box after box at a 5% margin, and the patient one waits for half price and gets it now and then, when nobody else wants a box. For the first twenty or thirty boxes Vicente does nothing. The market's margin is over 100% and no box falls that far while the hasty one has credit — so he does not shout, and he keeps his money.</p>
 <p>Then the hasty one is out of credit. Now the money left in the room is mostly Vicente's, the fish left is most of the fish, and the clearing margin tells him so: he can demand twice what the room could have paid an hour ago, and get it, box after box, until his credit and the fish run out together. He does not chase the best box. He buys everything that returns more than the average, and lets the others fight over the rest.</p>
@@ -95,7 +114,7 @@
 <form class="prompt"><span class="ps1">~/projects/fish-market $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-BQGySX7z.js"></script>
+<script type="module" src="/assets/main-CWEJ5OLv.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
