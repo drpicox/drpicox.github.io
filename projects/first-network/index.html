@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The first network — David Rodenas</title>
+<meta name="description" content="A network that tells letters apart, taught by backpropagation — first written in C in 1994 — and the robot of 1995 that learnt, rule by rule, to look for the light.">
+<link rel="canonical" href="https://david-rodenas.com/projects/first-network/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The first network — David Rodenas">
+<meta property="og:description" content="A network that tells letters apart, taught by backpropagation — first written in C in 1994 — and the robot of 1995 that learnt, rule by rule, to look for the light.">
+<meta property="og:url" content="https://david-rodenas.com/projects/first-network/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-DSZjJf7t.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/" aria-current="page">projects/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd projects/first-network &amp;&amp; cat README.md</p>
+<h1 id="the-first-network">The first network</h1>
+<p>In 1994, in my second year of BUP, I wrote a neural network in C that told two letters apart, drawn on a small grid. To learn how, I went to the university and, with help, searched for papers over Gopher.</p>
+<p>This is the same idea again, in this site's own code: a grid of five cells by five, ten hidden nodes, one output for each letter, and backpropagation. Press a cell to ink it or clear it, and the network reads the drawing again.</p>
+<div class="app" data-app="letters"><div class="letters"><div class="grid" role="group" aria-label="the drawing, five cells by five"><button type="button" class="cell" data-at="0" aria-pressed="false" aria-label="cell 1"></button><button type="button" class="cell" data-at="1" aria-pressed="true" aria-label="cell 2"></button><button type="button" class="cell" data-at="2" aria-pressed="true" aria-label="cell 3"></button><button type="button" class="cell" data-at="3" aria-pressed="true" aria-label="cell 4"></button><button type="button" class="cell" data-at="4" aria-pressed="false" aria-label="cell 5"></button><button type="button" class="cell" data-at="5" aria-pressed="true" aria-label="cell 6"></button><button type="button" class="cell" data-at="6" aria-pressed="false" aria-label="cell 7"></button><button type="button" class="cell" data-at="7" aria-pressed="false" aria-label="cell 8"></button><button type="button" class="cell" data-at="8" aria-pressed="false" aria-label="cell 9"></button><button type="button" class="cell" data-at="9" aria-pressed="true" aria-label="cell 10"></button><button type="button" class="cell" data-at="10" aria-pressed="true" aria-label="cell 11"></button><button type="button" class="cell" data-at="11" aria-pressed="true" aria-label="cell 12"></button><button type="button" class="cell" data-at="12" aria-pressed="true" aria-label="cell 13"></button><button type="button" class="cell" data-at="13" aria-pressed="true" aria-label="cell 14"></button><button type="button" class="cell" data-at="14" aria-pressed="true" aria-label="cell 15"></button><button type="button" class="cell" data-at="15" aria-pressed="true" aria-label="cell 16"></button><button type="button" class="cell" data-at="16" aria-pressed="false" aria-label="cell 17"></button><button type="button" class="cell" data-at="17" aria-pressed="false" aria-label="cell 18"></button><button type="button" class="cell" data-at="18" aria-pressed="false" aria-label="cell 19"></button><button type="button" class="cell" data-at="19" aria-pressed="true" aria-label="cell 20"></button><button type="button" class="cell" data-at="20" aria-pressed="true" aria-label="cell 21"></button><button type="button" class="cell" data-at="21" aria-pressed="false" aria-label="cell 22"></button><button type="button" class="cell" data-at="22" aria-pressed="false" aria-label="cell 23"></button><button type="button" class="cell" data-at="23" aria-pressed="false" aria-label="cell 24"></button><button type="button" class="cell" data-at="24" aria-pressed="true" aria-label="cell 25"></button></div><div class="reading"><p>It reads <b>A</b>, after 200 rounds of lessons.</p><table class="answers"><tbody><tr class="best"><th scope="row">A</th><td class="sure"><span class="bar" style="--p:0.971"></span>97%</td></tr><tr><th scope="row">B</th><td class="sure"><span class="bar" style="--p:0.028"></span>3%</td></tr></tbody></table></div></div></div>
+<p>It has been taught A and B, two hundred rounds. Each round shows it every letter twice, once as drawn and once with one cell wrong, so that it learns the letter and not the drawing. Tick more letters and it starts again with all of them. O, C and D are there to be confused. <strong>Forget everything</strong> leaves it guessing; <strong>teach 100 more rounds</strong> and it comes back.</p>
+<h2 id="the-code">The code</h2>
+<p>This is the whole of the learning, as it runs on this page:</p>
+<pre><code>learn(input, target, rate) {
+  <span class="hl-k">const</span> values = <span class="hl-k">this</span>.forward(input);
+  <span class="hl-k">const</span> output = values[values.length - <span class="hl-n">1</span>];
+  <span class="hl-c">// Each output is to blame for its error,</span>
+  <span class="hl-c">// times the slope of the squash where it stands.</span>
+  <span class="hl-k">let</span> blame = output.map((value, n) =&gt; {
+    <span class="hl-k">return</span> (value - target[n]) * value * (<span class="hl-n">1</span> - value);
+  });
+  <span class="hl-k">for</span> (<span class="hl-k">let</span> layer = <span class="hl-k">this</span>.weights.length - <span class="hl-n">1</span>; layer &gt;= <span class="hl-n">0</span>; layer -= <span class="hl-n">1</span>) {
+    <span class="hl-k">const</span> below = [...values[layer], <span class="hl-n">1</span>];
+    <span class="hl-k">const</span> nodes = <span class="hl-k">this</span>.weights[layer];
+    <span class="hl-c">// A node below takes the blame of the nodes it feeds,</span>
+    <span class="hl-c">// by its weight on each: before those weights move.</span>
+    <span class="hl-k">const</span> passed = values[layer].map((value, i) =&gt; {
+      <span class="hl-k">let</span> sum = <span class="hl-n">0</span>;
+      <span class="hl-k">for</span> (<span class="hl-k">let</span> n = <span class="hl-n">0</span>; n &lt; nodes.length; n += <span class="hl-n">1</span>) {
+        sum += nodes[n][i] * blame[n];
+      }
+      <span class="hl-k">return</span> sum * value * (<span class="hl-n">1</span> - value);
+    });
+    <span class="hl-k">for</span> (<span class="hl-k">let</span> n = <span class="hl-n">0</span>; n &lt; nodes.length; n += <span class="hl-n">1</span>) {
+      <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; below.length; i += <span class="hl-n">1</span>) {
+        nodes[n][i] -= rate * blame[n] * below[i];
+      }
+    }
+    blame = passed;
+  }
+  <span class="hl-k">let</span> error = <span class="hl-n">0</span>;
+  <span class="hl-k">for</span> (<span class="hl-k">let</span> n = <span class="hl-n">0</span>; n &lt; output.length; n += <span class="hl-n">1</span>) {
+    error += (output[n] - target[n]) ** <span class="hl-n">2</span>;
+  }
+  <span class="hl-k">return</span> error / <span class="hl-n">2</span>;
+}</code></pre>
+<p><code>forward</code> works the other way: every node adds up the values below it by its weights, plus a bias, and squashes the sum between 0 and 1. Then <code>learn</code> starts from the answer. Each output is to blame for how far it missed. The blame goes down a layer, shared out by the weights. Every weight moves a little against its share.</p>
+<h2 id="the-robot-that-looked-for-the-light">The robot that looked for the light</h2>
+<p>That same school year I did a robotics workshop at the Museu de la Ciència. We had to move a small robot, and in theory in plain C, with the moves written out by hand. I used what I knew about networks to simulate one instead, with the weights set by hand and no backpropagation, and it worked at once. They changed the problem: first find a light, then find it avoiding obstacles. It was enough to give the robot a <em>feeling</em>: aversion to obstacles. Then they asked for a maze, and told us the trick of keeping a hand on the right-hand wall. The robot got the feeling of <em>needing to touch something on its right</em>, and the change was almost instant. That part is memory. No code of it is here.</p>
+<p>What there is from that spring is a floppy of QBasic, dated April 1995. On it is a robot that learns to look for the light:</p>
+<blockquote>A learning program. It simulates a robot that will learn to look for the <code>*</code>. The robot has only an x motor and a y motor. It has two scanners, one to know whether the <code>*</code> is to the right or to the left, and the other whether it is above or below.</blockquote>
+<p>That is the header of <code>ROBOT2.BAS</code>, saved on 7 April, and this is that program, sub for sub, on its own screen of eighty columns by twenty-five rows:</p>
+<div class="app" data-app="light-robot"><div class="light-robot"><svg class="screen" viewBox="0 0 80 50" role="img" aria-label="the robot at row 16, column 1; the light at row 14, column 79"><rect class="glass" width="80" height="50"/><text class="light" x="78.5" y="27.6" text-anchor="middle">*</text><text class="robot" x="0.5" y="31.6" text-anchor="middle">R</text></svg><p class="doing">Turn 0: it knows nothing yet.</p><ol class="rules"><li class="unknown">the row motor, by the row scanner: <i>not yet</i></li><li class="unknown">the row motor, by the column scanner: <i>not yet</i></li><li class="unknown">the column motor, by the row scanner: <i>not yet</i></li><li class="unknown">the column motor, by the column scanner: <i>not yet</i></li></ol></div></div>
+<p>It starts knowing nothing. There are four rules to learn, one for each motor and each scanner. Until it has them all, it experiments. It picks a motor and a random step, one way, the other, or none, and keeps it for five turns. If a step brought it closer, it writes down, for that motor, what each scanner read and what the motor did:</p>
+<pre><code><span class="hl-k">IF</span> Bua <span class="hl-k">THEN</span>
+    i = Test
+    T = Bo
+    <span class="hl-k">FOR</span> j = <span class="hl-n">0</span> <span class="hl-k">TO</span> <span class="hl-n">1</span>
+        <span class="hl-k">IF</span> T <span class="hl-k">THEN</span>
+            <span class="hl-k">IF</span> W(<span class="hl-n">1</span>, i, j) = <span class="hl-n">2</span> <span class="hl-k">THEN</span>
+                W(<span class="hl-n">0</span>, i, j) = Ae(j)
+                W(<span class="hl-n">1</span>, i, j) = Am(i)
+                Inc = <span class="hl-n">0</span>
+            <span class="hl-k">END</span> <span class="hl-k">IF</span>
+        <span class="hl-k">END</span> <span class="hl-k">IF</span>
+    <span class="hl-k">NEXT</span> j
+    <span class="hl-k">IF</span> Inc &gt; <span class="hl-n">0</span> <span class="hl-k">THEN</span>
+        Inc = Inc - <span class="hl-n">1</span>
+    <span class="hl-k">ELSE</span>
+        Inc = <span class="hl-n">5</span>
+        Am(Test) = <span class="hl-n">0</span>
+        Test = INT(RND * <span class="hl-n">2</span>)
+        Am(Test) = INT(RND * <span class="hl-n">3</span>) - <span class="hl-n">1</span>
+    <span class="hl-k">END</span> <span class="hl-k">IF</span>
+<span class="hl-k">ELSE</span>
+    Test = <span class="hl-n">0</span>
+<span class="hl-k">END</span> <span class="hl-k">IF</span></code></pre>
+<p>That is <code>Aprende</code>, <em>learn</em>, less the line that printed. In English:</p>
+<pre><code><span class="hl-k">IF</span> StillLearning <span class="hl-k">THEN</span>
+    motor = Trying
+    closer = GotCloser
+    <span class="hl-k">FOR</span> scanner = <span class="hl-n">0</span> <span class="hl-k">TO</span> <span class="hl-n">1</span>
+        <span class="hl-k">IF</span> closer <span class="hl-k">THEN</span>
+            <span class="hl-k">IF</span> Move(motor, scanner) = UNKNOWN <span class="hl-k">THEN</span>
+                Reading(motor, scanner) = Scanner(scanner)
+                Move(motor, scanner) = Motor(motor)
+                TurnsLeft = <span class="hl-n">0</span>
+            <span class="hl-k">END</span> <span class="hl-k">IF</span>
+        <span class="hl-k">END</span> <span class="hl-k">IF</span>
+    <span class="hl-k">NEXT</span> scanner
+    <span class="hl-k">IF</span> TurnsLeft &gt; <span class="hl-n">0</span> <span class="hl-k">THEN</span>
+        TurnsLeft = TurnsLeft - <span class="hl-n">1</span>
+    <span class="hl-k">ELSE</span>
+        TurnsLeft = <span class="hl-n">5</span>
+        Motor(Trying) = <span class="hl-n">0</span>
+        Trying = INT(RND * <span class="hl-n">2</span>)
+        Motor(Trying) = INT(RND * <span class="hl-n">3</span>) - <span class="hl-n">1</span>
+    <span class="hl-k">END</span> <span class="hl-k">IF</span>
+<span class="hl-k">ELSE</span>
+    Trying = <span class="hl-n">0</span>
+<span class="hl-k">END</span> <span class="hl-k">IF</span></code></pre>
+<p>Once the four rules are written, it stops experimenting. Each motor adds up the moves of the rules whose reading it sees now, and takes one step in that direction.</p>
+<p>It learns its four rules in every run, in forty-odd turns on average. Then it goes where its rules take it, and that is not always the light. A still light gets reached in fewer than one run in ten, and the code says why. A good step is written down under <em>both</em> scanners, so the row motor also keeps a rule for what the column scanner read. Level with the light, the row scanner reads nothing, but a rule like &quot;light to the right: row motor down&quot; still holds, and it carries the robot past. And each rule knows only the reading it happened to see while it was learning. Set the light wandering and the robot can find itself where no rule applies.</p>
+<p>The other files on the floppy are the steps around it. <code>LOBOT.BAS</code>, on 1 April, is a robot among walls of stars, with scanners that look three cells each way. <code>ROBOT.BAS</code>, saved nine hours after <code>ROBOT2.BAS</code>, is the same program half rewritten. <code>ROBOT1.BAS</code>, on 13 April, has four scanners and four motors, and weights instead of rules: each motor adds up every scanner's reading times its weight, which is the shape of a neuron.</p>
+<h2 id="backpropagation-9-april-1995">Backpropagation, 9 April 1995</h2>
+<p>In between, on the 9th, <code>APREN.BAS</code> has the whole of backpropagation in outline. There are three layers of weights. The pass forward works out every node's value. The error starts at the output and goes back layer by layer. From the error comes a gradient, and every weight is corrected against it:</p>
+<pre><code><span class="hl-k">FOR</span> capa = <span class="hl-n">1</span> <span class="hl-k">TO</span> L
+    <span class="hl-k">FOR</span> nodo = <span class="hl-n">1</span> <span class="hl-k">TO</span> N(capa)
+        t = <span class="hl-n">0</span>
+        <span class="hl-k">FOR</span> i = <span class="hl-n">0</span> <span class="hl-k">TO</span> N(capa - <span class="hl-n">1</span>)
+            t = t + (W(capa, nodo, i) * U(capa - <span class="hl-n">1</span>, i))
+        <span class="hl-k">NEXT</span> i
+        <span class="hl-c">'IF t &gt; 0 THEN t = 1 ELSE t = -1</span>
+        U(capa, nodo) = t
+    <span class="hl-k">NEXT</span> nodo
+<span class="hl-k">NEXT</span> capa
+
+<span class="hl-k">FOR</span> capa = L <span class="hl-k">TO</span> <span class="hl-n">1</span> <span class="hl-k">STEP</span> -<span class="hl-n">1</span>
+    <span class="hl-k">FOR</span> nodo = <span class="hl-n">1</span> <span class="hl-k">TO</span> N(capa)
+        <span class="hl-k">IF</span> capa = L <span class="hl-k">THEN</span>
+            e(capa, nodo) = U(capa, nodo) - d(nodo)
+        <span class="hl-k">ELSE</span>
+            t = <span class="hl-n">0</span>
+            <span class="hl-k">FOR</span> m = <span class="hl-n">1</span> <span class="hl-k">TO</span> N(capa - <span class="hl-n">1</span>)
+                t = t + e(capa + <span class="hl-n">1</span>, m) * U(capa + <span class="hl-n">1</span>, m) * (<span class="hl-n">1</span> - U(capa - <span class="hl-n">1</span>, m)) * W(capa + <span class="hl-n">1</span>, m, nodo)
+            <span class="hl-k">NEXT</span> m
+            e(capa, nodo) = t
+        <span class="hl-k">END</span> <span class="hl-k">IF</span>
+    <span class="hl-k">NEXT</span> nodo
+<span class="hl-k">NEXT</span> capa
+
+<span class="hl-k">FOR</span> i = <span class="hl-n">1</span> <span class="hl-k">TO</span> UBOUND(g, <span class="hl-n">1</span>)
+    <span class="hl-k">FOR</span> j = LBOUND(g, <span class="hl-n">2</span>) <span class="hl-k">TO</span> UBOUND(g, <span class="hl-n">2</span>)
+        <span class="hl-k">FOR</span> k = LBOUND(g, <span class="hl-n">3</span>) <span class="hl-k">TO</span> UBOUND(g, <span class="hl-n">3</span>)
+            g(i, j, k) = e(i, j) * U(i, j) * (<span class="hl-n">1</span> - U(i, j)) * U(i - <span class="hl-n">1</span>, j)
+        <span class="hl-k">NEXT</span> k
+    <span class="hl-k">NEXT</span> j
+<span class="hl-k">NEXT</span> i
+
+<span class="hl-k">FOR</span> i = LBOUND(W, <span class="hl-n">1</span>) <span class="hl-k">TO</span> UBOUND(W, <span class="hl-n">1</span>)
+    <span class="hl-k">FOR</span> j = LBOUND(W, <span class="hl-n">2</span>) <span class="hl-k">TO</span> UBOUND(W, <span class="hl-n">2</span>)
+        <span class="hl-k">FOR</span> k = LBOUND(W, <span class="hl-n">3</span>) <span class="hl-k">TO</span> UBOUND(W, <span class="hl-n">3</span>)
+            W(i, j, k) = W(i, j, k) - (m * g(i, j, k))
+        <span class="hl-k">NEXT</span> k
+    <span class="hl-k">NEXT</span> j
+<span class="hl-k">NEXT</span> i</code></pre>
+<p>That is <code>Calcular</code>, <em>calculate</em>. In English:</p>
+<pre><code><span class="hl-k">FOR</span> layer = <span class="hl-n">1</span> <span class="hl-k">TO</span> LAYERS
+    <span class="hl-k">FOR</span> node = <span class="hl-n">1</span> <span class="hl-k">TO</span> Size(layer)
+        sum = <span class="hl-n">0</span>
+        <span class="hl-k">FOR</span> i = <span class="hl-n">0</span> <span class="hl-k">TO</span> Size(layer - <span class="hl-n">1</span>)
+            sum = sum + (Weight(layer, node, i) * Value(layer - <span class="hl-n">1</span>, i))
+        <span class="hl-k">NEXT</span> i
+        <span class="hl-c">'IF sum &gt; 0 THEN sum = 1 ELSE sum = -1</span>
+        Value(layer, node) = sum
+    <span class="hl-k">NEXT</span> node
+<span class="hl-k">NEXT</span> layer
+
+<span class="hl-k">FOR</span> layer = LAYERS <span class="hl-k">TO</span> <span class="hl-n">1</span> <span class="hl-k">STEP</span> -<span class="hl-n">1</span>
+    <span class="hl-k">FOR</span> node = <span class="hl-n">1</span> <span class="hl-k">TO</span> Size(layer)
+        <span class="hl-k">IF</span> layer = LAYERS <span class="hl-k">THEN</span>
+            Error(layer, node) = Value(layer, node) - Target(node)
+        <span class="hl-k">ELSE</span>
+            sum = <span class="hl-n">0</span>
+            <span class="hl-k">FOR</span> m = <span class="hl-n">1</span> <span class="hl-k">TO</span> Size(layer - <span class="hl-n">1</span>)
+                sum = sum + Error(layer + <span class="hl-n">1</span>, m) * Value(layer + <span class="hl-n">1</span>, m) * (<span class="hl-n">1</span> - Value(layer - <span class="hl-n">1</span>, m)) * Weight(layer + <span class="hl-n">1</span>, m, node)
+            <span class="hl-k">NEXT</span> m
+            Error(layer, node) = sum
+        <span class="hl-k">END</span> <span class="hl-k">IF</span>
+    <span class="hl-k">NEXT</span> node
+<span class="hl-k">NEXT</span> layer
+
+<span class="hl-k">FOR</span> i = <span class="hl-n">1</span> <span class="hl-k">TO</span> LAYERS
+    <span class="hl-k">FOR</span> j = <span class="hl-n">0</span> <span class="hl-k">TO</span> MAX
+        <span class="hl-k">FOR</span> k = <span class="hl-n">0</span> <span class="hl-k">TO</span> MAX
+            Gradient(i, j, k) = Error(i, j) * Value(i, j) * (<span class="hl-n">1</span> - Value(i, j)) * Value(i - <span class="hl-n">1</span>, j)
+        <span class="hl-k">NEXT</span> k
+    <span class="hl-k">NEXT</span> j
+<span class="hl-k">NEXT</span> i
+
+<span class="hl-k">FOR</span> i = <span class="hl-n">0</span> <span class="hl-k">TO</span> LAYERS
+    <span class="hl-k">FOR</span> j = <span class="hl-n">0</span> <span class="hl-k">TO</span> MAX
+        <span class="hl-k">FOR</span> k = <span class="hl-n">0</span> <span class="hl-k">TO</span> MAX
+            Weight(i, j, k) = Weight(i, j, k) - (m * Gradient(i, j, k))
+        <span class="hl-k">NEXT</span> k
+    <span class="hl-k">NEXT</span> j
+<span class="hl-k">NEXT</span> i</code></pre>
+<p>The steps are all there, in the right order, and it shows where the papers ran out. The squash is missing: the line that would have been the threshold is a comment. The targets are the same every turn, <code>−1, 0, 0, 0</code>, whatever the scanners read. The gradient reads the value below by the node's index, <code>j</code>, where it wanted <code>k</code>. And the rate it learns at is <code>m</code>, the counter of the loop before, left at 5.</p>
+<p>The network at the top of this page is the same three steps, with a squash between 0 and 1, a target for every example, and the right index.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/projects/first-network $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/projects/first-network $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-Cc-3vNvD.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
