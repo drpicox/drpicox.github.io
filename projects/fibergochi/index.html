@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fibergochi — David Rodenas</title>
+<meta name="description" content="A student of the FIB kept like a Tamagotchi, written in JavaScript in February 1999, one of the first interactive pages I made. Keep it studying, sleeping and finding a terminal until it gets its degree, or it will be thrown out.">
+<link rel="canonical" href="https://david-rodenas.com/projects/fibergochi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Fibergochi — David Rodenas">
+<meta property="og:description" content="A student of the FIB kept like a Tamagotchi, written in JavaScript in February 1999, one of the first interactive pages I made. Keep it studying, sleeping and finding a terminal until it gets its degree, or it will be thrown out.">
+<meta property="og:url" content="https://david-rodenas.com/projects/fibergochi/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-CRefUzQj.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/" aria-current="page">projects/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd projects/fibergochi &amp;&amp; cat README.md</p>
+<h1 id="the-fibergochi">The Fibergochi</h1>
+<p>A Tamagotchi, but the pet is a student at the FIB, the computer science faculty in Barcelona. It has to study for exams, find a free terminal for its labs, sleep, and not get bored, until it gets its degree, or it is thrown out. I wrote it in JavaScript in February 1999; the code is signed <em>Night</em>. It was one of the first interactive pages I made.</p>
+<p>This is it again, with its own drawings. Its words were in Spanish, and here they are in English.</p>
+<div class="app" data-app="fibergochi"><div class="fibergochi"><div class="egg"><p class="by"><span>by</span> Night</p><div class="keys"><button type="button" data-do="study" title="To study or to sleep.">Study/Sleep</button></div><div class="keys"><button type="button" data-do="http" title="To have a good time at a terminal (if you have one).">http</button><button type="button" data-do="alfa" title="See the score.">alfa</button><button type="button" data-do="bar" title="Go to the bar, have a drink or play mus.">Bar</button></div><div class="screen"><ul class="lamps" data-show="lamps"><li class="off" data-lamp="exam" title="Whether there is an exam.">exam</li><li class="off" data-lamp="lab" title="Whether there is a lab.">lab</li><li class="off" data-lamp="terminal" title="Whether it has a terminal.">terminal</li></ul><img data-show="picture" src="/fibergochi/normal0.gif" alt="The Fibergochi, standing about." width="200" height="160"></div><div class="keys"><button type="button" data-do="friends" title="To make new friends.">Friends</button><button type="button" data-do="terminal" title="Look for a terminal to do labs, or not.">Find terminal</button><button type="button" data-do="beg" title="Beg, to try to get more passes.">Beg</button></div></div><div class="panel"><p class="time"><output data-show="clock">1, 0:00h (1)</output> <button type="button" data-do="pause">pause</button> <button type="button" data-do="new">new</button></p></div></div></div>
+<p><strong>Study/Sleep</strong> sends it to study or to bed, and it decides which: it tosses a coin. <strong>Find terminal</strong> sends it to look for a free terminal, and once it has one, it does its labs there on its own. <strong>http</strong> sets it browsing, if it holds a terminal. <strong>Beg</strong> is to beg for better marks, and the answer is always the same. <strong>alfa</strong>, <strong>Bar</strong> and <strong>Friends</strong> were never written. They did nothing in 1999, and they do nothing here.</p>
+<p>The three lamps beside the drawing are an exam to study for, a lab to do, and a terminal held. After the last day of class the first two blink.</p>
+<p>A day has sixteen hours, and a term has twenty-five days, twenty of them with classes. The marks come out on the twenty-second day. A subject is passed if less than an hour of work is left on it. Here a step comes every tenth of a second, so a term lasts two minutes. Time passes only while the egg is on screen. The Fibergochi is kept in your browser, as a cookie kept it then, and <strong>new</strong> starts another.</p>
+<p>Left alone, it is thrown out for boredom on the sixteenth day of its first term.</p>
+<h2 id="the-rules-of-the-faculty">The rules of the faculty</h2>
+<p>It starts in the <em>Fase de Selección</em>, the first phase of the degree: nine credits, and in this game a credit is a subject. Anyone who has passed none after two terms is out, with a single word: <em>BACARRA</em>. After four terms, anyone more than two credits short is out. Anyone one or two short is let through, but only to the <em>Técnica</em>, the shorter degree of fifty credits. Anyone who passes all nine chooses: the <em>Superior</em>, a hundred credits, or the <em>Técnica</em>.</p>
+<p>After that come the <em>alfas</em>: for each of the last six terms, the credits passed over the credits taken. Four of them below half, and it is out. And anyone who finishes the degree gets two messages, the second of which is an error in <code>KERNEL386.EXE</code>, because nobody was expected to get that far.</p>
+<h2 id="what-the-code-of-1999-says">What the code of 1999 says</h2>
+<p>The notes at the top of the file tell how it was made. I did not know how to use arrays in JavaScript, and I had no internet connection to find out. So the ten subjects are ten variables, <code>credito0</code> to <code>credito9</code>, and they are reached by building the variable's name and evaluating it:</p>
+<pre><code><span class="hl-k">function</span> LeerArray (nom, index)
+  {
+    <span class="hl-k">return</span> eval (nom + index);
+  }</code></pre>
+<p>A browser kept only twenty cookies, which was not enough for a cookie per number. So all fifty numbers went into one cookie, four characters each, which is why every number in it had to stay between −999 and 9999. The notes also warn that Netscape did not tell upper case from lower case in names. So anything changed was to be tried in Explorer first.</p>
+<p>One line was missing. A student let through to the <em>Técnica</em> after four terms was never taken out of the <em>Fase de Selección</em>, so the next term threw them out after all. That line is added here, and nothing else is changed.</p>
+<p>The credits in the code give the original idea to Sardakuar, and the idea of actually making it to Josep Llosa, &quot;who does not know we have mentioned him, or does&quot;.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/projects/fibergochi $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/projects/fibergochi $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-rN-s4zjj.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
