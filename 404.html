@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-DSZjJf7t.css">
+<link rel="stylesheet" href="/assets/main-Isv9KMKG.css">
 </head>
 <body>
 <div class="container">
@@ -34,7 +34,7 @@
       ░░░░░░░░░░░░</pre></a>
   <div class="session">
     <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
-    <nav><a class="navlink" href="/" aria-current="page">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
+    <nav><a class="navlink" href="/" aria-current="page">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
   </div>
   <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
 </header>
@@ -42,21 +42,18 @@
 <p class="ran"><span class="ps1">~ $</span> cat README.md</p>
 <h1 id="i-lay-the-foundations-other-engineers-build-on">I lay<br>the foundations<br>other engineers build on.</h1>
 <p>Computer enthusiast, doctor and engineer. Former vice-dean of COEINF, the professional college of computer engineers of Catalonia. I write every Saturday and I have not missed one since 2022.</p>
-<h2 id="the-book">The book</h2>
+<p>This site is laid out like a disk. The names at the top are its directories; click one, or type at the prompt at the foot of the page — <code>ls</code>, <code>cd projects</code>, <code>cat README.md</code> — and it does the same. <code>help</code> says the rest. What each directory holds is listed at the bottom of this page.</p>
+<h2 id="where-to-start">Where to start</h2>
 <p><img src="/book/BookGuide.jpeg" alt="The cover of the book"> <em>The Emotional and Technical Guide to Rescue Stalled Software</em> (2024) is about conquering technical debt without sacrificing your sanity or your shipping schedule. Its rule fits on one line: never rewrite, never stop delivery. <a href="/book/">About the book.</a></p>
-<h2 id="essays">Essays</h2>
-<blockquote>&gt; More than half a million views.</blockquote>
-<p>More than 250 of them on <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>, one every Saturday since 2022. The most read one, and the ones read longest, argue with the canon:</p>
-<ul><li><a href="https://medium.com/p/bd110ddab732" target="_blank" rel="noopener noreferrer">The JavaScript framework war is over</a></li><li><a href="https://drpicox.medium.com/software-development-is-a-beautiful-mess-45edab1fab73" target="_blank" rel="noopener noreferrer">Software Development Is A Beautiful Mess</a></li><li><a href="https://drpicox.medium.com/scrum-vs-extreme-programming-was-xp-right-all-along-1bb1061e9e6b" target="_blank" rel="noopener noreferrer">Scrum vs Extreme Programming: Was XP Right All Along?</a></li><li><a href="https://medium.com/better-programming/confirmed-code-coverage-is-a-useless-management-metric-35afa05e8549" target="_blank" rel="noopener noreferrer">Confirmed: Code Coverage Is a Useless Management Metric</a></li><li><a href="https://drpicox.medium.com/the-craziest-piece-of-software-ive-ever-seen-4605085ceb5b" target="_blank" rel="noopener noreferrer">The Craziest Piece of Software I've Ever Seen</a></li><li><a href="https://drpicox.medium.com/what-are-micro-frontends-for-aad66e9c2cf8" target="_blank" rel="noopener noreferrer">What Are Micro-Frontends Really For?</a></li></ul>
-<p><a href="/essays/">Twenty of them, with a line on each.</a></p>
-<h2 id="two-public-apis-of-angularjs-are-mine">Two public APIs of AngularJS are mine</h2>
-<blockquote>I made its compiler faster.</blockquote>
-<p>Two performance changes in the AngularJS compiler are mine. They shipped in 2016 and were never taken out: six years of releases later they are still in 1.8.3, the last one the framework had. So is my implementation of <code>$componentController</code>, the helper its testing module gives you to unit-test a component. So are two benchmark suites I wrote when maintainers asked for numbers they could check — one of which measured the <code>ngClass</code> rewrite built on my work at more than a hundred times faster on the case that mattered. None of it is documentation. <a href="/open-source/angularjs/">The whole account.</a></p>
+<p><strong>Essays.</strong> More than 250 of them on <a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>, one every Saturday since 2022, read more than half a million times. The most read one, and the ones read longest, argue with the canon:</p>
+<ul><li><a href="https://medium.com/p/bd110ddab732" target="_blank" rel="noopener noreferrer">The JavaScript framework war is over</a></li><li><a href="https://drpicox.medium.com/software-development-is-a-beautiful-mess-45edab1fab73" target="_blank" rel="noopener noreferrer">Software Development Is A Beautiful Mess</a></li><li><a href="https://drpicox.medium.com/scrum-vs-extreme-programming-was-xp-right-all-along-1bb1061e9e6b" target="_blank" rel="noopener noreferrer">Scrum vs Extreme Programming: Was XP Right All Along?</a></li></ul>
+<p><a href="/essays/">All of them, by subject, with a line on each.</a></p>
+<p><strong><a href="/projects/fish-market/">The agent that won the fish auction.</a></strong> A class of competing buyers in December 2000, a Dutch auction, and the one number ours stood on: the margin at which the market clears. Run the morning again, and seat your own agent at the table.</p>
+<p><strong><a href="/open-source/angularjs/">Two public APIs of AngularJS are mine.</a></strong> I made its compiler faster. The two performance changes shipped in 2016 and were never taken out: they are still in 1.8.3, the last release the framework had, and so is <code>$componentController</code>, the helper its testing module gives you to unit-test a component.</p>
 <h2 id="the-world-at-the-top">The world at the top</h2>
-<p>The mark in the header is not a picture. It is a planet, grown the moment this page opened, by the pipeline of a program I wrote in 2000 for a university graphics course: <a href="https://david-rodenas.com/mons-fractals/" target="_blank" rel="noopener noreferrer">Mons fractals</a>, Java 1.1.8 on MS-DOS, writing worlds out as VRML.</p>
-<p>It is a pipeline of filters, and the order is part of the meaning. Start from an icosahedron. Split every edge and push each new midpoint out or in by a fraction of the edge it came from, so the first rounds carve continents and the last ones only roughen a slope. Put in the sea as a minimum radius: everything below it is raised up to it, which is why a coastline reads as a coastline and not as a change of colour. Work out the climate from height above the sea and from latitude, so that a summit is white wherever it stands, the way the Himalaya is. Only then paint it. Paint first and you get a ball of one colour.</p>
-<p>Reload, and it is a different world. The same pipeline runs here, rewritten in TypeScript with nothing underneath it, and you can <a href="/worlds/">turn the dials yourself</a>.</p>
-
+<p>The mark in the header is not a picture: it is a planet, grown the moment this page opened, by the pipeline of a program I wrote for a university graphics course in 2000. Reload, and it is a different world; <a href="/projects/worlds/">turn the dials yourself</a>.</p>
+<p class="ran"><span class="ps1">~ $</span> ls</p>
+<ul class="listing"><li><a class="entry" href="/book/"><code>book/</code><span class="title">The Emotional and Technical Guide to Rescue Stalled Software</span><span class="summary">Never rewrite. Never stop delivery. A book about rescuing stalled software, 2024, 156 pages.</span></a></li><li><a class="entry" href="/essays/"><code>essays/</code><span class="title">Essays</span><span class="summary">More than 250 essays on Medium, one every Saturday since 2022, read more than half a million times.</span></a></li><li><a class="entry" href="/projects/"><code>projects/</code><span class="title">Projects</span><span class="summary">Small programs you can run here, each made of one idea — from a network of 1994 and an auction of 2000 to a language model you can count by hand, with public data added up and two models of how software work goes wrong.</span></a></li><li><a class="entry" href="/open-source/"><code>open-source/</code><span class="title">Open source</span><span class="summary">Code of mine that is in other people's hands: what is still inside AngularJS, the npm packages strangers install, and what else is public.</span></a></li><li><a class="entry" href="/research/"><code>research/</code><span class="title">Research</span><span class="summary">A PhD on making parallel hardware usable by people who are not parallel programmers. Runtimes, a simulator, a compiler, and then graph matching on a GPU.</span></a></li><li><a class="entry" href="/teaching/"><code>teaching/</code><span class="title">Teaching</span><span class="summary">Courses I taught and what I built for students to stand on: a lab whose specifications are blog posts that compile into tests, a text adventure, a commons of fish that breed, Raft through a recipe for concurrency, and a kata.</span></a></li><li><a class="entry" href="/talks/"><code>talks/</code><span class="title">Talks</span><span class="summary">Twenty-one years of them: two international conferences as first author, the Barcelona JavaScript circuit of 2013–2017, and since 2022 talks about algorithms for people who do not write them.</span></a></li></ul>
 </main>
 <div class="screen" aria-live="polite"></div>
 <p class="ran end"><span class="ps1">~ $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
@@ -70,7 +67,7 @@
 <form class="prompt"><span class="ps1">~ $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-Cc-3vNvD.js"></script>
+<script type="module" src="/assets/main-D7rSjdV6.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

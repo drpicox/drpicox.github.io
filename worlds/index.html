@@ -1,66 +1,11 @@
 <!doctype html>
-<html lang="en" data-theme="dark" data-page-theme="dark" data-sky="stars">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Worlds — David Rodenas</title>
-<meta name="description" content="The fractal planet generator of 2000, in the browser, with the dials exposed.">
-<link rel="canonical" href="https://david-rodenas.com/worlds/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Worlds — David Rodenas">
-<meta property="og:description" content="The fractal planet generator of 2000, in the browser, with the dials exposed.">
-<meta property="og:url" content="https://david-rodenas.com/worlds/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" type="image/png" href="/favicon.png">
-<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"))h.dataset.theme=t}catch(e){}
-(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
-
-<link rel="stylesheet" href="/assets/main-DSZjJf7t.css">
+<title>Moved</title>
+<meta http-equiv="refresh" content="0; url=/projects/worlds/">
+<link rel="canonical" href="https://david-rodenas.com/projects/worlds/">
+<meta name="robots" content="noindex">
 </head>
-<body>
-<div class="container">
-<header class="site-header">
-  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
-    ░░░░░░░░░░░░░░░░
-  ░░░░░░░░░░░░░░░░░░░░
- ░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
- ░░░░░░░░░░░░░░░░░░░░░░
-  ░░░░░░░░░░░░░░░░░░░░
-    ░░░░░░░░░░░░░░░░
-      ░░░░░░░░░░░░</pre></a>
-  <div class="session">
-    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
-    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/talks/">talks/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/kata/">kata/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/simulators/">simulators/</a><a class="navlink" href="/worlds/" aria-current="page">worlds/</a><a class="navlink" href="/open-data/">open-data/</a><a class="navlink" href="/projects/">projects/</a></nav>
-  </div>
-  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
-</header>
-<main>
-<p class="ran"><span class="ps1">~ $</span> cd worlds &amp;&amp; cat README.md</p>
-<h1 id="worlds">Worlds</h1>
-<p><a href="https://david-rodenas.com/mons-fractals/" target="_blank" rel="noopener noreferrer">Mons fractals</a> was a university graphics assignment of the autumn of 2000: Java 1.1.8 on MS-DOS, a pipeline of filters that grew a planet and wrote it out as VRML for a browser plugin to fly around. This is the same pipeline, in TypeScript, with nothing underneath it, and the dials on the outside so you can play.</p>
-<div class="app" data-app="worlds"></div>
-<p>Drag the world to turn it; let it go and it keeps turning. Every dial is one of the filters:</p>
-<ul><li><strong>Seed</strong> picks the world. The same seed always grows the same one.</li><li><strong>Detail</strong> is how many times every edge is split in two. Each round has four times the triangles of the one before; six rounds are 81,920.</li><li><strong>Roughness</strong> is how far a new midpoint may move, as a fraction of the edge it came from. The original default was 0.1; a little more makes for better mountains at this size, and a lot more makes something that is not a planet.</li><li><strong>Sea</strong> is the share of the surface under water. The sea is a minimum radius: everything below it is raised up to it.</li></ul>
-<p>The pipeline runs in order, and the order is the meaning: raise the land, put in the sea, work out the climate from height and latitude, and only then paint. Paint first and there is nothing to paint.</p>
-
-</main>
-<div class="screen" aria-live="polite"></div>
-<p class="ran end"><span class="ps1">~/worlds $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
-<footer class="site-footer">
-  <span>&copy; 2026 David Rodenas</span>
-  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-</footer>
-</div>
-<section class="terminal">
-<div class="column">
-<form class="prompt"><span class="ps1">~/worlds $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
-</div>
-</section>
-<script type="module" src="/assets/main-Cc-3vNvD.js"></script>
-<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body>
+<body><p>This page has moved to <a href="/projects/worlds/">/projects/worlds/</a>.</p></body>
 </html>
