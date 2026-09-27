@@ -656,7 +656,7 @@ longest:
 
 ## More to run
 
-- ![The near stars, with the trip to Proxima Centauri drawn](/projects/shots/rocket.jpg "card") [A relativistic rocket](/projects/rocinante/)  
+- ![The Rocinante Simulator: the inner solar system in three dimensions, and the ship's dials](/rocinante-simulator.jpg "card") [A relativistic rocket](/projects/rocinante/)  
   Both clocks, the ship's and home's, and the fuel.
 
 - ![The auction floor: five buyers and a box of prawns](/projects/shots/fish-market.jpg "card") [The agent that won the fish auction](/projects/fish-market/)  
@@ -665,11 +665,11 @@ longest:
 - ![The Fibergochi, a stick figure in a yellow egg](/projects/shots/fibergochi.jpg "card") [The Fibergochi](/projects/fibergochi/)  
   A student kept like a Tamagotchi, 1999. Playable.
 
-- ![A letter A drawn on a grid, and the network reading it](/projects/shots/letters.jpg "card") [The first network](/projects/first-network/)  
+- ![A letter A drawn on a grid, and the network reading it](/projects/shots/letters.jpg "card") [My first neural network](/projects/first-network/)  
   Letters told apart by backpropagation, first written in C in 1994. Draw your own.
 
-- ![The map of the adventure beside its first room](/projects/shots/adventure.jpg "card") [Sixty-four rooms](/teaching/adventure/)  
-  A text adventure from a first-year course.
+- ![The source of this site as boxes and arrows, the features above the frame they stand on](/projects/shots/architecture.jpg "card") [How this site is built](/projects/architecture/)  
+  Its source as boxes and arrows, commit by commit: the program an AI wrote, and the rules it is held to.
 
 - ![A fractal planet of seas, land and snow](/projects/shots/worlds.jpg "card") [The planet in the header](/projects/worlds/)  
   Grown as this page opened, by a program I wrote in 2000. Reload for another.
@@ -1206,12 +1206,12 @@ The credits in the code give the original idea to Sardakuar, and the idea
 of actually making it to Josep Llosa, "who does not know we have mentioned
 him, or does".
 `},{file:"projects/first-network.md",markdown:`---
-title: The first network
+title: My first neural network
 summary: A network that tells letters apart, taught by backpropagation, first written in C in 1994 and shown to my class on the PC I carried from home. Draw on its grid, and teach it letters of your own.
 order: 41
 ---
 
-# The first network
+# My first neural network
 
 In 1994, in my second year of BUP, I wrote a neural network in C that told
 two letters apart, drawn on a small grid. To learn how, I went to the
@@ -1583,7 +1583,7 @@ read, nothing is fetched from anyone but this site.
 
 ## Before the doctorate, in the order they were made
 
-- [The first network](/projects/first-network/) -- a network that tells letters apart, taught by backpropagation, first written in C in 1994 and shown in class. Draw on its grid, and teach it letters of your own.
+- [My first neural network](/projects/first-network/) -- a network that tells letters apart, taught by backpropagation, first written in C in 1994 and shown in class. Draw on its grid, and teach it letters of your own.
 - [The Fibergochi](/projects/fibergochi/) -- a student of the FIB kept like a Tamagotchi, in the JavaScript of March 1999: study, sleep, find a terminal, go to the bar, and get through the Fase de Selección. Playable, in its own drawings.
 - [The program that finished before the professor left](/projects/bird-cards/) -- a Prolog parser for a field guide to birds, 1999, and the one idea that made it instant where everyone else's took twenty minutes: a grammar that never has to look back.
 - [The agent that won the fish auction](/projects/fish-market/) -- a Dutch auction, a class of competing agents in December 2000, and the one number ours stood on: the margin at which the market clears. Run it again, and seat your own.
