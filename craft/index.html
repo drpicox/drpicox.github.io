@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The craft — David Rodenas</title>
+<meta name="description" content="Rules that hold whoever writes the code, a person or an AI agent — shown as small working examples, each one running here.">
+<link rel="canonical" href="https://david-rodenas.com/craft/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The craft — David Rodenas">
+<meta property="og:description" content="Rules that hold whoever writes the code, a person or an AI agent — shown as small working examples, each one running here.">
+<meta property="og:url" content="https://david-rodenas.com/craft/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-CSnDRjdS.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/craft/" aria-current="page">craft/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd craft &amp;&amp; cat README.md</p>
+<h1 id="a-rule-that-matters-goes-into-the-code-not-into-a-guide">A rule that matters<br>goes into the code,<br>not into a guide.</h1>
+<p>A guide can go unread. A type, a grammar or a test cannot be skipped, and it does not matter who writes the change — a person or an AI agent: it holds for both.</p>
+<p>These are small examples of it, and every one of them runs here.</p>
+<ul><li><a href="/craft/the-post-is-the-test/">The post is the test</a><br>Write a post, and see the test it becomes: each sentence is a step, named by its words.</li><li><a href="/projects/architecture/">How this site is built</a><br>Its source as boxes and arrows, commit by commit, and the rules it is held to.</li><li><a href="/teaching/software-lab/">The post comes first</a><br>A course where posts were compiled into tests, and a grader read the repository.</li><li><a href="/teaching/raft/">Raft, and a recipe for concurrency</a><br>Three hints that let someone new to concurrency get a consensus algorithm right.</li></ul>
+<p class="ran"><span class="ps1">~/craft $</span> ls</p>
+<ul class="listing"><li><a class="entry" href="/craft/the-post-is-the-test/"><code>the-post-is-the-test/</code><span class="title">The post is the test</span><span class="summary">My students got stuck on the regular expressions that tie each step of a test to its code, so a step's sentence became the code's name, and a post became the test. The idea, running, and where it went after the course.</span></a></li><li><a class="entry" href="/projects/architecture/"><code>architecture@</code><span class="title">How this site is built</span><span class="summary">The source of this site as boxes and arrows, commit by commit — the program an AI wrote, and the rules it is held to.</span></a></li><li><a class="entry" href="/teaching/software-lab/"><code>software-lab@</code><span class="title">The post comes first</span><span class="summary">Six autumns of Laboratori de Software 2 at Tecnocampus, and the platform built for it — posts in markdown compiled into tests for server and client, the server's answers replayed to the client, and a grader that read the repository.</span></a></li><li><a class="entry" href="/teaching/raft/"><code>raft@</code><span class="title">Raft, and a recipe for concurrency</span><span class="summary">A consensus algorithm as a laboratory assignment in 2013, and the three hints — above all a three-step recipe — that let someone who has never written concurrent code get it right.</span></a></li></ul>
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/craft $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/craft $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-BH2an86a.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
