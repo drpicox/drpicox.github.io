@@ -2,97 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The post is the test — David Rodenas</title>
-<meta name="description" content="My students got stuck on the regular expressions that tie each step of a test to its code, so a step's sentence became the code's name, and a post became the test. The idea, running, and where it went after the course.">
-<link rel="canonical" href="https://david-rodenas.com/craft/the-post-is-the-test/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The post is the test — David Rodenas">
-<meta property="og:description" content="My students got stuck on the regular expressions that tie each step of a test to its code, so a step's sentence became the code's name, and a post became the test. The idea, running, and where it went after the course.">
-<meta property="og:url" content="https://david-rodenas.com/craft/the-post-is-the-test/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" type="image/png" href="/favicon.png">
-<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
-(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
-
-<link rel="stylesheet" href="/assets/main-CzkPiPbr.css">
+<title>Moved</title>
+<meta http-equiv="refresh" content="0; url=/craft/a-sentence-is-a-step/">
+<link rel="canonical" href="https://david-rodenas.com/craft/a-sentence-is-a-step/">
+<meta name="robots" content="noindex">
 </head>
-<body>
-<div class="container">
-<header class="site-header">
-  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
-    ░░░░░░░░░░░░░░░░
-  ░░░░░░░░░░░░░░░░░░░░
- ░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░
- ░░░░░░░░░░░░░░░░░░░░░░
-  ░░░░░░░░░░░░░░░░░░░░
-    ░░░░░░░░░░░░░░░░
-      ░░░░░░░░░░░░</pre></a>
-  <div class="session">
-    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
-    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/craft/" aria-current="page">craft/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
-  </div>
-  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
-</header>
-<main>
-<p class="ran"><span class="ps1">~ $</span> cd craft/the-post-is-the-test &amp;&amp; cat README.md</p>
-<h1 id="a-sentence-is-a-step-the-post-is-the-test">A sentence is a step.<br>The post is the test.</h1>
-<p>A behaviour test written in plain sentences needs, for every sentence, a piece of code that knows what to do with it, and the usual way to find that piece is a pattern — a regular expression, or a Cucumber expression — written to match the sentence. That is where my students got stuck: on the expressions, and on naming the functions behind the steps.</p>
-<p>So the course's platform stopped matching sentences, and read them instead. Every word goes into the name of a method; a quoted string becomes an argument and an <code>S</code> in the name, a number an argument and an <code>N</code>. There is nothing to match, because the sentence is the name. The post is the test, and each of its sentences a step: write one, a step a line, and see what it becomes:</p>
-<div class="app" data-app="step-names"><pre class="step-post">* Go to the blog section,
-* You should see a list of posts,
-* The last post title should be "Hello Blog", this post</pre><div class="step-code"><div class="step-test"><h4>The test, for the server</h4><pre><code>@Test
-<span class="hl-k">public</span> <span class="hl-k">void</span> post() {
-  context.goToTheBlogSection();                             <span class="hl-c">// Go to the blog section,</span>
-  context.youShouldSeeAListOfPosts();                       <span class="hl-c">// You should see a list of posts,</span>
-  context.theLastPostTitleShouldBeSThisPost(<span class="hl-s">&quot;Hello Blog&quot;</span>);  <span class="hl-c">// The last post title should be &quot;Hello Blog&quot;, this post</span>
-}</code></pre></div><div class="step-test"><h4>The test, for the client</h4><pre><code>test(<span class="hl-s">&quot;post&quot;</span>, () =&gt; {
-  context.goToTheBlogSection();                             <span class="hl-c">// Go to the blog section,</span>
-  context.youShouldSeeAListOfPosts();                       <span class="hl-c">// You should see a list of posts,</span>
-  context.theLastPostTitleShouldBeSThisPost(<span class="hl-s">&quot;Hello Blog&quot;</span>);  <span class="hl-c">// The last post title should be &quot;Hello Blog&quot;, this post</span>
-});</code></pre></div><div class="step-context"><h4>What is left to write, in Java</h4><pre><code><span class="hl-k">public</span> <span class="hl-k">void</span> goToTheBlogSection() {
-  <span class="hl-c">// to write</span>
-}
-
-<span class="hl-k">public</span> <span class="hl-k">void</span> youShouldSeeAListOfPosts() {
-  <span class="hl-c">// to write</span>
-}
-
-<span class="hl-k">public</span> <span class="hl-k">void</span> theLastPostTitleShouldBeSThisPost(String expected) {
-  <span class="hl-c">// to write</span>
-}</code></pre></div><div class="step-context"><h4>And in JavaScript</h4><pre><code>goToTheBlogSection() {
-  <span class="hl-c">// to write</span>
-}
-
-youShouldSeeAListOfPosts() {
-  <span class="hl-c">// to write</span>
-}
-
-theLastPostTitleShouldBeSThisPost(expected) {
-  <span class="hl-c">// to write</span>
-}</code></pre></div></div></div>
-<p>The test is the same for the server and for the client, one call a step, with the step's sentence beside it — so a line that fails says, in the student's own words, what did not happen. What is left to write are the methods at the bottom, and writing them is the work. The rest of that course is in <a href="/teaching/software-lab/">the post comes first</a>.</p>
-<h2 id="where-it-went">Where it went</h2>
-<p>The idea went through several versions in the course, and then out of it, as <a href="https://github.com/drpicox/gherkin-genie" target="_blank" rel="noopener noreferrer">Gherkin Genie</a>: the same reading of sentences, for Gherkin and for any test runner, with no regular expressions at all. A missing step is printed as the method to paste in, already named. Later it was adapted once more, for the tests of a product at work.</p>
-
-</main>
-<div class="screen" aria-live="polite"></div>
-<p class="ran end"><span class="ps1">~/craft/the-post-is-the-test $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
-<footer class="site-footer">
-  <span>&copy; 2026 David Rodenas</span>
-  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-</footer>
-</div>
-<section class="terminal">
-<div class="column">
-<form class="prompt"><span class="ps1">~/craft/the-post-is-the-test $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
-</div>
-</section>
-<script type="module" src="/assets/main-CEp47Waj.js"></script>
-<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body>
+<body><p>This page has moved to <a href="/craft/a-sentence-is-a-step/">/craft/a-sentence-is-a-step/</a>.</p></body>
 </html>
