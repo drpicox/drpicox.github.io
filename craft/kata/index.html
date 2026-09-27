@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The kata, one commit at a time — David Rodenas</title>
+<meta name="description" content="Robert C. Martin's Bowling Game Kata in the commits a student makes, each one run here as you reach it — the rhythm of test, code and clean, the step back to green before the design changes, and the one step I added.">
+<link rel="canonical" href="https://david-rodenas.com/craft/kata/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The kata, one commit at a time — David Rodenas">
+<meta property="og:description" content="Robert C. Martin's Bowling Game Kata in the commits a student makes, each one run here as you reach it — the rhythm of test, code and clean, the step back to green before the design changes, and the one step I added.">
+<meta property="og:url" content="https://david-rodenas.com/craft/kata/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-CzkPiPbr.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/craft/" aria-current="page">craft/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd craft/kata &amp;&amp; cat README.md</p>
+<h1 id="the-kata-one-commit-at-a-time">The kata,<br>one commit<br>at a time.</h1>
+<p>Robert C. Martin wrote the Bowling Game Kata to be repeated like a form, until its steps come without thinking. This is it in JavaScript, as I taught it, split into the commits a student makes: each one a single move — a test, the code it asks for, or a clean-up — and the bar says whether the tests passed. Every commit is run here, in the page, as you reach it: walk it with the arrows, or jump from the strip.</p>
+<div class="app" data-app="bowling-kata"><div class="kata"><ol class="kata-strip" aria-label="The commits of the kata, red or green"><li class="red test here" data-commit="0" title="commit 0 · test · Your test suite must contain at least one test." aria-current="step">0</li><li class="red test" data-commit="1" title="commit 1 · test · ReferenceError: Game is not defined">1</li><li class="green code" data-commit="2" title="commit 2 · code · All tests pass.">2</li><li class="red test" data-commit="3" title="commit 3 · test · TypeError: g.roll is not a function">3</li><li class="green code" data-commit="4" title="commit 4 · code · All tests pass.">4</li><li class="red test" data-commit="5" title="commit 5 · test · TypeError: g.score is not a function">5</li><li class="red code" data-commit="6" title="commit 6 · code · Expected: 0. Received: undefined.">6</li><li class="green code" data-commit="7" title="commit 7 · code · All tests pass.">7</li><li class="red test" data-commit="8" title="commit 8 · test · Expected: 20. Received: 0.">8</li><li class="green code" data-commit="9" title="commit 9 · code · All tests pass.">9</li><li class="green clean" data-commit="10" title="commit 10 · clean · All tests pass.">10</li><li class="green clean" data-commit="11" title="commit 11 · clean · All tests pass.">11</li><li class="green clean" data-commit="12" title="commit 12 · clean · All tests pass.">12</li><li class="green clean" data-commit="13" title="commit 13 · clean · All tests pass.">13</li><li class="green clean" data-commit="14" title="commit 14 · clean · All tests pass.">14</li><li class="green clean" data-commit="15" title="commit 15 · clean · All tests pass.">15</li><li class="green clean" data-commit="16" title="commit 16 · clean · All tests pass.">16</li><li class="red test" data-commit="17" title="commit 17 · test · Expected: 16. Received: 13.">17</li><li class="green test" data-commit="18" title="commit 18 · test · All tests pass.">18</li><li class="green clean" data-commit="19" title="commit 19 · clean · All tests pass.">19</li><li class="green clean" data-commit="20" title="commit 20 · clean · All tests pass.">20</li><li class="green clean" data-commit="21" title="commit 21 · clean · All tests pass.">21</li><li class="green clean" data-commit="22" title="commit 22 · clean · All tests pass.">22</li><li class="green clean" data-commit="23" title="commit 23 · clean · All tests pass.">23</li><li class="red test" data-commit="24" title="commit 24 · test · Expected: 16. Received: 13.">24</li><li class="green test" data-commit="25" title="commit 25 · test · All tests pass.">25</li><li class="green clean" data-commit="26" title="commit 26 · clean · All tests pass.">26</li><li class="red test" data-commit="27" title="commit 27 · test · Expected: 16. Received: 13.">27</li><li class="green code" data-commit="28" title="commit 28 · code · All tests pass.">28</li><li class="green clean" data-commit="29" title="commit 29 · clean · All tests pass.">29</li><li class="green clean" data-commit="30" title="commit 30 · clean · All tests pass.">30</li><li class="green clean" data-commit="31" title="commit 31 · clean · All tests pass.">31</li><li class="red test" data-commit="32" title="commit 32 · test · Expected: 24. Received: NaN.">32</li><li class="green code" data-commit="33" title="commit 33 · code · All tests pass.">33</li><li class="green clean" data-commit="34" title="commit 34 · clean · All tests pass.">34</li><li class="green clean" data-commit="35" title="commit 35 · clean · All tests pass.">35</li><li class="green clean" data-commit="36" title="commit 36 · clean · All tests pass.">36</li><li class="green clean" data-commit="37" title="commit 37 · clean · All tests pass.">37</li><li class="green clean" data-commit="38" title="commit 38 · clean · All tests pass.">38</li><li class="green test" data-commit="39" title="commit 39 · test · All tests pass.">39</li><li class="red test" data-commit="40" title="commit 40 · test · Expected: &quot;fail&quot;. Received: 300.">40</li><li class="green test" data-commit="41" title="commit 41 · test · All tests pass.">41</li></ol><p class="kata-legend"><span class="red">a test fails</span> <span class="green code">all pass</span> <span class="green clean">a clean step: all still pass</span></p><div class="kata-step"><p class="kata-move"><strong>commit 0</strong> · Test: write or change a test</p><p class="kata-bar red">Your test suite must contain at least one test.</p><div class="kata-files"><figure class="kata-file"><figcaption>bowling.spec.js</figcaption><p class="kata-empty">An empty file.</p></figure><figure class="kata-file"><figcaption>bowling.js</figcaption><p class="kata-empty">Not written yet.</p></figure></div><p class="kata-note">Create the BowlingGame project. Create a test file bowling.spec.js. Execute the test and verify that you get the following error.</p></div></div></div>
+<h2 id="what-to-watch">What to watch</h2>
+<p><strong>The rhythm.</strong> Red, then green, then as many clean steps as it takes, all of them green. The strip at the top is that rhythm, seen before a line of it is read.</p>
+<p><strong>Refactor only after it works.</strong> The duplication in the tests is marked at commit 8, and it waits: nothing is cleaned while a test fails. At 17 the spare test fails, and the design is wrong for it — the slide says so. So the next commit sets the test aside, and the design changes with every test passing. The test comes back, is set aside once more when the design is still wrong, and passes at 28.</p>
+<p><strong>Add new code before removing the old.</strong> Commit 10 creates a game for every test, and ignores it; only then do 11 and 12 take the old one out, one test at a time. Commits 19 to 23 do the same to the score itself: add a list of rolls beside the running total, write to both, read from the list, stop writing the total, delete it. After each step, the code works again. Elsewhere this shape is called a <a href="https://martinfowler.com/bliki/ParallelChange.html" target="_blank" rel="noopener noreferrer">parallel change</a>.</p>
+<p><strong>A test seen failing once.</strong> The perfect game passes the moment it is written. A test that has never failed has not yet shown it can: so at commit 40 it expects <code>&quot;fail&quot;</code>, to see it go red and show the 300 it really got, and at 41 it gets its 300 back. That step is the one I added; I wrote why in <a href="https://medium.com/p/6813582074f3" target="_blank" rel="noopener noreferrer">Don't Trust Tests</a>. Since then I do it with every test that passes without asking for any code.</p>
+<p>What else the kata taught me, I wrote down as I found it: its lessons on refactoring, <a href="https://medium.com/p/90b110a2ad17" target="_blank" rel="noopener noreferrer">part one</a> and <a href="https://medium.com/p/1d28b3a78b08" target="_blank" rel="noopener noreferrer">part two</a>, then <a href="https://medium.com/p/fc771d5e39e8" target="_blank" rel="noopener noreferrer">what to test</a> and <a href="https://medium.com/p/a37d8d11be9c" target="_blank" rel="noopener noreferrer">how to design</a>.</p>
+<h2 id="whose-it-is">Whose it is</h2>
+<p>The kata, its steps and the notes on its slides are Robert C. Martin's, from his slides of 2005. Mine are the JavaScript, the commits a student makes one by one, each labelled with its move, and the perfect game made to fail. The slides it follows are on <a href="/teaching/kata/">the kata's page</a>, with a version in Java.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/craft/kata $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/craft/kata $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-CEp47Waj.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-CSnDRjdS.css">
+<link rel="stylesheet" href="/assets/main-CzkPiPbr.css">
 </head>
 <body>
 <div class="container">
@@ -56,6 +56,8 @@
 <ul><li>The Kata analysis: it replicates the study of a developer of the problem.</li><li>TDD Overview: it explains what is TDD</li><li>The Kata</li></ul>
 <p>The last section is the exercise itself. Each slide is meaningful by itself and deserves a moment of attention. If you look carefully, some slides have a message on the top right in orange: «commit X.» It starts at zero and increments in one each time that appears. Some slides also have a green or a red bar; it represents the current state of tests. Red if tests are failing, green if tests pass after the current slide.</p>
 <p>The code is in a git repository. It starts in the «commit 0,» and it expects from you to replicate each slide in it. Be careful, and go slide by slide. Each time that you finish copying the changes of a slide verify two things: the commit number and the test bar status. If the test bar status matches the condition of your current tests, and there is a commit number, then commit the git repository with the commit number as a message. Once you have finished it, remember to push changes.</p>
+<p>Two messages on the JavaScript slides are printed wrong. When the fourth test fails, the runner says <code>Expected: 24. Received: NaN.</code>; and when the fifth is made to fail, <code>Expected: &quot;fail&quot;. Received: 300.</code></p>
+<p><a href="/craft/kata/">The kata, one commit at a time</a> follows the JavaScript slides: every commit run in the page, with what the runner really says.</p>
 
 </main>
 <div class="screen" aria-live="polite"></div>
@@ -70,7 +72,7 @@
 <form class="prompt"><span class="ps1">~/teaching/kata $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-T27Fs7kf.js"></script>
+<script type="module" src="/assets/main-CEp47Waj.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
