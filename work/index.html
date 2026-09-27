@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules into code — David Rodenas</title>
+<meta name="description" content="When a rule matters, I turn it into code instead of a guide, so it holds for a person and for an agent alike. What that looks like in industry — the mechanism, not the client.">
+<link rel="canonical" href="https://david-rodenas.com/work/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rules into code — David Rodenas">
+<meta property="og:description" content="When a rule matters, I turn it into code instead of a guide, so it holds for a person and for an agent alike. What that looks like in industry — the mechanism, not the client.">
+<meta property="og:url" content="https://david-rodenas.com/work/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-D_1Aa46w.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/work/" aria-current="page">work/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd work &amp;&amp; cat README.md</p>
+<h1 id="when-a-rule-matters-i-turn-it-into-code-instead-of-a-guide">When a rule matters,<br>I turn it into code<br>instead of a guide.</h1>
+<p>A guide can go unread. A type, a grammar, a test or an allowlist cannot be skipped. And because the check lives in the code, it does not matter who writes the change — a person or an AI agent: it holds for both.</p>
+<p>These pages are about the mechanism, not the client: no names of repositories, products, tickets or customers.</p>
+<ul><li><a href="/work/payment-masking/">A mask that cannot drift from its audit</a><br>Card data inside free text, and one pattern that both hides it and records it.</li><li><a href="/work/test-grammar/">A test suite is a language</a><br>A grammar for 3,813 step phrases, and a ratchet so test debt can only go down.</li><li><a href="/work/reliable-agent/">An agent reliable by construction</a><br>Tool calls checked against the program's own types, and evaluations no model can make flaky.</li></ul>
+<h2 id="changes-without-surprises">Changes without surprises</h2>
+<p>A plugin platform that several teams build on: 22 npm packages, 396 releases and 32 breaking changes in nine years, none of them by surprise. A change ships in two steps — deprecated with a warning, removed after a dated window. How much the old way is still used says which team to help first. And an allowlist keeps the code that exists working with the old API, while new code can only use the new one.</p>
+<h2 id="measured-before-touched">Measured before touched</h2>
+<ul><li>A flight-search screen that froze for more than a minute: the cause was in another team's code, and it was fixed there.</li><li>A CI test job from about eighteen minutes to about four, argued with a year of data.</li><li>A tenfold slowdown of the tests after a design-system migration, isolated with a control experiment.</li><li><a href="/open-source/angularjs/">Two performance changes in the AngularJS compiler</a>, still in its last release.</li><li><a href="/research/one-lock-at-a-time/">A database engine's buffer pool without locks</a>, on a research branch.</li></ul>
+<h2 id="and-this-site">And this site</h2>
+<p>It follows the same rule: its architecture is a set of tests, and <a href="/projects/architecture/">its source is drawn commit by commit</a>. What I teach is on <a href="/teaching/">teaching</a>; what I think about it, every Saturday, on <a href="/essays/">essays</a>.</p>
+<p class="ran"><span class="ps1">~/work $</span> ls</p>
+<ul class="listing"><li><a class="entry" href="/work/payment-masking/"><code>payment-masking/</code><span class="title">A mask that cannot drift from its audit</span><span class="summary">Payment cards inside free-text terminal commands, a log that must never show them and an audit that must record them — and one pattern that does both, so the two cannot drift apart.</span></a></li><li><a class="entry" href="/work/test-grammar/"><code>test-grammar/</code><span class="title">A test suite is a language</span><span class="summary">Thousands of plain-sentence test steps, each inventing its own way to say an old thing — treated as a problem of language design, with a grammar, a cost model and a ratchet so the debt can only go down.</span></a></li><li><a class="entry" href="/work/reliable-agent/"><code>reliable-agent/</code><span class="title">An agent reliable by construction</span><span class="summary">An AI assistant in a low-code product, made reliable the way programs are — tool calls checked against the program's own types, evaluations that no model can make flaky, and the cost counted to the microdollar.</span></a></li></ul>
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/work $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/work $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-H7Xo4Rnk.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
