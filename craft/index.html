@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-coGdQQ5B.css">
+<link rel="stylesheet" href="/assets/main-Cgq0UFdu.css">
 </head>
 <body>
 <div class="container">
@@ -46,52 +46,67 @@
 <p><strong>Small, safe steps, always.</strong> Not only when testing: it is how I make any change, in steps small enough to check one by one, so that the code is never more than a step away from working: a test that fails is put right before the next step is taken. [<a href="https://medium.com/p/1d28b3a78b08" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/8582157a2953" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/264b61d489f8" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
 <div class="app" data-app="small-steps"><ol class="small-steps" role="img" aria-label="Small steps: a test fails and is put right at once; clean steps between; again and again"><li class="green"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="green"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="green"></li><li class="green"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="green"></li><li class="green"></li><li class="green"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="green"></li><li class="clean"></li><li class="clean"></li><li class="clean"></li><li class="green"></li><li class="clean"></li></ol></div>
 <p><strong>A test first, and seen failing.</strong> A test that has never failed has not yet shown that it can. At the end of the kata the perfect game passes the moment it is written, so it is made to fail once, and only then gets its 300 back. [<a href="https://medium.com/p/6813582074f3" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/dfaf65024d9" target="_blank" rel="noopener noreferrer" class="ref">2</a>]</p>
-<pre><code>test(<span class="hl-s">&quot;perfect game&quot;</span>, () =&gt; {
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide"><pre><code>test(<span class="hl-s">&quot;perfect game&quot;</span>, () =&gt; {
+  rollMany(<span class="hl-n">12</span>, <span class="hl-n">10</span>);
+  expect(g.score()).toBe(<span class="hl-n">300</span>);
+});</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide"><pre><code>test(<span class="hl-s">&quot;perfect game&quot;</span>, () =&gt; {
   rollMany(<span class="hl-n">12</span>, <span class="hl-n">10</span>);
   expect(g.score()).toBe(<span class="hl-s">&quot;fail&quot;</span>);
-});
-<span class="hl-c">// Expected: &quot;fail&quot;. Received: 300.</span></code></pre>
+});</code></pre><p class="slide-status red">Expected: &quot;fail&quot;. Received: 300.</p></div><div class="slide current"><pre><code>test(<span class="hl-s">&quot;perfect game&quot;</span>, () =&gt; {
+  rollMany(<span class="hl-n">12</span>, <span class="hl-n">10</span>);
+  expect(g.score()).toBe(<span class="hl-n">300</span>);
+});</code></pre><p class="slide-status green">All tests pass.</p></div></div></figure>
 <p><strong>A test is an example of use.</strong> I write it the way I would explain the code to someone about to use it. Then it survives a refactor, and it catches the bug that the tests looking inside sleep through: <a href="/craft/a-test-is-an-example/">an example</a> shows it. [<a href="https://medium.com/p/73a356df3523" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/54c509852ab8" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/4a83e4012b17" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code>it(<span class="hl-s">&quot;delivers messages to listeners&quot;</span>, () =&gt; {
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide current"><pre><code>it(<span class="hl-s">&quot;delivers messages to listeners&quot;</span>, () =&gt; {
   dispatcher.addListener(cb);
   dispatcher.deliver(<span class="hl-s">&quot;message&quot;</span>);
   expect(cb).toHaveBeenCalledWith(<span class="hl-s">&quot;message&quot;</span>);
-});</code></pre>
+});</code></pre><p class="slide-status green">All tests pass.</p></div></div></figure>
 <p><strong>The need comes first, in its own words.</strong> A feature starts as the words of whoever needs it — in my course, <a href="/teaching/software-lab/">the post came first</a> — and <a href="/craft/a-sentence-is-a-step/">each sentence becomes a step</a> of its test. [<a href="https://medium.com/p/788421126b13" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/301eddc7e566" target="_blank" rel="noopener noreferrer" class="ref">2</a>]</p>
-<pre><code>* The last post title should be &quot;Hello Blog&quot;, this post
-context.theLastPostTitleShouldBeSThisPost(&quot;Hello Blog&quot;);</code></pre>
+<figure class="slides" data-language=""><div class="slides-screen"><div class="slide"><pre><code>* The last post title should be &quot;Hello Blog&quot;, this post</code></pre></div><div class="slide current"><pre><code>* The last post title should be &quot;Hello Blog&quot;, this post
+context.theLastPostTitleShouldBeSThisPost(&quot;Hello Blog&quot;);</code></pre></div></div></figure>
 <p><strong>Clean as I go.</strong> Before a change, where it will land; while I make it; and once more when it is done, for whoever reads it next. Not as a phase saved for the end, and never by starting again: when the design is wrong, I move the code towards the right one a little with every change. Kent Beck put the first part in one line: <a href="https://x.com/KentBeck/status/250733358307500032" target="_blank" rel="noopener noreferrer">make the change easy (warning: this may be hard), then make the easy change</a>. <a href="/book/">The book</a> is the rest, whole. [<a href="https://medium.com/p/f678a10ac1fa" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/24e3408767dc" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/a37d8d11be9c" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code>- score += rolls[frameIndex]+rolls[frameIndex + 1];
-+ score += sumOfBallsInFrame(rolls, frameIndex);</code></pre>
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide"><pre><code>score += rolls[frameIndex]+rolls[frameIndex + <span class="hl-n">1</span>];</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide current"><pre><code>score += sumOfBallsInFrame(rolls, frameIndex);</code></pre><p class="slide-status green">All tests pass.</p></div></div></figure>
 <p><strong>I build the tools.</strong> When a part of the work can be done by a program, I write the program, so that nothing starts from scratch: <a href="/teaching/software-lab/">a compiler from posts to tests</a>, <a href="/craft/a-sentence-is-a-step/">a reader of Gherkin that names its own steps</a>, graders that read a repository's history, <a href="https://github.com/drpicox/learn-javascript-bytesting-jest" target="_blank" rel="noopener noreferrer">koans</a>, and <a href="https://david-rodenas.com/test-putter/" target="_blank" rel="noopener noreferrer">a game of passing a test in the fewest keystrokes</a>. [<a href="https://medium.com/p/d4e6be5e7ef1" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/c7b59f00eefe" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/a824a05b7273" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code>Given I have 12 cucumbers
-givenIHaveNCucumbers(number1)</code></pre>
+<figure class="slides" data-language=""><div class="slides-screen"><div class="slide"><pre><code>Given I have 12 cucumbers</code></pre></div><div class="slide current"><pre><code>Given I have 12 cucumbers
+givenIHaveNCucumbers(number1)</code></pre></div></div></figure>
 <h2 id="with-others">With others</h2>
 <p><strong>Pairing is the better code review.</strong> It never stops, I often use it to bring beginners up to speed, and it leaves nobody indispensable — and nobody should be, not even an AI. On the critical parts that all of us will work on later, I would rather we mob, test first. [<a href="https://medium.com/p/eddf750ba19b" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/f6e1fa82ee1" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/b3f6fcbc3b95" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
 <blockquote>If they find any problem, it’s been written for only a few seconds; therefore, it can be changed instantly.</blockquote>
 <p><strong>Help is a smaller step, not the answer.</strong> When someone asks me for help, I often keep the solution to myself and propose trying again in steps so small that the way becomes plain. It looks simple, and it takes practice; that is what <a href="/craft/kata/">katas</a> are for. [<a href="https://medium.com/p/264b61d489f8" target="_blank" rel="noopener noreferrer" class="ref">1</a>]</p>
-<pre><code><span class="hl-k">return</span> <span class="hl-n">7</span>+<span class="hl-n">4</span>;
-<span class="hl-k">return</span> a + <span class="hl-n">4</span>;
-<span class="hl-k">return</span> a + b;</code></pre>
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide"><pre><code><span class="hl-k">function</span> add(a, b) {
+  <span class="hl-k">return</span> <span class="hl-n">11</span>;
+}</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">function</span> add(a, b) {
+  <span class="hl-k">return</span> <span class="hl-n">0</span>+<span class="hl-n">11</span>;
+}</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">function</span> add(a, b) {
+  <span class="hl-k">return</span> <span class="hl-n">7</span>+<span class="hl-n">4</span>;
+}</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">function</span> add(a, b) {
+  <span class="hl-k">return</span> a + <span class="hl-n">4</span>;
+}</code></pre><p class="slide-status green">All tests pass.</p></div><div class="slide current"><pre><code><span class="hl-k">function</span> add(a, b) {
+  <span class="hl-k">return</span> a + b;
+}</code></pre><p class="slide-status green">All tests pass.</p></div></div></figure>
 <p><strong>Curious before right.</strong> In a review I try to understand why the author did it, and ask with genuine curiosity. A comment should block a merge only when the product is at risk; the rest can wait for a later change, or for the whole team, on a Friday. [<a href="https://medium.com/p/206be5c44a92" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/f6e1fa82ee1" target="_blank" rel="noopener noreferrer" class="ref">2</a>]</p>
 <blockquote>“Why did you put this variable here?” — or — “I have seen this variable here, I tried to understand how is it here, but I failed, what I am missing?”</blockquote>
 <p><strong>Change the environment, not the people.</strong> The environment changes us, so a rule that matters goes into the code, where it holds for a person and for an agent alike, rather than into a guide: <a href="/projects/architecture/">this site</a> is built that way. And a change to how we work is an experiment, with a date to look back at it together. [<a href="https://medium.com/p/834692848569" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/70a3c6cb4e45" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/9e94fba6beb3" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code>it(<span class="hl-s">&quot;has no boxes that need each other round in a circle&quot;</span>, () =&gt; {
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide current"><pre><code>it(<span class="hl-s">&quot;has no boxes that need each other round in a circle&quot;</span>, () =&gt; {
   expect(boxCycles(shipped)).toEqual([]);
-});</code></pre>
+});</code></pre><p class="slide-status green">All tests pass.</p></div></div></figure>
 <p><strong>The credit is the team's.</strong> When a system where every new feature brought new bugs turned around without stopping delivery, it was not me who fixed it: it was my team, working a new way. [<a href="https://medium.com/p/9467d18a788b" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/b3f6fcbc3b95" target="_blank" rel="noopener noreferrer" class="ref">2</a>]</p>
 <blockquote>The programmer had to separate his ego from the code itself: egoless programming.</blockquote>
 <h2 id="behind-it">Behind it</h2>
 <p><strong>I started against it.</strong> I was a detractor of testing: at meetups everyone showed how, and no one showed why. That began to change when I contributed to <a href="/open-source/angularjs/">AngularJS</a>. So I teach it starting from why — at the Legacy Code Rocks meetup, the talk was <a href="/talks/"><em>Testing: what, how, why?</em></a> — because it is counterintuitive. In 2017 I told a room of students that doctors have the Hippocratic oath, and we have testing. [<a href="https://medium.com/p/96c7a7dfff1e" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/9a3911bfd7e0" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/6518d83c833a" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
 <blockquote>Why test code that I know works?</blockquote>
 <p><strong>Assume I got it wrong.</strong> That, for me, is the essence of agile: leave room to find the mistake and fix it, in the design and in the requirement alike. [<a href="https://medium.com/p/aa012cd24186" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/9e94fba6beb3" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/b5d0b6faca9e" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code>  1,  2,  3  ✅ # ascending order!
+<figure class="slides" data-language=""><div class="slides-screen"><div class="slide"><pre><code>  1,  2,  3  ✅ # ascending order!</code></pre></div><div class="slide"><pre><code>  1,  2,  3  ✅ # ascending order!
+  1,  1,  1  ❌ # but it might be a &lt;= b &lt; c</code></pre></div><div class="slide current"><pre><code>  1,  2,  3  ✅ # ascending order!
   1,  1,  1  ❌ # but it might be a &lt;= b &lt; c
-  1,  2,  2  ❌ # or it might be a &lt; b &lt;= c</code></pre>
+  1,  2,  2  ❌ # or it might be a &lt; b &lt;= c</code></pre></div></div></figure>
 <p><strong>The responsibility stays mine.</strong> With an AI, on code I mean to keep, the rhythm is the same: I direct it one step at a time and commit between steps. I ask for the clean step on every cycle, because left alone it forgets the refactor; and I tell it that finding nothing to clean is a correct answer, because pushed, it invents something. When I caught myself letting my assistant do the designing, I switched it off until the design was mine again. [<a href="https://medium.com/p/dfaf65024d9" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/0b5058e302bf" target="_blank" rel="noopener noreferrer" class="ref">2</a>, <a href="https://medium.com/p/37023881ba0a" target="_blank" rel="noopener noreferrer" class="ref">3</a>]</p>
-<pre><code><span class="hl-k">function</span> Greeting({ name }) {
+<figure class="slides" data-language="js"><div class="slides-screen"><div class="slide"><pre><code><span class="hl-k">function</span> Greeting({ name }) {
   <span class="hl-k">return</span> &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
-}</code></pre>
+}</code></pre></div><div class="slide current"><pre><code><span class="hl-k">function</span> Greeting({ name = <span class="hl-s">'John'</span> }) {
+  <span class="hl-k">return</span> &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}</code></pre></div></div></figure>
 <blockquote>What did the AI do? Add a name = ‘John’ just in case it was empty.</blockquote>
 <p><strong>Share what worked.</strong> Whoever has something worth sharing should share it: it is what took me to meetups, and what keeps me publishing every Saturday — <a href="/essays/">the essays</a> are gathered by subject. I teach it as well — <a href="/teaching/raft/">a recipe for concurrency</a>, <a href="/teaching/software-lab/">a course built on posts that are tests</a> — and say it out loud in <a href="/talks/">talks</a>. [<a href="https://medium.com/p/82d0f511023e" target="_blank" rel="noopener noreferrer" class="ref">1</a>, <a href="https://medium.com/p/e265a5f3048f" target="_blank" rel="noopener noreferrer" class="ref">2</a>]</p>
 <blockquote>Whoever came to present was presenting something that had actually worked for them.</blockquote>
@@ -110,7 +125,7 @@ givenIHaveNCucumbers(number1)</code></pre>
 <form class="prompt"><span class="ps1">~/craft $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-B4cmXnns.js"></script>
+<script type="module" src="/assets/main-BSIQWuE-.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
