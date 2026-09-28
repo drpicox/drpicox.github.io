@@ -824,7 +824,7 @@ tried — finding another that suits better, with every case still passing, is
 what a refactor is.
 `},{file:"craft/index.md",markdown:`---
 title: The craft
-summary: How I work, and how I think about it — in the code, with others, and behind it all. Each line runs here, or has the essays where I argued it.
+summary: What I hold to, whoever writes the code — in the code, with others, and behind it all. Each line runs here, or has the essays where I argued it.
 order: 35
 was: /craft/writing/
 ---
@@ -833,8 +833,8 @@ was: /craft/writing/
 and the code  
 works again.
 
-That is the mantra I try to keep with every change, and the rest of how I
-work grows from it. The links go to where each line runs, here; the numbers,
+That is the mantra I try to keep with every change, and the rest of what I
+hold to grows from it. The links go to where each line runs, here; the numbers,
 to the essays where I argued it.
 
 ## In the code
@@ -1345,8 +1345,8 @@ one of them saves time on each and pays interest on it after.
 ## The craft
 
 Small, safe steps, always: a test that fails is put right before the next step
-is taken, and the code is never more than a step away from working. [How I
-work, and why.](/craft/)
+is taken, and the code is never more than a step away from working. [What I
+hold to, whoever writes the code.](/craft/)
 
 ::small-steps
 
