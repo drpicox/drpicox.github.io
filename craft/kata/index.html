@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-Ce1nP_ta.css">
+<link rel="stylesheet" href="/assets/main-DKAgv_NW.css">
 </head>
 <body>
 <div class="container">
@@ -52,75 +52,75 @@
 <h2 id="five-steps-and-the-code-works-after-each-one">Five steps, and the code works after each one</h2>
 <p>Probably the best thing the kata teaches, and it works on code of any size: how to change the way something is kept without ever breaking it. First name the parts — what keeps the data, what writes it, what reads it. Then add the new beside the old, write to both, read from the new, stop writing the old, and remove it:</p>
 <div class="app" data-app="kata-five-steps"><figure class="slides" data-language="js"><div class="slides-screen"><div class="slide"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _score = <span class="hl-n">0</span>;
+  #score = <span class="hl-n">0</span>;
   roll(pins) {
-    <span class="hl-k">this</span>._score += pins;
+    <span class="hl-k">this</span>.#score += pins;
   }
   score() {
-    <span class="hl-k">return</span> <span class="hl-k">this</span>._score;
+    <span class="hl-k">return</span> <span class="hl-k">this</span>.#score;
   }
 }</code></pre><p class="slide-status green">commit 18 · Step 0 · Name the parts — all tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _score = <span class="hl-n">0</span>;
-  _rolls = [];
+  #score = <span class="hl-n">0</span>;
+  #rolls = [];
   roll(pins) {
-    <span class="hl-k">this</span>._score += pins;
+    <span class="hl-k">this</span>.#score += pins;
   }
   score() {
-    <span class="hl-k">return</span> <span class="hl-k">this</span>._score;
+    <span class="hl-k">return</span> <span class="hl-k">this</span>.#score;
   }
 }</code></pre><p class="slide-status green">commit 19 · Step 1 · Add the new beside the old — all tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _score = <span class="hl-n">0</span>;
-  _rolls = [];
+  #score = <span class="hl-n">0</span>;
+  #rolls = [];
   roll(pins) {
-    <span class="hl-k">this</span>._score += pins;
-    <span class="hl-k">this</span>._rolls.push(pins);
+    <span class="hl-k">this</span>.#score += pins;
+    <span class="hl-k">this</span>.#rolls.push(pins);
   }
   score() {
-    <span class="hl-k">return</span> <span class="hl-k">this</span>._score;
+    <span class="hl-k">return</span> <span class="hl-k">this</span>.#score;
   }
 }</code></pre><p class="slide-status green">commit 20 · Step 2 · Write to both — all tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _score = <span class="hl-n">0</span>;
-  _rolls = [];
+  #score = <span class="hl-n">0</span>;
+  #rolls = [];
   roll(pins) {
-    <span class="hl-k">this</span>._score += pins;
-    <span class="hl-k">this</span>._rolls.push(pins);
+    <span class="hl-k">this</span>.#score += pins;
+    <span class="hl-k">this</span>.#rolls.push(pins);
   }
   score() {
     <span class="hl-k">let</span> score = <span class="hl-n">0</span>;
-    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>._rolls.length; i++) {
-      score += <span class="hl-k">this</span>._rolls[i];
+    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>.#rolls.length; i++) {
+      score += <span class="hl-k">this</span>.#rolls[i];
     }
     <span class="hl-k">return</span> score;
   }
 }</code></pre><p class="slide-status green">commit 21 · Step 3 · Read from the new — all tests pass.</p></div><div class="slide"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _score = <span class="hl-n">0</span>;
-  _rolls = [];
+  #score = <span class="hl-n">0</span>;
+  #rolls = [];
   roll(pins) {
-    <span class="hl-k">this</span>._rolls.push(pins);
+    <span class="hl-k">this</span>.#rolls.push(pins);
   }
   score() {
     <span class="hl-k">let</span> score = <span class="hl-n">0</span>;
-    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>._rolls.length; i++) {
-      score += <span class="hl-k">this</span>._rolls[i];
+    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>.#rolls.length; i++) {
+      score += <span class="hl-k">this</span>.#rolls[i];
     }
     <span class="hl-k">return</span> score;
   }
 }</code></pre><p class="slide-status green">commit 22 · Step 4 · Stop writing the old — all tests pass.</p></div><div class="slide current"><pre><code><span class="hl-k">export</span> <span class="hl-k">default</span> <span class="hl-k">class</span> Game {
-  _rolls = [];
+  #rolls = [];
   roll(pins) {
-    <span class="hl-k">this</span>._rolls.push(pins);
+    <span class="hl-k">this</span>.#rolls.push(pins);
   }
   score() {
     <span class="hl-k">let</span> score = <span class="hl-n">0</span>;
-    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>._rolls.length; i++) {
-      score += <span class="hl-k">this</span>._rolls[i];
+    <span class="hl-k">for</span> (<span class="hl-k">let</span> i = <span class="hl-n">0</span>; i &lt; <span class="hl-k">this</span>.#rolls.length; i++) {
+      score += <span class="hl-k">this</span>.#rolls[i];
     }
     <span class="hl-k">return</span> score;
   }
 }</code></pre><p class="slide-status green">commit 23 · Step 5 · Remove the old — all tests pass.</p></div></div></figure></div>
 <p>After each step the code works again, so each one could be committed and merged: a large change becomes many small ones, without stopping delivery. Elsewhere this shape is called a <a href="https://martinfowler.com/bliki/ParallelChange.html" target="_blank" rel="noopener noreferrer">parallel change</a>. I wrote the technique down in <a href="https://medium.com/p/1d28b3a78b08" target="_blank" rel="noopener noreferrer">Refactor Lessons Learned From The Bowling Game Kata (2/2)</a>.</p>
 <h2 id="whose-it-is">Whose it is</h2>
-<p>The kata, its steps and the notes on its slides are Robert C. Martin's, from his slides of 2005. Mine are the JavaScript, the commits a student makes one by one, each labelled with its move, and the perfect game made to fail. The slides it follows are on <a href="/teaching/kata/">the kata's page</a>, with a version in Java.</p>
+<p>The kata, its steps and the notes on its slides are Robert C. Martin's, from his slides of 2005. Mine are the JavaScript, the commits a student makes one by one, each labelled with its move, and the perfect game made to fail. The slides it follows are on <a href="/teaching/kata/">the kata's page</a>, with a version in Java; here the game keeps its state in private fields, <code>#score</code>, where the slides still write <code>_score</code>.</p>
 
 </main>
 <div class="screen" aria-live="polite"></div>
@@ -135,7 +135,7 @@
 <form class="prompt"><span class="ps1">~/craft/kata $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-Dn6sRFzy.js"></script>
+<script type="module" src="/assets/main-D_m5KYMZ.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
