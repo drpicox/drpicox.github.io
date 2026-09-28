@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
 (function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
 
-<link rel="stylesheet" href="/assets/main-DKAgv_NW.css">
+<link rel="stylesheet" href="/assets/main-emmuEC0R.css">
 </head>
 <body>
 <div class="container">
@@ -79,26 +79,26 @@ theLastPostTitleShouldBeSThisPost(expected) {
 <h2 id="where-it-went">Where it went</h2>
 <p>The idea went through several versions in the course, and then out of it, as <a href="https://github.com/drpicox/gherkin-genie" target="_blank" rel="noopener noreferrer">Gherkin Genie</a>: the same reading of sentences, for Gherkin and for any test runner, with no regular expressions at all. A missing step is printed as the method to paste in, already named. Later it was adapted once more, for the tests of a product at work.</p>
 <p>Here it is with the example of its own README: a feature about cucumbers, and the steps with one method written. Genie prints the two still missing; paste them into the steps, fill them in, and the scenario runs.</p>
-<div class="app" data-app="gherkin-genie"><div class="genie"><div class="genie-in"><figure class="kata-file"><figcaption>cucumbers.feature</figcaption><pre class="genie-source">Feature: Magic of Disappearing Cucumbers
+<div class="app" data-app="gherkin-genie"><div class="genie"><div class="genie-in"><figure class="kata-file"><figcaption>cucumbers.feature</figcaption><pre class="genie-source"><code><span class="hl-k">Feature:</span> Magic of Disappearing Cucumbers
 
-  Scenario: Eating 5 out of 12 cucumbers
-    Given I have 12 cucumbers
-    When I eat 5 cucumbers
-    Then I should have 7 cucumbers remaining</pre></figure><figure class="kata-file"><figcaption>steps.js</figcaption><pre class="genie-source">class CucumberSteps {
-  #count = 0;
+  <span class="hl-k">Scenario:</span> Eating <span class="hl-n">5</span> out of <span class="hl-n">12</span> cucumbers
+    <span class="hl-k">Given</span> I have <span class="hl-n">12</span> cucumbers
+    <span class="hl-k">When</span> I eat <span class="hl-n">5</span> cucumbers
+    <span class="hl-k">Then</span> I should have <span class="hl-n">7</span> cucumbers remaining</code></pre></figure><figure class="kata-file"><figcaption>steps.js</figcaption><pre class="genie-source"><code><span class="hl-k">class</span> CucumberSteps {
+  #count = <span class="hl-n">0</span>;
 
   givenIHaveNCucumbers(count) {
-    this.#count = count;
+    <span class="hl-k">this</span>.#count = count;
   }
-}</pre></figure></div><figure class="kata-file genie-out"><figcaption>npm test</figcaption><div class="genie-output"><pre class="genie-wished">There are missing steps. Please implement them:
+}</code></pre></figure></div><figure class="kata-file genie-out"><figcaption>npm test</figcaption><div class="genie-output"><pre class="genie-wished">There are missing steps. Please implement them:
 
-class WishedSteps {
+<span class="hl-k">class</span> WishedSteps {
   whenIEatNCucumbers(number1) {
-    throw new Error(&quot;Unimplemented&quot;);
+    <span class="hl-k">throw</span> <span class="hl-k">new</span> Error(<span class="hl-s">&quot;Unimplemented&quot;</span>);
   }
 
   thenIShouldHaveNCucumbersRemaining(number1) {
-    throw new Error(&quot;Unimplemented&quot;);
+    <span class="hl-k">throw</span> <span class="hl-k">new</span> Error(<span class="hl-s">&quot;Unimplemented&quot;</span>);
   }
 }</pre></div></figure></div></div>
 <p>Genie reads a feature with Cucumber's own parser; the page reads a part of Gherkin — scenarios, a background, steps, tables and doc strings — with a few lines of its own, and names each step by Genie's own rules.</p>
@@ -116,7 +116,7 @@ class WishedSteps {
 <form class="prompt"><span class="ps1">~/craft/a-sentence-is-a-step $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
 </div>
 </section>
-<script type="module" src="/assets/main-BtkuqeTo.js"></script>
+<script type="module" src="/assets/main-DeRVZfyg.js"></script>
 <script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
