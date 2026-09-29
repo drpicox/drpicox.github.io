@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage, generated — David Rodenas</title>
+<meta name="description" content="2023. A program that knows nothing of what the code is for wrote the tests, and reached 85% code coverage, more than most companies ask for. Why coverage helps the programmer, and says nothing to a manager.">
+<link rel="canonical" href="https://david-rodenas.com/research/coverage-generated/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coverage, generated — David Rodenas">
+<meta property="og:description" content="2023. A program that knows nothing of what the code is for wrote the tests, and reached 85% code coverage, more than most companies ask for. Why coverage helps the programmer, and says nothing to a manager.">
+<meta property="og:url" content="https://david-rodenas.com/research/coverage-generated/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<script>document.documentElement.classList.add("js");try{var h=document.documentElement,t=localStorage.getItem("theme");if(!h.dataset.pageTheme&&(t==="light"||t==="dark"||t==="pink"))h.dataset.theme=t;var f=localStorage.getItem("flags");if(f)h.dataset.flags=f}catch(e){}
+(function(){var k=[];window.__typed=k;function h(e){var f=e.target&&e.target.matches&&e.target.matches("input,textarea,select,[contenteditable]");if(f||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key.length===1||e.key==="Enter"||e.key==="Backspace"){k.push(e.key);e.preventDefault()}}window.addEventListener("keydown",h);window.__stopTyped=function(){window.removeEventListener("keydown",h)}})()</script>
+
+<link rel="stylesheet" href="/assets/main-DvPRxVvs.css">
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+  <a class="mark" href="/" aria-label="Home"><pre class="planet" aria-hidden="true">      ░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░
+ ░░░░░░░░░░░░░░░░░░░░░░
+  ░░░░░░░░░░░░░░░░░░░░
+    ░░░░░░░░░░░░░░░░
+      ░░░░░░░░░░░░</pre></a>
+  <div class="session">
+    <p class="ran"><a class="brand" href="/">@drpicox</a> <span class="ps1">~ $</span> ls</p>
+    <nav><a class="navlink" href="/">README.md</a><a class="navlink" href="/book/">book/</a><a class="navlink" href="/essays/">essays/</a><a class="navlink" href="/projects/">projects/</a><a class="navlink" href="/craft/">craft/</a><a class="navlink" href="/open-source/">open-source/</a><a class="navlink" href="/research/" aria-current="page">research/</a><a class="navlink" href="/teaching/">teaching/</a><a class="navlink" href="/talks/">talks/</a></nav>
+  </div>
+  <button class="theme-toggle" type="button" aria-hidden="true" tabindex="-1" aria-label="Switch theme" title="theme">&#9680;</button>
+</header>
+<main>
+<p class="ran"><span class="ps1">~ $</span> cd research/coverage-generated &amp;&amp; cat README.md</p>
+<h1 id="coverage-generated">Coverage, generated</h1>
+<p>Code coverage counts the lines the tests run. For a programmer it is a good question to ask: a line no test runs is a line no test checks, and a change there breaks something nobody sees. It also became a target. Many companies ask for 80% before code can ship, and that second use is the one this experiment was about.</p>
+<p>A test can run a line without checking it. <code>addition(3, 4)</code> covers all of <code>return a + b</code>, and passes just as well once it has become <code>a - b</code>. In a small program that shows; in a large one, nobody finds the test that asserts nothing. And covering code takes two rules only: run every method, and run every branch. Neither needs to know what the code is for. Allen Holub had put it that way: tests that call every method with random arguments would reach the 80% so many companies ask for.</p>
+<p>So I wrote them. The first version, in Java, made an instance of every class with a public constructor that took no arguments, and called every method that took none: 11%. It became a final-degree project, which Gerard Torrent took on: instead of one test that walks through everything, a generator that writes a test for every method and its arguments, and builds whatever objects those need. Step by step, coverage went:</p>
+<figure class="bars"><table style="--rule:0.941" class="ruled"><tbody><tr><th scope="row">my first version</th><td><span class="bar" style="--p:0.129"></span><span class="value">11%</span></td></tr><tr><th scope="row">every constructor called, with nulls</th><td><span class="bar" style="--p:0.235"></span><span class="value">20%</span></td></tr><tr><th scope="row">the public methods that return nothing</th><td><span class="bar" style="--p:0.271"></span><span class="value">23%</span></td></tr><tr><th scope="row">every public method</th><td><span class="bar" style="--p:0.588"></span><span class="value">50%</span></td></tr><tr><th scope="row">every method, the private ones too</th><td><span class="bar" style="--p:0.588"></span><span class="value">50%</span></td></tr><tr><th scope="row">the arguments built, not null</th><td><span class="bar" style="--p:0.765"></span><span class="value">65%</span></td></tr><tr><th scope="row">what those arguments need, built too</th><td><span class="bar" style="--p:0.812"></span><span class="value">69%</span></td></tr><tr><th scope="row">three values for every argument</th><td><span class="bar" style="--p:0.812"></span><span class="value">69%</span></td></tr><tr class="marked"><th scope="row">Spring building whatever it can</th><td><span class="bar" style="--p:1.000"></span><span class="value">85%</span></td></tr></tbody></table><figcaption>code coverage, by tests that know nothing of the business. The line is what many companies ask for, at 80.</figcaption></figure>
+<p>Calling private methods from a test is a bad habit; it was tried only to see what it would add, and it added nothing.</p>
+<p>Eighty-five per cent, without a line that knows what the program is for, and without any AI. People under a deadline meet a coverage target the same way. A developer I met at a meetup told me how his team, which had no tests, had to reach the 60% the FDA required: they started with tests worth having, and ended writing whatever raised the number, for three months. And I once opened a team's tests, written to meet their company's 80%, broke the code on purpose, and watched them pass.</p>
+<p>So coverage is for the programmer: where it is low, there is code no test runs, and that is worth a look, as <a href="https://www.martinfowler.com/bliki/TestCoverage.html" target="_blank" rel="noopener noreferrer">Martin Fowler has long said</a>. As a number for a manager to ask for, it measures only that the code was run. What says a test is worth something is seeing it fail first, which writing it first gives, and checking something the business needs.</p>
+<p>The whole story is on Medium: <a href="https://medium.com/@drpicox/confirmed-code-coverage-is-a-useless-management-metric-35afa05e8549" target="_blank" rel="noopener noreferrer"><em>Confirmed: Code Coverage Is a Useless Management Metric</em></a>, 8 July 2023.</p>
+
+</main>
+<div class="screen" aria-live="polite"></div>
+<p class="ran end"><span class="ps1">~/research/coverage-generated $</span> <span class="line"><span class="typed"></span><span class="ghost" aria-hidden="true"></span></span></p>
+<footer class="site-footer">
+  <span>&copy; 2026 David Rodenas</span>
+  <span class="social"><a href="https://github.com/drpicox" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://drpicox.medium.com" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://www.linkedin.com/in/davidrodenas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</footer>
+</div>
+<section class="terminal">
+<div class="column">
+<form class="prompt"><span class="ps1">~/research/coverage-generated $</span><span class="line"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command"><span class="cursor" aria-hidden="true"></span><span class="suggest" aria-hidden="true">help</span></span></form>
+</div>
+</section>
+<script type="module" src="/assets/main-CZVfWaSE.js"></script>
+<script data-goatcounter="https://drpicox.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
