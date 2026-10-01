@@ -1,0 +1,80 @@
+# David Rodenas
+
+> PhD. I lay the foundations other engineers build on.
+
+Every page is plain HTML at its address, its words in the page and not drawn by a script. In a browser with WebMCP, the site offers the tools at the end to the agent in it.
+
+## The Emotional and Technical Guide to Rescue Stalled Software
+
+- [The Emotional and Technical Guide to Rescue Stalled Software](https://david-rodenas.com/book/): Never rewrite. Never stop delivery. A book about rescuing stalled software, 2024, 156 pages.
+
+## Essays with more than half a million views
+
+- [Essays with more than half a million views](https://david-rodenas.com/essays/): More than 250 essays on Medium, one every Saturday since 2022, read more than half a million times.
+
+## Projects
+
+- [Projects](https://david-rodenas.com/projects/): Small programs you can run here, each made of one idea — from a network of 1994 and an auction of 2000 to a language model you can count by hand, with public data added up and two models of how software work goes wrong.
+- [The next word](https://david-rodenas.com/projects/next-word/): A language model with everything taken away but the idea: count which word follows which, then throw the dice.
+- [A relativistic rocket](https://david-rodenas.com/projects/rocinante/): How long a trip takes on board, how long for those left at home, and why a ship that crosses the solar system in days cannot reach a star in a lifetime.
+- [Technical debt](https://david-rodenas.com/projects/technical-debt/): How shortcuts create compound productivity losses over time.
+- [Developer meetings](https://david-rodenas.com/projects/developer-meetings/): How the kind and timing of meetings affect focus, fatigue and how many features a week finishes.
+- [NO2 by the hour and the month](https://david-rodenas.com/projects/no2/): Thirty years of hourly NO2, averaged by hour of the day and month of the year. A city's working day turns out to have a shape.
+- [Hot nights, counted](https://david-rodenas.com/projects/hot-nights/): How many nights a year never cool below 20 °C, at nine weather stations, and whether the second half of each record differs from the first.
+- [My first neural network](https://david-rodenas.com/projects/first-network/): A network that tells letters apart, taught by backpropagation, first written in C in 1994 and shown to my class on the PC I carried from home. Draw on its grid, and teach it letters of your own.
+- [The Fibergochi](https://david-rodenas.com/projects/fibergochi/): A student of the FIB kept like a Tamagotchi, written in JavaScript in 1999, one of the first interactive pages I made. Keep it studying, working at a terminal, sleeping and going to the bar, until it gets its degree, or it will be thrown out.
+- [The program that finished before the professor left](https://david-rodenas.com/projects/bird-cards/): A Prolog parser for a field guide to birds, 1999, and the one idea that made it instant where everyone else's took twenty minutes.
+- [The agent that won the fish auction](https://david-rodenas.com/projects/fish-market/): A Dutch auction, a class of competing agents, December 2000, and the one number ours stood on — the margin at which the market clears. Run it again, and seat your own.
+- [Worlds](https://david-rodenas.com/projects/worlds/): The fractal planet generator of 2000, in the browser, with the dials exposed.
+- [A maze you could not fly over](https://david-rodenas.com/projects/maze/): A VRML maze generator from May 2001, a depth-first dig with spheres that jump you across the walls, grown again here room for room from the same seeds, and what the spheres did that nobody noticed.
+- [How this site is built](https://david-rodenas.com/projects/architecture/): The source of this site as boxes and arrows, commit by commit — the program an AI wrote, and the rules it is held to.
+- [How this site changes](https://david-rodenas.com/projects/changes/): The history of this site's source, read for what changes, how often and with what — the picture of the source seen through its changes, the files that never settle, how far a change travels and which files stand where changes are, and the dependencies no arrow shows.
+
+## The craft
+
+- [The craft](https://david-rodenas.com/craft/): What I hold to, whoever writes the code — in the code, with others, and behind it all. Each line runs here, or has the essays where I argued it.
+- [The kata, one commit at a time](https://david-rodenas.com/craft/kata/): Robert C. Martin's Bowling Game Kata in the commits a student makes, each one run here as you reach it — the rhythm of test, code and clean, the step back to green before the design changes, and the one step I added.
+- [A test is an example](https://david-rodenas.com/craft/a-test-is-an-example/): One of the first essays I published was about this — a test that reads like the documentation of what it tests survives a refactor, and tests that look inside can pass over a bug. The same tests, run here against three dispatchers.
+- [A sentence is a step](https://david-rodenas.com/craft/a-sentence-is-a-step/): In my course the post came first, and my students got stuck on the expressions that tie each of its sentences to code — so a sentence became the name of its code. The idea, running, and where it went after the course.
+- [Guess the rule](https://david-rodenas.com/craft/guess-the-rule/): A rule you cannot see marks sequences of three numbers ✅ or ❌. Test as many as you like, then guess it — the page my old site had in 2020 for my essay on testing and refactoring, played again.
+
+## Open source
+
+- [Open source](https://david-rodenas.com/open-source/): Code of mine that is in other people's hands: what is still inside AngularJS, the npm packages strangers install, and what else is public.
+- [Two public APIs of AngularJS are mine](https://david-rodenas.com/open-source/angularjs/): Core work in AngularJS, none of it documentation — the compiler, ngClass, the testing module, two benchmark suites and a directive — and what is still in the final release.
+- [What strangers install](https://david-rodenas.com/open-source/packages/): Thirty-four npm packages, most written for one project. A few kept being downloaded for years, by people nobody told about them.
+
+## Research
+
+- [Research](https://david-rodenas.com/research/): A PhD on making parallel hardware usable by people who are not parallel programmers. Runtimes, a simulator, a compiler, and then graph matching on a GPU; and two experiments since, on code coverage and on the language of a question to an AI.
+- [Tools for parallel machines](https://david-rodenas.com/research/parallel-tools/): UPC and the Barcelona Supercomputing Center, 2003–2008. OpenMP on a chip with 128 threads and on a cluster with no shared memory, a simulator of a heterogeneous processor, and a compiler that turns serial C into streams.
+- [Streams by annotation](https://david-rodenas.com/research/streams-by-annotation/): A serial C program becomes a pipeline of tasks by writing in its margin what goes in and what comes out. The model, by the examples of its own poster, and what the prototype measured.
+- [Graph matching on a desktop](https://david-rodenas.com/research/graph-matching/): Universitat Rovira i Virgili, 2009–2011. Two computer-vision algorithms rewritten for CUDA and OpenMP on an eighteen-watt desktop: an hour and a quarter became under two minutes, without changing the result by a bit.
+- [Loops into zones](https://david-rodenas.com/research/loops-into-zones/): The method of the thesis, step by step. Two loop transformations and two annotations turn a serial algorithm into one shaped like a graphics card, without changing what it computes.
+- [One lock at a time](https://david-rodenas.com/research/one-lock-at-a-time/): Making a database engine's core concurrent, one technique at a time, each with its number — including the right change that made everything twice as slow.
+- [Coverage, generated](https://david-rodenas.com/research/coverage-generated/): 2023. A program that knows nothing of what the code is for wrote the tests, and reached 85% code coverage, more than most companies ask for. Why coverage helps the programmer, and says nothing to a manager.
+- [The language of the question](https://david-rodenas.com/research/language-of-the-question/): 2025. The same questions to the same AI in Catalan, Spanish, English, French and Dutch, and answers that did not agree. On dubbing, each language took its own side; on tourism, the most concrete answers were not in English.
+
+## Teaching
+
+- [Teaching](https://david-rodenas.com/teaching/): Courses I taught and what I built for students to stand on: a lab whose specifications are blog posts that compile into tests, a text adventure, a commons of fish that breed, Raft through a recipe for concurrency, and a kata.
+- [The post comes first](https://david-rodenas.com/teaching/software-lab/): Six autumns of Laboratori de Software 2 at Tecnocampus, and the platform built for it — posts in markdown compiled into tests for server and client, the server's answers replayed to the client, and a grader that read the repository.
+- [Sixty-four rooms](https://david-rodenas.com/teaching/adventure/): UPC, 2007. A text adventure as the lab of a first-year course, built so that four traversal-and-search schemas were all a student needed. Playable.
+- [The fishing lagoon](https://david-rodenas.com/teaching/fishing-lagoon/): A lab from 2018 where the assignment is a commons: a lagoon whose fish breed if left alone, bots that share it, and a tit-for-tat that only cooperates with those who do. Play it, and seat your own bot.
+- [Raft, and a recipe for concurrency](https://david-rodenas.com/teaching/raft/): A consensus algorithm as a laboratory assignment in 2013, and the three hints given to simplify it — above all a three-step recipe, simple enough for someone who cannot yet reason about interleavings.
+- [The Bowling Game Kata](https://david-rodenas.com/teaching/kata/): Robert C. Martin's kata, with slides and a repository to do it in JavaScript or Java.
+
+## Talks
+
+- [Talks](https://david-rodenas.com/talks/): Twenty-one years of them: two international conferences as first author, the Barcelona JavaScript circuit of 2013–2017, and since 2022 talks about algorithms for people who do not write them.
+
+## Tools
+
+Offered on every page, in a browser with WebMCP (`document.modelContext`). Each answers as JSON: `summary`, in words; `data`, the figures, each with its unit in its name; `url`; and `shown`, for one that puts its answer in front of the reader unless it is told `show: false`. For example, `technical-debt {"show": false}` answers without moving the reader's page.
+
+- `read` (path): The words of one page of this site, as the markdown it is written in, and the pages under it. Nothing on the reader's screen moves.
+- `search` (query, under): The pages of this site that say every word of a query, the ones named for it first, each with its title, summary and the lines that say it. Nothing on the reader's screen moves.
+- `technical-debt` (base-time, shortcuts, interest, timeline, show): what shortcuts cost, compounded: two teams build the same features, one of them cutting corners.
+- `rocket` (acceleration, fuel, exhaust, to, show): a relativistic rocket: how long a trip takes on board and at home, and what it burns.
+- `writings` (kind, about, from, to): The essays and talks this site lists — each with its title, link, the subject it is grouped under and what the page says of it; talks with their date — and where to find the ones it does not list. Nothing on the reader's screen moves.
+- `shell` (line): runs a line at the prompt the reader sees, as if they had typed it: ls, cd, cat, find, grep, help, and every program as a command.
