@@ -29,6 +29,7 @@ Every page is plain HTML at its address, its words in the page and not drawn by 
 - [A maze you could not fly over](https://david-rodenas.com/projects/maze/): A VRML maze generator from May 2001, a depth-first dig with spheres that jump you across the walls, grown again here room for room from the same seeds, and what the spheres did that nobody noticed.
 - [How this site is built](https://david-rodenas.com/projects/architecture/): The source of this site as boxes and arrows, commit by commit — the program an AI wrote, and the rules it is held to.
 - [How this site changes](https://david-rodenas.com/projects/changes/): The history of this site's source, read for what changes, how often and with what — the picture of the source seen through its changes, the files that never settle, how far a change travels and which files stand where changes are, and the dependencies no arrow shows.
+- [Blueprints](https://david-rodenas.com/projects/blueprints/): The data this site keeps — the weather, the air, its own source — as nodes to wire together, the way Unreal and Unity wire their programs: sources, steps, statistics and pictures, with dials to turn. Nine to start from, the last one yours.
 
 ## The craft
 
